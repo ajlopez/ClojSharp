@@ -8,7 +8,7 @@
 
     public class Lexer
     {
-        private const string separators = "()";
+        private const string separators = "()[]";
         private TextReader reader;
 
         public Lexer(string text)
