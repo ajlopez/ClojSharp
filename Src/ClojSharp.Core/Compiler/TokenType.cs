@@ -7,6 +7,7 @@
 
     public enum TokenType
     {
-        Name = 1
+        Name = 1,
+        Integer = 2
     }
 }
