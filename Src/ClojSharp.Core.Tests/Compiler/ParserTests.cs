@@ -71,5 +71,32 @@
 
             Assert.IsNull(list.Rest);
         }
+
+        [TestMethod]
+        public void ParseListWithTwoSymbols()
+        {
+            Parser parser = new Parser("(name1 name2)");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(List));
+
+            var list = (List)expr;
+
+            Assert.IsNotNull(list.First);
+            Assert.IsInstanceOfType(list.First, typeof(Symbol));
+            Assert.AreEqual("name1", ((Symbol)list.First).Name);
+
+            Assert.IsNotNull(list.Rest);
+            Assert.IsInstanceOfType(list.Rest, typeof(List));
+
+            list = (List)list.Rest;
+
+            Assert.IsNotNull(list.First);
+            Assert.IsInstanceOfType(list.First, typeof(Symbol));
+            Assert.AreEqual("name2", ((Symbol)list.First).Name);
+            Assert.IsNull(list.Rest);
+        }
     }
 }
