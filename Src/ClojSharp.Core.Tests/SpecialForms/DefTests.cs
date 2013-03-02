@@ -31,6 +31,25 @@
         }
 
         [TestMethod]
+        public void DefVariableWithoutInitialValue()
+        {
+            Context context = new Context();
+            Symbol symbol = new Symbol("one");
+            Def def = new Def();
+
+            var result = def.Evaluate(context, new object[] { symbol });
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Var));
+
+            var var = (Var)result;
+
+            Assert.AreEqual("one", var.Name);
+
+            Assert.IsNull(context.GetValue("one"));
+        }
+
+        [TestMethod]
         public void DefVariableFromASymbol()
         {
             Context context = new Context();

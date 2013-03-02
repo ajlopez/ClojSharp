@@ -11,10 +11,15 @@
         public object Evaluate(Context context, IList<object> arguments)
         {
             Symbol symbol = (Symbol)arguments[0];
-            object value = arguments[1];
+            object value = null;
 
-            if (value is Symbol)
-                value = context.GetValue(((Symbol)value).Name);
+            if (arguments.Count == 2) 
+            {
+                value = arguments[1];
+
+                if (value is Symbol)
+                    value = context.GetValue(((Symbol)value).Name);
+            }
 
             context.SetRootValue(symbol.Name, value);
             return new Var(symbol.Name);
