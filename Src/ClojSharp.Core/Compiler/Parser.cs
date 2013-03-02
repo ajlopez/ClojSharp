@@ -33,14 +33,22 @@
 
         private List ParseList()
         {
+            Stack<object> elements = new Stack<object>();
             var token = this.lexer.NextToken();
 
-            if (token.Type == TokenType.Separator && token.Value == ")")
-                return null;
+            while (token.Type != TokenType.Separator || token.Value != ")")
+            {
+                this.lexer.PushToken(token);
+                elements.Push(this.ParseExpression());
+                token = this.lexer.NextToken();
+            }
 
-            this.lexer.PushToken(token);
+            List list = null;
 
-            return new List(this.ParseExpression(), this.ParseList());
+            while (elements.Count > 0)
+                list = new List(elements.Pop(), list);
+
+            return list;
         }
     }
 }
