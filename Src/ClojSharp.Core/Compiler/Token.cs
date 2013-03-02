@@ -5,15 +5,9 @@
     using System.Linq;
     using System.Text;
 
-    public class Lexer
+    public class Token
     {
-        public Lexer(string text)
-        {
-        }
-
-        public Token NextToken()
-        {
-            return null;
-        }
+        private TokenType type;
+        private string value;
     }
 }
