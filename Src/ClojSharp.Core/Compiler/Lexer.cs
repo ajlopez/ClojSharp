@@ -58,9 +58,12 @@
         private Token NextInteger(char chr)
         {
             string value = chr.ToString();
+            int ch;
 
-            for (int ch = this.NextChar(); ch >= 0 && char.IsDigit((char)ch); ch = this.NextChar())
+            for (ch = this.NextChar(); ch >= 0 && char.IsDigit((char)ch); ch = this.NextChar())
                 value += (char)ch;
+
+            this.PushChar(ch);
 
             return new Token(TokenType.Integer, value);
         }
