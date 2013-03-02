@@ -11,8 +11,9 @@
         {
             int result = 0;
 
-            foreach (var value in arguments)
-                result += (int)value;
+            if (arguments != null)
+                foreach (var value in arguments)
+                    result += (int)value;
 
             return result;
         }

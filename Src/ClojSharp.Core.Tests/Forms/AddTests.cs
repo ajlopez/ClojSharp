@@ -27,6 +27,14 @@
         }
 
         [TestMethod]
+        public void AddNullIsZero()
+        {
+            Add add = new Add();
+
+            Assert.AreEqual(0, add.Evaluate(null, null));
+        }
+
+        [TestMethod]
         public void AddAnInteger()
         {
             Add add = new Add();
