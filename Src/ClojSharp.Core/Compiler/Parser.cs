@@ -22,6 +22,9 @@
             if (token == null)
                 return null;
 
+            if (token.Type == TokenType.Integer)
+                return int.Parse(token.Value);
+
             return new Symbol(token.Value);
         }
     }
