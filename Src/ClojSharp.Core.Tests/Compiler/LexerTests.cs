@@ -93,5 +93,25 @@
 
             Assert.IsNull(lexer.NextToken());
         }
+
+        [TestMethod]
+        public void GetParentheses()
+        {
+            Lexer lexer = new Lexer("()");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Separator, token.Type);
+            Assert.AreEqual("(", token.Value);
+
+            token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Separator, token.Type);
+            Assert.AreEqual(")", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
     }
 }

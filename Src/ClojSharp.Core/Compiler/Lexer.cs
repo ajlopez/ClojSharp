@@ -8,6 +8,7 @@
 
     public class Lexer
     {
+        private const string separators = "()";
         private TextReader reader;
 
         public Lexer(string text)
@@ -31,8 +32,8 @@
 
             char chr = (char)ch;
 
-            if (chr == '(')
-                return new Token(TokenType.Separator, "(");
+            if (separators.Contains(chr))
+                return new Token(TokenType.Separator, chr.ToString());
 
             if (char.IsDigit(chr))
                 return this.NextInteger(chr);
