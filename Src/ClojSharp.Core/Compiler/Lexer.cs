@@ -24,7 +24,7 @@
         {
             string value = string.Empty;
 
-            int ch = this.NextChar();
+            int ch = this.NextCharSkippingSpaces();
 
             if (ch < 0)
                 return null;
@@ -41,7 +41,7 @@
         {
             string value = chr.ToString();
 
-            for (int ch = this.NextChar(); ch >= 0; ch = this.NextChar())
+            for (int ch = this.NextChar(); ch >= 0 && char.IsLetterOrDigit((char)ch); ch = this.NextChar())
                 value += (char)ch;
 
             return new Token(TokenType.Name, value);
@@ -55,6 +55,16 @@
                 value += (char)ch;
 
             return new Token(TokenType.Integer, value);
+        }
+
+        private int NextCharSkippingSpaces()
+        {
+            int ch;
+
+            for (ch = this.NextChar(); ch >= 0 && char.IsWhiteSpace((char)ch); ch = this.NextChar())
+                ;
+
+            return ch;
         }
 
         private int NextChar()
