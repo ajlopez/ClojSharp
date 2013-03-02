@@ -67,6 +67,32 @@
         }
 
         [TestMethod]
+        public void GetNamesInParentheses()
+        {
+            Lexer lexer = new Lexer("(name)");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Separator, token.Type);
+            Assert.AreEqual("(", token.Value);
+
+            token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("name", token.Value);
+
+            token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Separator, token.Type);
+            Assert.AreEqual(")", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetInteger()
         {
             Lexer lexer = new Lexer("123");

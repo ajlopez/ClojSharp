@@ -10,6 +10,7 @@
     {
         private const string separators = "()[]";
         private TextReader reader;
+        private Stack<int> chars = new Stack<int>();
 
         public Lexer(string text)
             : this(new StringReader(text ?? string.Empty))
@@ -44,9 +45,12 @@
         private Token NextName(char chr)
         {
             string value = chr.ToString();
+            int ch;
 
-            for (int ch = this.NextChar(); ch >= 0 && char.IsLetterOrDigit((char)ch); ch = this.NextChar())
+            for (ch = this.NextChar(); ch >= 0 && char.IsLetterOrDigit((char)ch); ch = this.NextChar())
                 value += (char)ch;
+
+            this.PushChar(ch);
 
             return new Token(TokenType.Name, value);
         }
@@ -73,7 +77,15 @@
 
         private int NextChar()
         {
+            if (chars.Count > 0)
+                return chars.Pop();
+
             return this.reader.Read();
+        }
+
+        private void PushChar(int ch)
+        {
+            this.chars.Push(ch);
         }
     }
 }
