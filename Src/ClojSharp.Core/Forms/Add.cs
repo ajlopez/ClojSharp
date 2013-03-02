@@ -9,7 +9,12 @@
     {
         public object Evaluate(Context context, IList<object> arguments)
         {
-            return (int)arguments[0] + (int)arguments[1];
+            int result = 0;
+
+            foreach (var value in arguments)
+                result += (int)value;
+
+            return result;
         }
     }
 }

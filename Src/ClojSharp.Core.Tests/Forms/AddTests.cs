@@ -17,5 +17,21 @@
 
             Assert.AreEqual(3, add.Evaluate(null, new object[] { 1, 2 }));
         }
+
+        [TestMethod]
+        public void AddNoIntegerIsZero()
+        {
+            Add add = new Add();
+
+            Assert.AreEqual(0, add.Evaluate(null, new object[] { }));
+        }
+
+        [TestMethod]
+        public void AddAnInteger()
+        {
+            Add add = new Add();
+
+            Assert.AreEqual(5, add.Evaluate(null, new object[] { 5 }));
+        }
     }
 }
