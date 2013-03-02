@@ -29,5 +29,26 @@
 
             Assert.AreEqual(1, context.GetValue("one"));
         }
+
+        [TestMethod]
+        public void DefIntegerVariableAtRootContext()
+        {
+            Context root = new Context();
+            Context context = new Context(root);
+            Symbol symbol = new Symbol("one");
+            Def def = new Def();
+
+            var result = def.Evaluate(context, new object[] { symbol, 1 });
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Var));
+
+            var var = (Var)result;
+
+            Assert.AreEqual("one", var.Name);
+
+            Assert.AreEqual(1, context.GetValue("one"));
+            Assert.AreEqual(1, root.GetValue("one"));
+        }
     }
 }
