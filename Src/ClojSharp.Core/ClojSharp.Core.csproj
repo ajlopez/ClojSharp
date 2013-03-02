@@ -52,8 +52,10 @@
     <Compile Include="Context.cs" />
     <Compile Include="Language\List.cs" />
     <Compile Include="Language\Symbol.cs" />
+    <Compile Include="Language\Var.cs" />
     <Compile Include="Language\Vector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecialForms\Def.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
