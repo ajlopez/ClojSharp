@@ -11,6 +11,7 @@
         private const string separators = "()[]";
         private TextReader reader;
         private Stack<int> chars = new Stack<int>();
+        private Stack<Token> tokens = new Stack<Token>();
 
         public Lexer(string text)
             : this(new StringReader(text ?? string.Empty))
@@ -24,6 +25,9 @@
 
         public Token NextToken()
         {
+            if (tokens.Count > 0)
+                return tokens.Pop();
+
             string value = string.Empty;
 
             int ch = this.NextCharSkippingSpaces();
@@ -40,6 +44,11 @@
                 return this.NextInteger(chr);
 
             return this.NextName(chr);
+        }
+
+        public void PushToken(Token token)
+        {
+            this.tokens.Push(token);
         }
 
         private Token NextName(char chr)

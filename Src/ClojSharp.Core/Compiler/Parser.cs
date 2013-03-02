@@ -22,10 +22,25 @@
             if (token == null)
                 return null;
 
+            if (token.Type == TokenType.Separator && token.Value == "(")
+                return this.ParseList();
+
             if (token.Type == TokenType.Integer)
                 return int.Parse(token.Value);
 
             return new Symbol(token.Value);
+        }
+
+        private List ParseList()
+        {
+            var token = this.lexer.NextToken();
+
+            if (token.Type == TokenType.Separator && token.Value == ")")
+                return null;
+
+            this.lexer.PushToken(token);
+
+            return new List(this.ParseExpression(), this.ParseList());
         }
     }
 }

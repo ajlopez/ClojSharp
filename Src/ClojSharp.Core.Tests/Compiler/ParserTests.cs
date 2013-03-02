@@ -52,5 +52,24 @@
 
             Assert.IsNull(parser.ParseExpression());
         }
+
+        [TestMethod]
+        public void ParseListWithOneSymbol()
+        {
+            Parser parser = new Parser("(name)");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(List));
+
+            var list = (List)expr;
+
+            Assert.IsNotNull(list.First);
+            Assert.IsInstanceOfType(list.First, typeof(Symbol));
+            Assert.AreEqual("name", ((Symbol)list.First).Name);
+
+            Assert.IsNull(list.Rest);
+        }
     }
 }
