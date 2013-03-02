@@ -31,6 +31,27 @@
         }
 
         [TestMethod]
+        public void DefVariableFromASymbol()
+        {
+            Context context = new Context();
+            context.SetValue("uno", 1);
+            Symbol symbol = new Symbol("one");
+            Symbol uno = new Symbol("uno");
+            Def def = new Def();
+
+            var result = def.Evaluate(context, new object[] { symbol, uno });
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Var));
+
+            var var = (Var)result;
+
+            Assert.AreEqual("one", var.Name);
+
+            Assert.AreEqual(1, context.GetValue("one"));
+        }
+
+        [TestMethod]
         public void DefIntegerVariableAtRootContext()
         {
             Context root = new Context();

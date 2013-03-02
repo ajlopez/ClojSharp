@@ -12,6 +12,10 @@
         {
             Symbol symbol = (Symbol)arguments[0];
             object value = arguments[1];
+
+            if (value is Symbol)
+                value = context.GetValue(((Symbol)value).Name);
+
             context.SetRootValue(symbol.Name, value);
             return new Var(symbol.Name);
         }
