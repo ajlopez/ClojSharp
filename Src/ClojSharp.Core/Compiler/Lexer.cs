@@ -31,6 +31,9 @@
 
             char chr = (char)ch;
 
+            if (chr == '(')
+                return new Token(TokenType.Separator, "(");
+
             if (char.IsDigit(chr))
                 return this.NextInteger(chr);
 
