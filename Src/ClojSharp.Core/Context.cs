@@ -25,6 +25,14 @@
             values[name] = value;
         }
 
+        public void SetTopValue(string name, object value)
+        {
+            if (parent != null)
+                parent.SetTopValue(name, value);
+            else
+                this.SetValue(name, value);
+        }
+
         public object GetValue(string name)
         {
             if (values.ContainsKey(name))
