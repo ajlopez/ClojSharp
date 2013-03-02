@@ -25,6 +25,9 @@
             if (token.Type == TokenType.Separator && token.Value == "(")
                 return this.ParseList();
 
+            if (token.Type == TokenType.Separator && token.Value == "[")
+                return this.ParseVector();
+
             if (token.Type == TokenType.Integer)
                 return int.Parse(token.Value);
 
@@ -49,6 +52,21 @@
                 list = new List(elements.Pop(), list);
 
             return list;
+        }
+
+        private Vector ParseVector()
+        {
+            List<object> elements = new List<object>();
+            var token = this.lexer.NextToken();
+
+            while (token.Type != TokenType.Separator || token.Value != "]")
+            {
+                this.lexer.PushToken(token);
+                elements.Add(this.ParseExpression());
+                token = this.lexer.NextToken();
+            }
+
+            return new Vector(elements);
         }
     }
 }

@@ -98,5 +98,23 @@
             Assert.AreEqual("name2", ((Symbol)list.First).Name);
             Assert.IsNull(list.Rest);
         }
+
+        [TestMethod]
+        public void ParseVectorWithTwoIntegers()
+        {
+            Parser parser = new Parser("[1 2]");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(Vector));
+
+            var vector = (Vector)expr;
+
+            Assert.IsNotNull(vector.Elements);
+            Assert.AreEqual(2, vector.Elements.Count);
+            Assert.AreEqual(1, vector.Elements[0]);
+            Assert.AreEqual(2, vector.Elements[1]);
+        }
     }
 }
