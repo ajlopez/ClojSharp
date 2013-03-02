@@ -12,7 +12,7 @@
         {
             Symbol symbol = (Symbol)arguments[0];
             object value = arguments[1];
-            context.SetTopValue(symbol.Name, value);
+            context.SetRootValue(symbol.Name, value);
             return new Var(symbol.Name);
         }
     }

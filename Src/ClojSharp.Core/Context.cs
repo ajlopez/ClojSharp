@@ -25,10 +25,10 @@
             values[name] = value;
         }
 
-        public void SetTopValue(string name, object value)
+        public void SetRootValue(string name, object value)
         {
             if (parent != null)
-                parent.SetTopValue(name, value);
+                parent.SetRootValue(name, value);
             else
                 this.SetValue(name, value);
         }
