@@ -47,6 +47,34 @@
         }
 
         [TestMethod]
+        public void GetPlusAsName()
+        {
+            Lexer lexer = new Lexer("+");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("+", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
+        public void GetTwoSymbolsAsName()
+        {
+            Lexer lexer = new Lexer("+=");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("+=", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetTwoNames()
         {
             Lexer lexer = new Lexer("name1 name2");

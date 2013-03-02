@@ -43,7 +43,10 @@
             if (char.IsDigit(chr))
                 return this.NextInteger(chr);
 
-            return this.NextName(chr);
+            if (char.IsLetter(chr))
+                return this.NextName(chr);
+
+            return this.NextSymbolName(chr);
         }
 
         public void PushToken(Token token)
@@ -57,6 +60,19 @@
             int ch;
 
             for (ch = this.NextChar(); ch >= 0 && char.IsLetterOrDigit((char)ch); ch = this.NextChar())
+                value += (char)ch;
+
+            this.PushChar(ch);
+
+            return new Token(TokenType.Name, value);
+        }
+
+        private Token NextSymbolName(char chr)
+        {
+            string value = chr.ToString();
+            int ch;
+
+            for (ch = this.NextChar(); ch >= 0 && !char.IsWhiteSpace((char)ch) && !char.IsLetterOrDigit((char)ch) && !separators.Contains((char)ch); ch = this.NextChar())
                 value += (char)ch;
 
             this.PushChar(ch);
