@@ -39,5 +39,15 @@
             Assert.IsInstanceOfType(result, typeof(IForm));
             Assert.IsNotInstanceOfType(result, typeof(BaseForm));
         }
+
+        [TestMethod]
+        public void MachineEvaluateObjects()
+        {
+            Machine machine = new Machine();
+
+            Assert.AreEqual(3, machine.Evaluate(3, null));
+            Assert.AreEqual("foo", machine.Evaluate("foo", null));
+            Assert.IsNull(machine.Evaluate(null, null));
+        }
     }
 }

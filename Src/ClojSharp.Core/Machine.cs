@@ -19,5 +19,10 @@
         }
 
         public Context RootContext { get { return this.root; } }
+
+        public object Evaluate(object obj, Context context)
+        {
+            return obj;
+        }
     }
 }
