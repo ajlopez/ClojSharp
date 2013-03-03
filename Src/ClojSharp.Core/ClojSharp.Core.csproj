@@ -50,6 +50,7 @@
     <Compile Include="Compiler\Token.cs" />
     <Compile Include="Compiler\TokenType.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Exceptions\ArityException.cs" />
     <Compile Include="Forms\Add.cs" />
     <Compile Include="Forms\BaseForm.cs" />
     <Compile Include="Forms\IForm.cs" />

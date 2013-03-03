@@ -4,11 +4,15 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using ClojSharp.Core.Exceptions;
 
     public class Subtract : BaseForm
     {
         public override object EvaluateForm(Context context, IList<object> arguments)
         {
+            if (arguments.Count == 0)
+                throw new ArityException(typeof(Subtract), 0);
+
             if (arguments.Count == 1)
                 return -(int)arguments[0];
 
