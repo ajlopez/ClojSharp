@@ -58,6 +58,7 @@
     <Compile Include="Language\Symbol.cs" />
     <Compile Include="Language\Var.cs" />
     <Compile Include="Language\Vector.cs" />
+    <Compile Include="Machine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecialForms\Def.cs" />
   </ItemGroup>

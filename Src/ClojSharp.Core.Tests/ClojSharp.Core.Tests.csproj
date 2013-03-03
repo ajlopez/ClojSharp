@@ -46,6 +46,7 @@
     <Compile Include="Forms\AddTests.cs" />
     <Compile Include="Language\VectorTests.cs" />
     <Compile Include="Language\ListTests.cs" />
+    <Compile Include="MachineTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecialForms\DefTests.cs" />
   </ItemGroup>
