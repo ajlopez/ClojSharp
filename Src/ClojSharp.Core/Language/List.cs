@@ -6,12 +6,12 @@
     using System.Text;
     using ClojSharp.Core.Forms;
 
-    public class List : IEvaluable
+    public class List : IEvaluable, ISeq
     {
         private object first;
-        private object rest;
+        private ISeq rest;
 
-        public List(object first, object rest)
+        public List(object first, ISeq rest)
         {
             this.first = first;
             this.rest = rest;
@@ -19,7 +19,9 @@
 
         public object First { get { return this.first; } }
 
-        public object Rest { get { return this.rest; } }
+        public ISeq Next { get { return this.rest; } }
+
+        public ISeq Rest { get { return this.rest; } }
 
         public object Evaluate(Context context)
         {
@@ -28,8 +30,8 @@
 
             IList<object> arguments = new List<object>();
 
-            for (var args = (List)this.rest; args != null; args = (List)args.rest)
-                arguments.Add(args.first);
+            for (var args = this.rest; args != null; args = args.Next)
+                arguments.Add(args.First);
 
             return fn.Evaluate(context, arguments);
         }

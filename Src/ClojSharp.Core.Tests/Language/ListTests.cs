@@ -15,10 +15,10 @@
         [TestMethod]
         public void MakeList()
         {
-            List list = new List(1, 2);
+            List list = new List(1, null);
 
             Assert.AreEqual(1, list.First);
-            Assert.AreEqual(2, list.Rest);
+            Assert.IsNull(list.Next);
         }
 
         [TestMethod]

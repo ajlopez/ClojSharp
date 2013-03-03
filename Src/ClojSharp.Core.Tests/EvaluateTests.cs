@@ -120,6 +120,18 @@
             Assert.AreEqual(1, this.Evaluate("(/)"));
         }
 
+        [TestMethod]
+        public void EvaluateQuoteInteger()
+        {
+            Assert.AreEqual(1, this.Evaluate("(quote 1)"));
+        }
+
+        [TestMethod]
+        public void EvaluateQuoteList()
+        {
+            Assert.AreEqual("(1 2)", this.Evaluate("(quote (1 2))").ToString());
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);
