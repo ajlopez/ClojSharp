@@ -26,6 +26,18 @@
             var result = machine.RootContext.GetValue("+");
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(IForm));
+            Assert.IsInstanceOfType(result, typeof(BaseForm));
+        }
+
+        [TestMethod]
+        public void MachineHasDefinedSpecialForms()
+        {
+            Machine machine = new Machine();
+
+            var result = machine.RootContext.GetValue("def");
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(IForm));
+            Assert.IsNotInstanceOfType(result, typeof(BaseForm));
         }
     }
 }
