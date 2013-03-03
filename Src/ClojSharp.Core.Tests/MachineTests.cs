@@ -35,6 +35,7 @@
             this.IsForm("cons");
             this.IsForm("list");
             this.IsForm("first");
+            this.IsForm("rest");
         }
 
         [TestMethod]

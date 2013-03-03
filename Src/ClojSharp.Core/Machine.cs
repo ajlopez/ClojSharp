@@ -21,6 +21,7 @@
             this.root.SetValue("cons", new Cons());
             this.root.SetValue("list", new ListForm());
             this.root.SetValue("first", new First());
+            this.root.SetValue("rest", new Rest());
             this.root.SetValue("+", new Add());
             this.root.SetValue("-", new Subtract());
             this.root.SetValue("*", new Multiply());

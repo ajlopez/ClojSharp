@@ -7,6 +7,7 @@
     using ClojSharp.Core.Compiler;
     using ClojSharp.Core.Exceptions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ClojSharp.Core.Language;
 
     [TestClass]
     public class EvaluateTests
@@ -148,6 +149,14 @@
             Assert.AreEqual(1, this.Evaluate("(first (list 1 2))"));
             Assert.IsNull(this.Evaluate("(first nil)"));
             Assert.IsNull(this.Evaluate("(first ())"));
+        }
+
+        [TestMethod]
+        public void EvaluateRest()
+        {
+            Assert.AreEqual("(2)", this.Evaluate("(rest (list 1 2))").ToString());
+            Assert.AreSame(EmptyList.Instance, this.Evaluate("(rest nil)"));
+            Assert.AreSame(EmptyList.Instance, this.Evaluate("(rest ())"));
         }
 
         private object Evaluate(string text)
