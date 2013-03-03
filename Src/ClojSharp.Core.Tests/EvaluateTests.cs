@@ -33,26 +33,11 @@
         }
 
         [TestMethod]
-        public void EvaluateAddTwoIntegers()
+        public void EvaluateAdd()
         {
             Assert.AreEqual(3, this.Evaluate("(+ 1 2)", this.machine.RootContext));
-        }
-
-        [TestMethod]
-        public void EvaluateAddThreeIntegers()
-        {
             Assert.AreEqual(6, this.Evaluate("(+ 1 2 3)", this.machine.RootContext));
-        }
-
-        [TestMethod]
-        public void EvaluateOneInteger()
-        {
             Assert.AreEqual(5, this.Evaluate("(+ 5)", this.machine.RootContext));
-        }
-
-        [TestMethod]
-        public void EvaluateNoInteger()
-        {
             Assert.AreEqual(0, this.Evaluate("(+)", this.machine.RootContext));
         }
 
