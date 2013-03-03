@@ -32,6 +32,8 @@
             this.IsForm("-");
             this.IsForm("*");
             this.IsForm("/");
+            this.IsForm("cons");
+            this.IsForm("list");
         }
 
         [TestMethod]
