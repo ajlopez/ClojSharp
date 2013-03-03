@@ -153,9 +153,6 @@
     <milliseconds>475</milliseconds>
     <violations />
   </sourcecode>
-  <project key="-1333396368">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="Divide.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -183,13 +180,25 @@
     <milliseconds>7</milliseconds>
     <violations />
   </sourcecode>
+  <project key="-1333396368">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="Fn.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 11:05:40</timestamp>
+    <milliseconds>75</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
       <milliseconds>243</milliseconds>
     </settings>
-    <timestamp>03/03/2013 10:23:51</timestamp>
-    <milliseconds>755</milliseconds>
+    <timestamp>03/03/2013 11:02:24</timestamp>
+    <milliseconds>342</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>

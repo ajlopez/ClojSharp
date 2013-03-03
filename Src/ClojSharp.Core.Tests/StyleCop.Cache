@@ -84,22 +84,22 @@
   <project key="1081152653">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <sourcecode name="FunctionTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:45</timestamp>
-      <milliseconds>848</milliseconds>
-    </settings>
-    <timestamp>03/03/2013 10:47:45</timestamp>
-    <milliseconds>59</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="EvaluateTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/02/2013 17:40:45</timestamp>
       <milliseconds>848</milliseconds>
     </settings>
-    <timestamp>03/03/2013 10:22:21</timestamp>
-    <milliseconds>886</milliseconds>
+    <timestamp>03/03/2013 11:00:51</timestamp>
+    <milliseconds>143</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="FunctionTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/02/2013 17:40:45</timestamp>
+      <milliseconds>848</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 10:54:31</timestamp>
+    <milliseconds>413</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="MachineTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -107,8 +107,8 @@
       <timestamp>03/02/2013 17:40:45</timestamp>
       <milliseconds>848</milliseconds>
     </settings>
-    <timestamp>03/03/2013 10:22:51</timestamp>
-    <milliseconds>452</milliseconds>
+    <timestamp>03/03/2013 11:01:06</timestamp>
+    <milliseconds>461</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>

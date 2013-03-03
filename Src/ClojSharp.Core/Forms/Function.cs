@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Language;
+    using ClojSharp.Core.Exceptions;
 
     public class Function : BaseForm
     {
@@ -12,12 +13,14 @@
         private IList<string> names;
         private object body;
         private IEvaluable evalbody;
+        private int arity;
 
         public Function(Context closure, IList<string> names, object body)
         {
             this.closure = closure;
             this.names = names;
             this.body = body;
+            this.arity = names == null ? 0 : names.Count;
 
             if (body is IEvaluable)
                 this.evalbody = (IEvaluable)body;
@@ -25,6 +28,11 @@
 
         public override object EvaluateForm(Context context, IList<object> arguments)
         {
+            int arity = arguments == null ? 0 : arguments.Count;
+
+            if (this.arity != arity)
+                throw new ArityException(typeof(Function), arity);
+
             if (this.evalbody == null)
                 return this.body;
 

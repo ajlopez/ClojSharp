@@ -94,6 +94,27 @@
 
         [TestMethod]
         [ExpectedException(typeof(ArityException))]
+        public void RaiseWhenAdditionalFirstArgument()
+        {
+            Assert.AreEqual(1, this.Evaluate("((fn [] 1) 2)"));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArityException))]
+        public void RaiseWhenAdditionalSecondArgument()
+        {
+            Assert.AreEqual(1, this.Evaluate("((fn [x] (+ 1 x)) 2 3)"));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArityException))]
+        public void RaiseWhenMissingFirstArgument()
+        {
+            Assert.AreEqual(1, this.Evaluate("((fn [x] (+ 1 x)))"));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArityException))]
         public void RaiseArityExceptionWhenEvaluateDivideWithoutArguments()
         {
             Assert.AreEqual(1, this.Evaluate("(/)"));
