@@ -21,7 +21,7 @@
 
         public ISeq Next { get { return this.rest; } }
 
-        public ISeq Rest { get { return this.rest; } }
+        public ISeq Rest { get { return this.rest == null ? EmptyList.Instance : this.rest; } }
 
         public object Evaluate(Context context)
         {
@@ -43,7 +43,7 @@
             sb.Append("(");
             sb.Append(this.first.ToString());
 
-            for (var rest = (List)this.rest; rest != null; rest = (List)rest.rest)
+            for (var rest = this.rest; rest != null; rest = rest.Next)
             {
                 sb.Append(" ");
                 sb.Append(rest.First.ToString());

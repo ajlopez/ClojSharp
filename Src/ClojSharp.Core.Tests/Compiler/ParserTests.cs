@@ -87,7 +87,7 @@
             Assert.IsInstanceOfType(list.First, typeof(Symbol));
             Assert.AreEqual("name", ((Symbol)list.First).Name);
 
-            Assert.IsNull(list.Rest);
+            Assert.IsNull(list.Next);
         }
 
         [TestMethod]
@@ -106,15 +106,16 @@
             Assert.IsInstanceOfType(list.First, typeof(Symbol));
             Assert.AreEqual("name1", ((Symbol)list.First).Name);
 
-            Assert.IsNotNull(list.Rest);
-            Assert.IsInstanceOfType(list.Rest, typeof(List));
+            Assert.IsNotNull(list.Next);
+            Assert.IsInstanceOfType(list.Next, typeof(List));
 
             list = (List)list.Rest;
 
             Assert.IsNotNull(list.First);
             Assert.IsInstanceOfType(list.First, typeof(Symbol));
             Assert.AreEqual("name2", ((Symbol)list.First).Name);
-            Assert.IsNull(list.Rest);
+            Assert.IsNull(list.Next);
+            Assert.AreSame(EmptyList.Instance, list.Rest);
         }
 
         [TestMethod]

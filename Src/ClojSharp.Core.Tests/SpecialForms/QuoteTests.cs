@@ -37,9 +37,9 @@
 
             var list = (List)result;
             Assert.AreEqual(1, list.First);
-            Assert.IsInstanceOfType(list.Rest, typeof(List));
-            Assert.AreEqual(2, ((List)list.Rest).First);
-            Assert.IsNull(((List)list.Rest).Rest);
+            Assert.IsInstanceOfType(list.Next, typeof(List));
+            Assert.AreEqual(2, ((List)list.Next).First);
+            Assert.IsNull(((List)list.Next).Next);
         }
     }
 }

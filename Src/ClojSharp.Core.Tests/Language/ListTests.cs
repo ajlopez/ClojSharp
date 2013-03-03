@@ -19,6 +19,7 @@
 
             Assert.AreEqual(1, list.First);
             Assert.IsNull(list.Next);
+            Assert.AreSame(EmptyList.Instance, list.Rest);
         }
 
         [TestMethod]
