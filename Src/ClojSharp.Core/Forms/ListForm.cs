@@ -12,6 +12,9 @@
 
         public override object EvaluateForm(Context context, IList<object> arguments)
         {
+            if (arguments == null || arguments.Count == 0)
+                return EmptyList.Instance;
+
             List result = null;
             for (var k = arguments.Count; k-- > 0; )
                 result = new List(arguments[k], result);
