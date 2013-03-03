@@ -49,6 +49,15 @@
             Assert.AreEqual(-5, this.Evaluate("(- 5)"));
         }
 
+        [TestMethod]
+        public void EvaluateMultiply()
+        {
+            Assert.AreEqual(1, this.Evaluate("(*)"));
+            Assert.AreEqual(2, this.Evaluate("(* 2)"));
+            Assert.AreEqual(6, this.Evaluate("(* 2 3)"));
+            Assert.AreEqual(24, this.Evaluate("(* 2 3 4)"));
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);
