@@ -130,6 +130,7 @@
         public void EvaluateQuoteList()
         {
             Assert.AreEqual("(1 2)", this.Evaluate("(quote (1 2))").ToString());
+            Assert.AreEqual("(1 2)", this.Evaluate("'(1 2)").ToString());
         }
 
         private object Evaluate(string text)
