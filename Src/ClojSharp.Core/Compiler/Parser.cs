@@ -11,6 +11,7 @@
     {
         private static Symbol Quote = new Symbol("quote");
         private static string QuoteChar = "'";
+        private static string NilName = "nil";
 
         private Lexer lexer;
 
@@ -40,8 +41,13 @@
             if (token.Type == TokenType.Integer)
                 return int.Parse(token.Value);
 
-            if (token.Type == TokenType.Name && token.Value == QuoteChar)
-                return new List(Quote, new List(this.ParseExpression(), null));
+            if (token.Type == TokenType.Name)
+            {
+                if (token.Value == QuoteChar)
+                    return new List(Quote, new List(this.ParseExpression(), null));
+                if (token.Value == NilName)
+                    return null;
+            }
 
             return new Symbol(token.Value);
         }

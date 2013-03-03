@@ -147,5 +147,15 @@
             Assert.IsInstanceOfType(expr, typeof(List));
             Assert.AreEqual("(quote (1 2))", expr.ToString());
         }
+
+        [TestMethod]
+        public void ParseNilAsNull()
+        {
+            Parser parser = new Parser("nil");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNull(expr);
+        }
     }
 }
