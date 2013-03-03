@@ -4,10 +4,11 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using ClojSharp.Core.Language;
 
-    public class Add
+    public class Add : BaseForm
     {
-        public object Evaluate(Context context, IList<object> arguments)
+        public override object EvaluateForm(Context context, IList<object> arguments)
         {
             int result = 0;
 

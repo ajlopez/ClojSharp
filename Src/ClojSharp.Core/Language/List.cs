@@ -6,7 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Forms;
 
-    public class List
+    public class List : IEvaluable
     {
         private object first;
         private object rest;
@@ -23,8 +23,8 @@
 
         public object Evaluate(Context context)
         {
-            var symbol = (Symbol)this.first;
-            var fn = (Add)context.GetValue(symbol.Name);
+            IForm fn;
+            fn = (IForm)((IEvaluable)this.first).Evaluate(context);
 
             IList<object> arguments = new List<object>();
 

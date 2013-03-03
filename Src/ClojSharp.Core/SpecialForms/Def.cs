@@ -4,9 +4,10 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using ClojSharp.Core.Forms;
     using ClojSharp.Core.Language;
 
-    public class Def
+    public class Def : IForm
     {
         public object Evaluate(Context context, IList<object> arguments)
         {

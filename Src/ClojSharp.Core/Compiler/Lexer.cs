@@ -8,7 +8,7 @@
 
     public class Lexer
     {
-        private const string separators = "()[]";
+        private const string Separators = "()[]";
         private TextReader reader;
         private Stack<int> chars = new Stack<int>();
         private Stack<Token> tokens = new Stack<Token>();
@@ -25,8 +25,8 @@
 
         public Token NextToken()
         {
-            if (tokens.Count > 0)
-                return tokens.Pop();
+            if (this.tokens.Count > 0)
+                return this.tokens.Pop();
 
             string value = string.Empty;
 
@@ -37,7 +37,7 @@
 
             char chr = (char)ch;
 
-            if (separators.Contains(chr))
+            if (Separators.Contains(chr))
                 return new Token(TokenType.Separator, chr.ToString());
 
             if (char.IsDigit(chr))
@@ -72,7 +72,7 @@
             string value = chr.ToString();
             int ch;
 
-            for (ch = this.NextChar(); ch >= 0 && !char.IsWhiteSpace((char)ch) && !char.IsLetterOrDigit((char)ch) && !separators.Contains((char)ch); ch = this.NextChar())
+            for (ch = this.NextChar(); ch >= 0 && !char.IsWhiteSpace((char)ch) && !char.IsLetterOrDigit((char)ch) && !Separators.Contains((char)ch); ch = this.NextChar())
                 value += (char)ch;
 
             this.PushChar(ch);
@@ -97,16 +97,17 @@
         {
             int ch;
 
-            for (ch = this.NextChar(); ch >= 0 && char.IsWhiteSpace((char)ch); ch = this.NextChar())
-                ;
+            for (ch = this.NextChar(); ch >= 0 && char.IsWhiteSpace((char)ch); ch = this.NextChar()) 
+            {
+            }
 
             return ch;
         }
 
         private int NextChar()
         {
-            if (chars.Count > 0)
-                return chars.Pop();
+            if (this.chars.Count > 0)
+                return this.chars.Pop();
 
             return this.reader.Read();
         }

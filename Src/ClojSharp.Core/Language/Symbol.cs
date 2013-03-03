@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class Symbol
+    public class Symbol : IEvaluable
     {
         private string name;
 
@@ -15,5 +15,10 @@
         }
 
         public string Name { get { return this.name; } }
+
+        public object Evaluate(Context context)
+        {
+            return context.GetValue(this.name);
+        }
     }
 }

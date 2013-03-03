@@ -7,6 +7,7 @@
     using ClojSharp.Core.Forms;
     using ClojSharp.Core.Language;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using ClojSharp.Core.SpecialForms;
 
     [TestClass]
     public class ListTests
@@ -28,6 +29,37 @@
             List list = new List(new Symbol("+"), new List(1, new List(2, null)));
 
             Assert.AreEqual(3, list.Evaluate(context));
+        }
+
+        [TestMethod]
+        public void EvaluateAddSymbols()
+        {
+            Context context = new Context();
+            context.SetValue("+", new Add());
+            context.SetValue("one", 1);
+            context.SetValue("two", 2);
+            List list = new List(new Symbol("+"), new List(new Symbol("one"), new List(new Symbol("two"), null)));
+
+            Assert.AreEqual(3, list.Evaluate(context));
+        }
+
+        [TestMethod]
+        public void EvaluateDefIntegerVariable()
+        {
+            Context context = new Context();
+            context.SetValue("def", new Def());
+            List list = new List(new Symbol("def"), new List(new Symbol("one"), new List(1, null)));
+
+            var result = list.Evaluate(context);
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Var));
+
+            var var = (Var)result;
+
+            Assert.AreEqual("one", var.Name);
+
+            Assert.AreEqual(1, context.GetValue("one"));
         }
     }
 }

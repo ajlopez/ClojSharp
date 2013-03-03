@@ -51,6 +51,9 @@
     <Compile Include="Compiler\TokenType.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Forms\Add.cs" />
+    <Compile Include="Forms\BaseForm.cs" />
+    <Compile Include="Forms\IForm.cs" />
+    <Compile Include="Language\IEvaluable.cs" />
     <Compile Include="Language\List.cs" />
     <Compile Include="Language\Symbol.cs" />
     <Compile Include="Language\Var.cs" />
