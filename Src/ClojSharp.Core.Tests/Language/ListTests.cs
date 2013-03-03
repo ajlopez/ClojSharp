@@ -61,5 +61,13 @@
 
             Assert.AreEqual(1, context.GetValue("one"));
         }
+
+        [TestMethod]
+        public void SimpleListToString()
+        {
+            List list = new List(1, new List(2, null));
+
+            Assert.AreEqual("(1 2)", list.ToString());
+        }
     }
 }

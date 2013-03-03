@@ -33,5 +33,23 @@
 
             return fn.Evaluate(context, arguments);
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("(");
+            sb.Append(this.first.ToString());
+
+            for (var rest = (List)this.rest; rest != null; rest = (List)rest.rest)
+            {
+                sb.Append(" ");
+                sb.Append(rest.First.ToString());
+            }
+            
+            sb.Append(")");
+
+            return sb.ToString();
+        }
     }
 }
