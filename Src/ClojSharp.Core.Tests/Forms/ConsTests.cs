@@ -36,5 +36,13 @@
             Assert.IsInstanceOfType(result, typeof(ISeq));
             Assert.AreEqual("(1 2)", result.ToString());
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void RaiseWhenSecondArgumentIsNotAnISeq()
+        {
+            Cons cons = new Cons();
+            cons.EvaluateForm(null, new object[] { 1, 2 });
+        }
     }
 }
