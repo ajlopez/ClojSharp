@@ -19,6 +19,7 @@
             this.root.SetValue("+", new Add());
             this.root.SetValue("-", new Subtract());
             this.root.SetValue("*", new Multiply());
+            this.root.SetValue("/", new Divide());
         }
 
         public Context RootContext { get { return this.root; } }
