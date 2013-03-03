@@ -35,18 +35,23 @@
         [TestMethod]
         public void EvaluateAdd()
         {
-            Assert.AreEqual(3, this.Evaluate("(+ 1 2)", this.machine.RootContext));
-            Assert.AreEqual(6, this.Evaluate("(+ 1 2 3)", this.machine.RootContext));
-            Assert.AreEqual(5, this.Evaluate("(+ 5)", this.machine.RootContext));
-            Assert.AreEqual(0, this.Evaluate("(+)", this.machine.RootContext));
+            Assert.AreEqual(3, this.Evaluate("(+ 1 2)"));
+            Assert.AreEqual(6, this.Evaluate("(+ 1 2 3)"));
+            Assert.AreEqual(5, this.Evaluate("(+ 5)"));
+            Assert.AreEqual(0, this.Evaluate("(+)"));
         }
 
         [TestMethod]
         public void EvaluateSubtract()
         {
-            Assert.AreEqual(-1, this.Evaluate("(- 1 2)", this.machine.RootContext));
-            Assert.AreEqual(-4, this.Evaluate("(- 1 2 3)", this.machine.RootContext));
-            Assert.AreEqual(-5, this.Evaluate("(- 5)", this.machine.RootContext));
+            Assert.AreEqual(-1, this.Evaluate("(- 1 2)"));
+            Assert.AreEqual(-4, this.Evaluate("(- 1 2 3)"));
+            Assert.AreEqual(-5, this.Evaluate("(- 5)"));
+        }
+
+        private object Evaluate(string text)
+        {
+            return this.Evaluate(text, this.machine.RootContext);
         }
 
         private object Evaluate(string text, Context context)
