@@ -70,5 +70,13 @@
 
             Assert.AreEqual("(1 2)", list.ToString());
         }
+
+        [TestMethod]
+        public void EmptyListProperties()
+        {
+            Assert.IsNull(EmptyList.Instance.First);
+            Assert.IsNull(EmptyList.Instance.Next);
+            Assert.AreSame(EmptyList.Instance, EmptyList.Instance.Rest);
+        }
     }
 }
