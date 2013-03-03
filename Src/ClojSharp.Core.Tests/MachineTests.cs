@@ -39,6 +39,7 @@
         {
             this.IsSpecialForm("def");
             this.IsSpecialForm("fn");
+            this.IsSpecialForm("quote");
         }
 
         [TestMethod]
