@@ -80,6 +80,14 @@
         }
 
         [TestMethod]
+        public void ListWithTwoNilsToString()
+        {
+            List list = new List(null, new List(null, null));
+
+            Assert.AreEqual("(nil nil)", list.ToString());
+        }
+
+        [TestMethod]
         public void EmptyListProperties()
         {
             Assert.IsNull(EmptyList.Instance.First);

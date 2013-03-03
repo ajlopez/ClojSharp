@@ -49,7 +49,10 @@
             for (var rest = this.rest; rest != null; rest = rest.Next)
             {
                 sb.Append(" ");
-                sb.Append(rest.First.ToString());
+                if (rest.First == null)
+                    sb.Append("nil");
+                else
+                    sb.Append(rest.First.ToString());
             }
             
             sb.Append(")");
