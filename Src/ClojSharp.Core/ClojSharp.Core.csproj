@@ -53,6 +53,7 @@
     <Compile Include="Forms\Add.cs" />
     <Compile Include="Forms\BaseForm.cs" />
     <Compile Include="Forms\IForm.cs" />
+    <Compile Include="Forms\Subtract.cs" />
     <Compile Include="Language\IEvaluable.cs" />
     <Compile Include="Language\List.cs" />
     <Compile Include="Language\Symbol.cs" />
