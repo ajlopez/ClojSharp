@@ -18,8 +18,8 @@
             {
                 value = arguments[1];
 
-                if (value is Symbol)
-                    value = context.GetValue(((Symbol)value).Name);
+                if (value is IEvaluable)
+                    value = ((IEvaluable)value).Evaluate(context);
             }
 
             context.SetRootValue(symbol.Name, value);
