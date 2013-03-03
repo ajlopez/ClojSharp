@@ -5,8 +5,8 @@
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Forms;
-    using ClojSharp.Core.SpecialForms;
     using ClojSharp.Core.Language;
+    using ClojSharp.Core.SpecialForms;
 
     public class Machine
     {

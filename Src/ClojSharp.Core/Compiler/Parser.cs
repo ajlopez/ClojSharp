@@ -2,10 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Language;
-    using System.IO;
 
     public class Parser
     {

@@ -6,8 +6,8 @@
     using System.Text;
     using ClojSharp.Core.Forms;
     using ClojSharp.Core.Language;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ClojSharp.Core.SpecialForms;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class ListTests

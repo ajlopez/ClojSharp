@@ -22,24 +22,24 @@
 
         public void SetValue(string name, object value)
         {
-            values[name] = value;
+            this.values[name] = value;
         }
 
         public void SetRootValue(string name, object value)
         {
-            if (parent != null)
-                parent.SetRootValue(name, value);
+            if (this.parent != null)
+                this.parent.SetRootValue(name, value);
             else
                 this.SetValue(name, value);
         }
 
         public object GetValue(string name)
         {
-            if (values.ContainsKey(name))
-                return values[name];
+            if (this.values.ContainsKey(name))
+                return this.values[name];
 
-            if (parent != null)
-                return parent.GetValue(name);
+            if (this.parent != null)
+                return this.parent.GetValue(name);
 
             return null;
         }

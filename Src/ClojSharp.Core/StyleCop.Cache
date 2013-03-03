@@ -1,201 +1,48 @@
 <stylecopresultscache>
   <version>10</version>
-  <sourcecode name="Token.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 17:47:16</timestamp>
-    <milliseconds>855</milliseconds>
-    <violations>
-      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
-        <context>The property must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
-        <line>19</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
-        <context>The property must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
-        <line>21</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
-  <sourcecode name="TokenType.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 18:11:03</timestamp>
-    <milliseconds>838</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Context.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 20:09:03</timestamp>
-    <milliseconds>774</milliseconds>
-    <violations>
-      <violation namespace="Microsoft.StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
-        <context>The call to values must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>25</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
-        <context>The call to parent must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>31</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
-        <context>The call to parent must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>30</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
-        <context>The call to values must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>39</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
-        <context>The call to values must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>38</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
-        <context>The call to parent must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>42</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
-        <context>The call to parent must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
-        <line>41</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
-  <sourcecode name="IForm.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 21:03:21</timestamp>
-    <milliseconds>304</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="IEvaluable.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 21:00:23</timestamp>
-    <milliseconds>646</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="BaseForm.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 21:06:54</timestamp>
-    <milliseconds>471</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Symbol.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 21:01:37</timestamp>
-    <milliseconds>705</milliseconds>
-    <violations>
-      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
-        <context>The property must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
-        <line>17</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
-  <sourcecode name="Var.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 20:01:03</timestamp>
-    <milliseconds>220</milliseconds>
-    <violations>
-      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
-        <context>The property must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
-        <line>17</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
-  <sourcecode name="Vector.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 19:18:23</timestamp>
-    <milliseconds>309</milliseconds>
-    <violations>
-      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
-        <context>The property must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
-        <line>17</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
-  <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 17:32:46</timestamp>
-    <milliseconds>475</milliseconds>
-    <violations />
-  </sourcecode>
   <project key="-1333396368">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
-    </settings>
-    <timestamp>03/03/2013 08:32:34</timestamp>
-    <milliseconds>403</milliseconds>
-    <violations>
-      <violation namespace="Microsoft.StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
-        <context>Using directives must be sorted alphabetically by the namespaces.</context>
-        <line>5</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
-        <context>Using directives must be sorted alphabetically by the namespaces.</context>
-        <line>6</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
-        <context>System using directives must be placed before all other using directives.</context>
-        <line>8</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
   <sourcecode name="Lexer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
     </settings>
     <timestamp>03/03/2013 08:32:49</timestamp>
     <milliseconds>499</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 09:17:36</timestamp>
+    <milliseconds>393</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Token.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/02/2013 17:47:16</timestamp>
+    <milliseconds>855</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Context.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 09:17:56</timestamp>
+    <milliseconds>408</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="ArityException.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
     </settings>
     <timestamp>03/03/2013 09:15:50</timestamp>
     <milliseconds>408</milliseconds>
@@ -203,55 +50,98 @@
   </sourcecode>
   <sourcecode name="Add.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
     </settings>
     <timestamp>03/02/2013 21:09:40</timestamp>
     <milliseconds>576</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="BaseForm.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/02/2013 21:06:54</timestamp>
+    <milliseconds>471</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="TokenType.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/02/2013 18:11:03</timestamp>
+    <milliseconds>838</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="IForm.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/02/2013 21:03:21</timestamp>
+    <milliseconds>304</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="IEvaluable.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/02/2013 21:00:23</timestamp>
+    <milliseconds>646</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="Subtract.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
     </settings>
     <timestamp>03/03/2013 09:16:26</timestamp>
     <milliseconds>139</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="Symbol.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/02/2013 21:01:37</timestamp>
+    <milliseconds>705</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="List.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
     </settings>
     <timestamp>03/02/2013 21:12:35</timestamp>
     <milliseconds>28</milliseconds>
-    <violations>
-      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
-        <context>The property must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
-        <line>20</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
-        <context>The property must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
-        <line>22</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
+    <violations />
   </sourcecode>
-  <sourcecode name="Def.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+  <sourcecode name="Var.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
     </settings>
-    <timestamp>03/03/2013 07:48:29</timestamp>
-    <milliseconds>390</milliseconds>
+    <timestamp>03/02/2013 20:01:03</timestamp>
+    <milliseconds>220</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Vector.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/02/2013 19:18:23</timestamp>
+    <milliseconds>309</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
-      <timestamp>03/02/2013 17:40:35</timestamp>
-      <milliseconds>558</milliseconds>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
     </settings>
     <timestamp>03/03/2013 09:08:26</timestamp>
     <milliseconds>516</milliseconds>
@@ -261,11 +151,24 @@
         <line>8</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="Microsoft.StyleCop.CSharp.LayoutRules" rule="ElementMustNotBeOnSingleLine" ruleCheckId="SA1502">
-        <context>The property must not be placed on a single line. The opening and closing curly brackets must each be placed on their own line.</context>
-        <line>23</line>
-        <warning>False</warning>
-      </violation>
     </violations>
+  </sourcecode>
+  <sourcecode name="Def.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 07:48:29</timestamp>
+    <milliseconds>390</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="AssemblyInfo.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/02/2013 17:32:46</timestamp>
+    <milliseconds>475</milliseconds>
+    <violations />
   </sourcecode>
 </stylecopresultscache>
