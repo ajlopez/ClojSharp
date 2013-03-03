@@ -142,6 +142,14 @@
             Assert.AreEqual("(nil)", this.Evaluate("(list nil)").ToString());
         }
 
+        [TestMethod]
+        public void EvaluateFirst()
+        {
+            Assert.AreEqual(1, this.Evaluate("(first (list 1 2))"));
+            Assert.IsNull(this.Evaluate("(first nil)"));
+            Assert.IsNull(this.Evaluate("(first ())"));
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);
