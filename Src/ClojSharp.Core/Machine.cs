@@ -17,6 +17,7 @@
             this.root = new Context();
             this.root.SetValue("def", new Def());
             this.root.SetValue("+", new Add());
+            this.root.SetValue("-", new Subtract());
         }
 
         public Context RootContext { get { return this.root; } }

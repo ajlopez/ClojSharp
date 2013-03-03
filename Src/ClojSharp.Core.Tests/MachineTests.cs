@@ -28,6 +28,11 @@
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(IForm));
             Assert.IsInstanceOfType(result, typeof(BaseForm));
+
+            result = machine.RootContext.GetValue("-");
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(IForm));
+            Assert.IsInstanceOfType(result, typeof(BaseForm));
         }
 
         [TestMethod]
