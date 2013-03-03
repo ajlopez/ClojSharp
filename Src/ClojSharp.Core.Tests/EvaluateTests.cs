@@ -68,6 +68,31 @@
         }
 
         [TestMethod]
+        public void EvaluateSimpleFn()
+        {
+            Assert.AreEqual(1, this.Evaluate("((fn [] 1))"));
+        }
+
+        [TestMethod]
+        public void EvaluateFnWithSimpleBody()
+        {
+            Assert.AreEqual(3, this.Evaluate("((fn [] (+ 1 2)))"));
+        }
+
+        [TestMethod]
+        public void EvaluateFnWithArgument()
+        {
+            Assert.AreEqual(3, this.Evaluate("((fn [x] (+ 1 x)) 2)"));
+        }
+
+        [TestMethod]
+        public void EvaluateFnWithArgumentAndFreeVariable()
+        {
+            this.machine.RootContext.SetValue("one", 1);
+            Assert.AreEqual(3, this.Evaluate("((fn [x] (+ one x)) 2)"));
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArityException))]
         public void RaiseArityExceptionWhenEvaluateDivideWithoutArguments()
         {

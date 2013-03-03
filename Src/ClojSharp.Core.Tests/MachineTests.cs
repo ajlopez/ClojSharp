@@ -54,6 +54,11 @@
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(IForm));
             Assert.IsNotInstanceOfType(result, typeof(BaseForm));
+
+            result = machine.RootContext.GetValue("fn");
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(IForm));
+            Assert.IsNotInstanceOfType(result, typeof(BaseForm));
         }
 
         [TestMethod]

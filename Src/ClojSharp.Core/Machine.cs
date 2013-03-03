@@ -16,6 +16,7 @@
         {
             this.root = new Context();
             this.root.SetValue("def", new Def());
+            this.root.SetValue("fn", new Fn());
             this.root.SetValue("+", new Add());
             this.root.SetValue("-", new Subtract());
             this.root.SetValue("*", new Multiply());
