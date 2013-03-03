@@ -46,6 +46,7 @@
     <Compile Include="EvaluateTests.cs" />
     <Compile Include="Forms\AddTests.cs" />
     <Compile Include="Forms\ConsTests.cs" />
+    <Compile Include="Forms\FirstTests.cs" />
     <Compile Include="Forms\FunctionTests.cs" />
     <Compile Include="Forms\ListFormTests.cs" />
     <Compile Include="Forms\SubtractTests.cs" />

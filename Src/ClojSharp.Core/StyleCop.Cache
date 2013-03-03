@@ -9,15 +9,6 @@
     <milliseconds>499</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>03/03/2013 09:17:36</timestamp>
-    <milliseconds>393</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="Token.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -45,24 +36,6 @@
     <milliseconds>408</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Add.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 21:09:40</timestamp>
-    <milliseconds>576</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="BaseForm.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 21:06:54</timestamp>
-    <milliseconds>471</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="TokenType.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -88,33 +61,6 @@
     </settings>
     <timestamp>03/02/2013 21:00:23</timestamp>
     <milliseconds>646</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Subtract.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>03/03/2013 09:16:26</timestamp>
-    <milliseconds>139</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Symbol.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 21:01:37</timestamp>
-    <milliseconds>705</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="List.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>03/02/2013 21:12:35</timestamp>
-    <milliseconds>28</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="Var.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -153,36 +99,6 @@
     <milliseconds>475</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Divide.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>03/03/2013 10:23:31</timestamp>
-    <milliseconds>222</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Function.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>03/03/2013 10:52:52</timestamp>
-    <milliseconds>847</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Multiply.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>03/03/2013 10:17:37</timestamp>
-    <milliseconds>7</milliseconds>
-    <violations />
-  </sourcecode>
-  <project key="-1333396368">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="Fn.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -192,13 +108,207 @@
     <milliseconds>75</milliseconds>
     <violations />
   </sourcecode>
+  <project key="-1333396368">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="Add.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 17:43:09</timestamp>
+    <milliseconds>895</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 17:03:46</timestamp>
+    <milliseconds>853</milliseconds>
+    <violations>
+      <violation namespace="Microsoft.StyleCop.CSharp.NamingRules" rule="FieldNamesMustBeginWithLowerCaseLetter" ruleCheckId="SA1306">
+        <context>Variable names must start with a lower-case letter: Quote.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="Microsoft.StyleCop.CSharp.NamingRules" rule="FieldNamesMustBeginWithLowerCaseLetter" ruleCheckId="SA1306">
+        <context>Variable names must start with a lower-case letter: QuoteChar.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="Microsoft.StyleCop.CSharp.NamingRules" rule="FieldNamesMustBeginWithLowerCaseLetter" ruleCheckId="SA1306">
+        <context>Variable names must start with a lower-case letter: NilName.</context>
+        <line>14</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="Cons.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 17:59:00</timestamp>
+    <milliseconds>208</milliseconds>
+    <violations>
+      <violation namespace="Microsoft.StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
+        <context>Using directives must be sorted alphabetically by the namespaces.</context>
+        <line>7</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="Divide.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 17:51:53</timestamp>
+    <milliseconds>122</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="First.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 18:31:34</timestamp>
+    <milliseconds>364</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Function.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 17:51:21</timestamp>
+    <milliseconds>994</milliseconds>
+    <violations>
+      <violation namespace="Microsoft.StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
+        <context>Using directives must be sorted alphabetically by the namespaces.</context>
+        <line>7</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="ListForm.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 18:10:35</timestamp>
+    <milliseconds>232</milliseconds>
+    <violations>
+      <violation namespace="Microsoft.StyleCop.CSharp.SpacingRules" rule="ClosingParenthesisMustBeSpacedCorrectly" ruleCheckId="SA1009">
+        <context>Invalid spacing around the closing parenthesis.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="Multiply.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 17:41:25</timestamp>
+    <milliseconds>914</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Subtract.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 17:52:28</timestamp>
+    <milliseconds>364</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="EmptyList.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 18:21:47</timestamp>
+    <milliseconds>647</milliseconds>
+    <violations>
+      <violation namespace="Microsoft.StyleCop.CSharp.OrderingRules" rule="ElementsMustAppearInTheCorrectOrder" ruleCheckId="SA1201">
+        <context>All properties must be placed after all constructors.</context>
+        <line>14</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="ISeq.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 12:07:40</timestamp>
+    <milliseconds>824</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="BaseForm.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 17:47:29</timestamp>
+    <milliseconds>653</milliseconds>
+    <violations>
+      <violation namespace="Microsoft.StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBeOrderedAlphabeticallyByNamespace" ruleCheckId="SA1210">
+        <context>Using directives must be sorted alphabetically by the namespaces.</context>
+        <line>7</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="Microsoft.StyleCop.CSharp.OrderingRules" rule="ElementsMustAppearInTheCorrectOrder" ruleCheckId="SA1201">
+        <context>All methods must be placed after all properties.</context>
+        <line>36</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="Microsoft.StyleCop.CSharp.OrderingRules" rule="ElementsMustAppearInTheCorrectOrder" ruleCheckId="SA1201">
+        <context>All methods must be placed after all properties.</context>
+        <line>38</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="Symbol.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 12:30:05</timestamp>
+    <milliseconds>640</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="List.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 18:24:26</timestamp>
+    <milliseconds>594</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Quote.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>03/03/2013 11:38:32</timestamp>
+    <milliseconds>81</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
       <milliseconds>243</milliseconds>
     </settings>
-    <timestamp>03/03/2013 11:02:24</timestamp>
-    <milliseconds>342</milliseconds>
+    <timestamp>03/03/2013 18:15:23</timestamp>
+    <milliseconds>951</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>
