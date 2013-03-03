@@ -56,6 +56,7 @@
     <Compile Include="Forms\Cons.cs" />
     <Compile Include="Forms\Divide.cs" />
     <Compile Include="Forms\Function.cs" />
+    <Compile Include="Forms\ListForm.cs" />
     <Compile Include="Forms\Multiply.cs" />
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\Subtract.cs" />
