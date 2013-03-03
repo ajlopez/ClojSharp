@@ -16,5 +16,12 @@
             Subtract subtract = new Subtract();
             Assert.AreEqual(-1, subtract.Evaluate(null, new object[] { 1, 2 }));
         }
+
+        [TestMethod]
+        public void SubtractAnInteger()
+        {
+            Subtract subtract = new Subtract();
+            Assert.AreEqual(-1, subtract.Evaluate(null, new object[] { 1 }));
+        }
     }
 }
