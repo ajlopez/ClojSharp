@@ -10,24 +10,34 @@
     [TestClass]
     public class EvaluateTests
     {
+        private Machine machine;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            this.machine = new Machine();
+        }
+
         [TestMethod]
         public void EvaluateInteger()
         {
-            Machine machine = new Machine();
-            Parser parser = new Parser("123");
-            var expr = parser.ParseExpression();
-            Assert.AreEqual(123, machine.Evaluate(expr, null));
+            Assert.AreEqual(123, this.Evaluate("123", null));
         }
 
         [TestMethod]
         public void EvaluateSymbolInContext()
         {
-            Machine machine = new Machine();
             Context context = new Context();
             context.SetValue("one", 1);
-            Parser parser = new Parser("one");
+            Assert.AreEqual(1, this.Evaluate("one", context));
+        }
+
+        private object Evaluate(string text, Context context)
+        {
+            Parser parser = new Parser(text);
             var expr = parser.ParseExpression();
-            Assert.AreEqual(1, machine.Evaluate(expr, context));
+            Assert.IsNull(parser.ParseExpression());
+            return this.machine.Evaluate(expr, context);
         }
     }
 }
