@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using ClojSharp.Core.Exceptions;
     using ClojSharp.Core.Forms;
     using ClojSharp.Core.Language;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -42,7 +43,31 @@
         public void RaiseWhenSecondArgumentIsNotAnISeq()
         {
             Cons cons = new Cons();
-            cons.EvaluateForm(null, new object[] { 1, 2 });
+            cons.Evaluate(null, new object[] { 1, 2 });
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArityException))]
+        public void RaiseWhenOnlyOneArgument()
+        {
+            Cons cons = new Cons();
+            cons.Evaluate(null, new object[] { 1 });
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArityException))]
+        public void RaiseWhenThreeArgument()
+        {
+            Cons cons = new Cons();
+            cons.Evaluate(null, new object[] { 1, 2, 3 });
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArityException))]
+        public void RaiseWhenNoArgument()
+        {
+            Cons cons = new Cons();
+            cons.Evaluate(null, new object[] { });
         }
     }
 }

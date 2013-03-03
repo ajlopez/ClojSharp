@@ -26,13 +26,15 @@
                 this.evalbody = (IEvaluable)body;
         }
 
+        public override int RequiredArity
+        {
+            get { return this.arity; }
+        }
+
+        public override bool VariableArity { get { return false; } }
+
         public override object EvaluateForm(Context context, IList<object> arguments)
         {
-            int arity = arguments == null ? 0 : arguments.Count;
-
-            if (this.arity != arity)
-                throw new ArityException(typeof(Function), arity);
-
             if (this.evalbody == null)
                 return this.body;
 

@@ -5,9 +5,17 @@
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Language;
+    using ClojSharp.Core.Exceptions;
 
     public class Cons : BaseForm
     {
+        public override int RequiredArity
+        {
+            get { return 2; }
+        }
+
+        public override bool VariableArity { get { return false; } }
+
         public override object EvaluateForm(Context context, IList<object> arguments)
         {
             if (arguments[1] != null && !(arguments[1] is ISeq))

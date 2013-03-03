@@ -8,6 +8,11 @@
 
     public class Add : BaseForm
     {
+        public override int RequiredArity
+        {
+            get { return 0; }
+        }
+
         public override object EvaluateForm(Context context, IList<object> arguments)
         {
             int result = 0;

@@ -8,11 +8,13 @@
 
     public class Subtract : BaseForm
     {
+        public override int RequiredArity
+        {
+            get { return 1; }
+        }
+
         public override object EvaluateForm(Context context, IList<object> arguments)
         {
-            if (arguments.Count == 0)
-                throw new ArityException(typeof(Subtract), 0);
-
             if (arguments.Count == 1)
                 return -(int)arguments[0];
 
