@@ -30,10 +30,11 @@
 
             Context newcontext = this.closure;
 
-            if (names != null && names.Count > 0) {
+            if (this.names != null && this.names.Count > 0) 
+            {
                 newcontext = new Context(newcontext);
-                for (int k = 0; k < names.Count; k++)
-                    newcontext.SetValue(names[k], arguments[k]);
+                for (int k = 0; k < this.names.Count; k++)
+                    newcontext.SetValue(this.names[k], arguments[k]);
             }
 
             return this.evalbody.Evaluate(newcontext);
