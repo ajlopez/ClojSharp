@@ -38,5 +38,15 @@
 
             Assert.AreEqual(3, function.Evaluate(null, null));
         }
+
+        [TestMethod]
+        public void FunctionEvaluateAddToArgument()
+        {
+            Machine machine = new Machine();
+            var list = new List(new Symbol("+"), new List(1, new List(new Symbol("x"), null)));
+            Function function = new Function(machine.RootContext, new string[] { "x" }, list);
+
+            Assert.AreEqual(3, function.Evaluate(null, new object[] { 2 }));
+        }
     }
 }

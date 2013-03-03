@@ -9,14 +9,14 @@
     public class Function : BaseForm
     {
         private Context closure;
-        private IList<string> argumentnames;
+        private IList<string> names;
         private object body;
         private IEvaluable evalbody;
 
-        public Function(Context closure, IList<string> argumentnames, object body)
+        public Function(Context closure, IList<string> names, object body)
         {
             this.closure = closure;
-            this.argumentnames = argumentnames;
+            this.names = names;
             this.body = body;
 
             if (body is IEvaluable)
@@ -25,10 +25,18 @@
 
         public override object EvaluateForm(Context context, IList<object> arguments)
         {
-            if (this.evalbody != null)
-                return this.evalbody.Evaluate(this.closure);
+            if (this.evalbody == null)
+                return this.body;
 
-            return this.body;
+            Context newcontext = this.closure;
+
+            if (names != null && names.Count > 0) {
+                newcontext = new Context(newcontext);
+                for (int k = 0; k < names.Count; k++)
+                    newcontext.SetValue(names[k], arguments[k]);
+            }
+
+            return this.evalbody.Evaluate(newcontext);
         }
     }
 }
