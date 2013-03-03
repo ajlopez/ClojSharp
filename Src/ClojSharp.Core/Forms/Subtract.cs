@@ -12,7 +12,12 @@
             if (arguments.Count == 1)
                 return -(int)arguments[0];
 
-            return (int)arguments[0] - (int)arguments[1];
+            var result = (int)arguments[0];
+
+            for (var k = 1; k < arguments.Count; k++)
+                result -= (int)arguments[k];
+
+            return result;
         }
     }
 }

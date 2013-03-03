@@ -23,5 +23,12 @@
             Subtract subtract = new Subtract();
             Assert.AreEqual(-1, subtract.Evaluate(null, new object[] { 1 }));
         }
+
+        [TestMethod]
+        public void SubtractThreeIntegers()
+        {
+            Subtract subtract = new Subtract();
+            Assert.AreEqual(-4, subtract.Evaluate(null, new object[] { 1, 2, 3 }));
+        }
     }
 }
