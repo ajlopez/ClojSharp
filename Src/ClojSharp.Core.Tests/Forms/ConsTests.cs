@@ -12,7 +12,7 @@
     public class ConsTests
     {
         [TestMethod]
-        public void ConsInteger()
+        public void ConsIntegerToNil()
         {
             Cons cons = new Cons();
             var result= cons.Evaluate(null, new object[] { 1, null });
@@ -23,6 +23,18 @@
             var seq = (ISeq)result;
             Assert.AreEqual(1, seq.First);
             Assert.IsNull(seq.Next);
+        }
+
+        [TestMethod]
+        public void ConsIntegerToList()
+        {
+            Cons cons = new Cons();
+            var list = new List(2, null);
+            var result = cons.EvaluateForm(null, new object[] { 1, list });
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ISeq));
+            Assert.AreEqual("(1 2)", result.ToString());
         }
     }
 }
