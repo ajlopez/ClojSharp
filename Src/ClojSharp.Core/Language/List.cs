@@ -41,7 +41,10 @@
             StringBuilder sb = new StringBuilder();
 
             sb.Append("(");
-            sb.Append(this.first.ToString());
+            if (this.first == null)
+                sb.Append("nil");
+            else
+                sb.Append(this.first.ToString());
 
             for (var rest = this.rest; rest != null; rest = rest.Next)
             {

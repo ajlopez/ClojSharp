@@ -72,11 +72,25 @@
         }
 
         [TestMethod]
+        public void ListWithNilToString()
+        {
+            List list = new List(null, null);
+
+            Assert.AreEqual("(nil)", list.ToString());
+        }
+
+        [TestMethod]
         public void EmptyListProperties()
         {
             Assert.IsNull(EmptyList.Instance.First);
             Assert.IsNull(EmptyList.Instance.Next);
             Assert.AreSame(EmptyList.Instance, EmptyList.Instance.Rest);
+        }
+
+        [TestMethod]
+        public void EmptyListToString()
+        {
+            Assert.AreEqual("()", EmptyList.Instance.ToString());
         }
     }
 }

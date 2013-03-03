@@ -15,5 +15,10 @@
             : base(null, null)
         {
         }
+
+        public override string ToString()
+        {
+            return "()";
+        }
     }
 }

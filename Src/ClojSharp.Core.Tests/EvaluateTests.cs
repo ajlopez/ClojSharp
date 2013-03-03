@@ -133,6 +133,15 @@
             Assert.AreEqual("(1 2)", this.Evaluate("'(1 2)").ToString());
         }
 
+        [TestMethod]
+        public void EvaluateList()
+        {
+            Assert.AreEqual("(1 2)", this.Evaluate("(list 1 2)").ToString());
+            Assert.AreEqual("(1 2 3)", this.Evaluate("(list 1 2 3)").ToString());
+            Assert.AreEqual("()", this.Evaluate("(list)").ToString());
+            Assert.AreEqual("(nil)", this.Evaluate("(list nil)").ToString());
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);
