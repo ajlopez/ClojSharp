@@ -37,6 +37,9 @@
             if (token.Type == TokenType.Integer)
                 return int.Parse(token.Value);
 
+            if (token.Type == TokenType.Name && token.Value == "'")
+                return new List(new Symbol("quote"), new List(this.ParseExpression(), null));
+
             return new Symbol(token.Value);
         }
 

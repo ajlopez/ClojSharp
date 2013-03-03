@@ -20,5 +20,10 @@
         {
             return context.GetValue(this.name);
         }
+
+        public override string ToString()
+        {
+            return this.name;
+        }
     }
 }

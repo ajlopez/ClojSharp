@@ -135,5 +135,17 @@
             Assert.AreEqual(1, vector.Elements[0]);
             Assert.AreEqual(2, vector.Elements[1]);
         }
+
+        [TestMethod]
+        public void ParseQuotedList()
+        {
+            Parser parser = new Parser("'(1 2)");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(List));
+            Assert.AreEqual("(quote (1 2))", expr.ToString());
+        }
     }
 }
