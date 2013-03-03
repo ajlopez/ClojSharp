@@ -11,74 +11,67 @@
     [TestClass]
     public class MachineTests
     {
+        private Machine machine;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            this.machine = new Machine();
+        }
+
         [TestMethod]
         public void MachineHasRootContext()
         {
-            Machine machine = new Machine();
-
-            Assert.IsNotNull(machine.RootContext);
+            Assert.IsNotNull(this.machine.RootContext);
         }
 
         [TestMethod]
         public void MachineHasDefinedForms()
         {
-            Machine machine = new Machine();
-
-            var result = machine.RootContext.GetValue("+");
-            Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(IForm));
-            Assert.IsInstanceOfType(result, typeof(BaseForm));
-
-            result = machine.RootContext.GetValue("-");
-            Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(IForm));
-            Assert.IsInstanceOfType(result, typeof(BaseForm));
-
-            result = machine.RootContext.GetValue("*");
-            Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(IForm));
-            Assert.IsInstanceOfType(result, typeof(BaseForm));
-
-            result = machine.RootContext.GetValue("/");
-            Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(IForm));
-            Assert.IsInstanceOfType(result, typeof(BaseForm));
+            this.IsForm("+");
+            this.IsForm("-");
+            this.IsForm("*");
+            this.IsForm("/");
         }
 
         [TestMethod]
         public void MachineHasDefinedSpecialForms()
         {
-            Machine machine = new Machine();
-
-            var result = machine.RootContext.GetValue("def");
-            Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(IForm));
-            Assert.IsNotInstanceOfType(result, typeof(BaseForm));
-
-            result = machine.RootContext.GetValue("fn");
-            Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(IForm));
-            Assert.IsNotInstanceOfType(result, typeof(BaseForm));
+            this.IsSpecialForm("def");
+            this.IsSpecialForm("fn");
         }
 
         [TestMethod]
         public void MachineEvaluateObjects()
         {
-            Machine machine = new Machine();
-
-            Assert.AreEqual(3, machine.Evaluate(3, null));
-            Assert.AreEqual("foo", machine.Evaluate("foo", null));
-            Assert.IsNull(machine.Evaluate(null, null));
+            Assert.AreEqual(3, this.machine.Evaluate(3, null));
+            Assert.AreEqual("foo", this.machine.Evaluate("foo", null));
+            Assert.IsNull(this.machine.Evaluate(null, null));
         }
 
         [TestMethod]
         public void MachineEvaluateSymbolInContext()
         {
-            Machine machine = new Machine();
             Context context = new Context();
             context.SetValue("one", 1);
 
-            Assert.AreEqual(1, machine.Evaluate(new Symbol("one"), context));
+            Assert.AreEqual(1, this.machine.Evaluate(new Symbol("one"), context));
+        }
+
+        private void IsSpecialForm(string name)
+        {
+            var result = this.machine.RootContext.GetValue(name);
+            Assert.IsNotNull(result, name);
+            Assert.IsInstanceOfType(result, typeof(IForm), name);
+            Assert.IsNotInstanceOfType(result, typeof(BaseForm), name);
+        }
+
+        private void IsForm(string name)
+        {
+            var result = this.machine.RootContext.GetValue(name);
+            Assert.IsNotNull(result, name);
+            Assert.IsInstanceOfType(result, typeof(IForm), name);
+            Assert.IsInstanceOfType(result, typeof(BaseForm), name);
         }
     }
 }
