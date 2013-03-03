@@ -9,6 +9,9 @@
 
     public class Parser
     {
+        private static Symbol Quote = new Symbol("quote");
+        private static string QuoteChar = "'";
+
         private Lexer lexer;
 
         public Parser(string text)
@@ -37,8 +40,8 @@
             if (token.Type == TokenType.Integer)
                 return int.Parse(token.Value);
 
-            if (token.Type == TokenType.Name && token.Value == "'")
-                return new List(new Symbol("quote"), new List(this.ParseExpression(), null));
+            if (token.Type == TokenType.Name && token.Value == QuoteChar)
+                return new List(Quote, new List(this.ParseExpression(), null));
 
             return new Symbol(token.Value);
         }
