@@ -18,7 +18,7 @@
         {
         }
 
-        public Lexer(StringReader reader)
+        public Lexer(TextReader reader)
         {
             this.reader = reader;
         }

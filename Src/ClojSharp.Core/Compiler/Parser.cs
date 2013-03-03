@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Language;
+    using System.IO;
 
     public class Parser
     {
@@ -13,6 +14,11 @@
         public Parser(string text)
         {
             this.lexer = new Lexer(text);
+        }
+
+        public Parser(TextReader reader)
+        {
+            this.lexer = new Lexer(reader);
         }
 
         public object ParseExpression()

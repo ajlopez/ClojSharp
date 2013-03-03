@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Compiler;
@@ -14,7 +15,7 @@
         [TestMethod]
         public void ParseNull()
         {
-            Parser parser = new Parser(null);
+            Parser parser = new Parser((string)null);
 
             Assert.IsNull(parser.ParseExpression());
         }
@@ -40,6 +41,23 @@
         public void ParseInteger()
         {
             Parser parser = new Parser("123");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(int));
+
+            var value = (int)expr;
+
+            Assert.AreEqual(123, value);
+
+            Assert.IsNull(parser.ParseExpression());
+        }
+
+        [TestMethod]
+        public void ParseIntegerUsingAReader()
+        {
+            Parser parser = new Parser(new StringReader("123"));
 
             var expr = parser.ParseExpression();
 

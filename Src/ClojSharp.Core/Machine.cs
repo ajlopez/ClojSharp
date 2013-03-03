@@ -6,6 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Forms;
     using ClojSharp.Core.SpecialForms;
+    using ClojSharp.Core.Language;
 
     public class Machine
     {
@@ -22,6 +23,9 @@
 
         public object Evaluate(object obj, Context context)
         {
+            if (obj is IEvaluable)
+                return ((IEvaluable)obj).Evaluate(context);
+
             return obj;
         }
     }

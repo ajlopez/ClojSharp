@@ -1,11 +1,12 @@
 ﻿namespace ClojSharp.Core.Tests
 {
     using System;
-    using System.Text;
     using System.Collections.Generic;
     using System.Linq;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Text;
     using ClojSharp.Core.Forms;
+    using ClojSharp.Core.Language;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class MachineTests
@@ -48,6 +49,16 @@
             Assert.AreEqual(3, machine.Evaluate(3, null));
             Assert.AreEqual("foo", machine.Evaluate("foo", null));
             Assert.IsNull(machine.Evaluate(null, null));
+        }
+
+        [TestMethod]
+        public void MachineEvaluateSymbolInContext()
+        {
+            Machine machine = new Machine();
+            Context context = new Context();
+            context.SetValue("one", 1);
+
+            Assert.AreEqual(1, machine.Evaluate(new Symbol("one"), context));
         }
     }
 }
