@@ -159,6 +159,14 @@
             Assert.AreSame(EmptyList.Instance, this.Evaluate("(rest ())"));
         }
 
+        [TestMethod]
+        public void EvaluateNext()
+        {
+            Assert.AreEqual("(2)", this.Evaluate("(next (list 1 2))").ToString());
+            Assert.IsNull(this.Evaluate("(next nil)"));
+            Assert.IsNull(this.Evaluate("(next ())"));
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);
