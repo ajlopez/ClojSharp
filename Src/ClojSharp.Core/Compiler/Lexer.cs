@@ -113,7 +113,7 @@
         {
             int ch;
 
-            for (ch = this.NextChar(); ch >= 0 && char.IsWhiteSpace((char)ch); ch = this.NextChar()) 
+            for (ch = this.NextChar(); ch >= 0 && ((char)ch == ',' || char.IsWhiteSpace((char)ch)); ch = this.NextChar()) 
             {
             }
 

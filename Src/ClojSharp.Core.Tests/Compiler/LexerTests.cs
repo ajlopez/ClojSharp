@@ -227,5 +227,13 @@
 
             Assert.IsNull(lexer.NextToken());
         }
+
+        [TestMethod]
+        public void CommaIsWhiteSpace()
+        {
+            Lexer lexer = new Lexer(", ,, ,,,");
+
+            Assert.IsNull(lexer.NextToken());
+        }
     }
 }
