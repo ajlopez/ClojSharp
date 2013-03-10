@@ -25,8 +25,7 @@
                 return this.EvaluateForm(context, null);
 
             for (var k = 0; k < arguments.Count; k++)
-                if (arguments[k] is IEvaluable)
-                    arguments[k] = ((IEvaluable)arguments[k]).Evaluate(context);
+                arguments[k] = Machine.Evaluate(arguments[k], context);
 
             return this.EvaluateForm(context, arguments);
         }
