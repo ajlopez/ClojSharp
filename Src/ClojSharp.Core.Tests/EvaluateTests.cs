@@ -177,7 +177,7 @@
             Parser parser = new Parser(text);
             var expr = parser.ParseExpression();
             Assert.IsNull(parser.ParseExpression());
-            return this.machine.Evaluate(expr, context);
+            return Machine.Evaluate(expr, context);
         }
     }
 }

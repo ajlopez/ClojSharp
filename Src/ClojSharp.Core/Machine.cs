@@ -31,7 +31,7 @@
 
         public Context RootContext { get { return this.root; } }
 
-        public object Evaluate(object obj, Context context)
+        public static object Evaluate(object obj, Context context)
         {
             if (obj is IEvaluable)
                 return ((IEvaluable)obj).Evaluate(context);

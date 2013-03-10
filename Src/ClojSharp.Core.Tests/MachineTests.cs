@@ -50,9 +50,9 @@
         [TestMethod]
         public void MachineEvaluateObjects()
         {
-            Assert.AreEqual(3, this.machine.Evaluate(3, null));
-            Assert.AreEqual("foo", this.machine.Evaluate("foo", null));
-            Assert.IsNull(this.machine.Evaluate(null, null));
+            Assert.AreEqual(3, Machine.Evaluate(3, null));
+            Assert.AreEqual("foo", Machine.Evaluate("foo", null));
+            Assert.IsNull(Machine.Evaluate(null, null));
         }
 
         [TestMethod]
@@ -61,7 +61,7 @@
             Context context = new Context();
             context.SetValue("one", 1);
 
-            Assert.AreEqual(1, this.machine.Evaluate(new Symbol("one"), context));
+            Assert.AreEqual(1, Machine.Evaluate(new Symbol("one"), context));
         }
 
         private void IsSpecialForm(string name)
