@@ -167,6 +167,35 @@
             Assert.IsNull(this.Evaluate("(next ())"));
         }
 
+        [TestMethod]
+        public void EvaluateVectorWithForms()
+        {
+            var result = this.Evaluate("[(+ 1 2) (+ 2 3) (+ 3 4)]");
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Vector));
+
+            var vector = (Vector)result;
+
+            Assert.AreEqual(3, vector.Elements.Count);
+            Assert.AreEqual(3, vector.Elements[0]);
+            Assert.AreEqual(5, vector.Elements[1]);
+            Assert.AreEqual(7, vector.Elements[2]);
+        }
+
+        [TestMethod]
+        public void EvaluateMapWithForms()
+        {
+            var result = this.Evaluate("{:three (+ 1 2) :five (+ 2 3) :seven (+ 3 4)}");
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Map));
+
+            var map = (Map)result;
+
+            Assert.AreEqual(3, map.GetValue(new Keyword("three")));
+            Assert.AreEqual(5, map.GetValue(new Keyword("five")));
+            Assert.AreEqual(7, map.GetValue(new Keyword("seven")));
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);
