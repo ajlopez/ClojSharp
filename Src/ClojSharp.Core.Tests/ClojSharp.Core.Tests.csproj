@@ -52,6 +52,7 @@
     <Compile Include="Forms\FunctionTests.cs" />
     <Compile Include="Forms\ListFormTests.cs" />
     <Compile Include="Forms\SubtractTests.cs" />
+    <Compile Include="Language\SymbolTests.cs" />
     <Compile Include="Language\KeywordTests.cs" />
     <Compile Include="Language\VectorTests.cs" />
     <Compile Include="Language\ListTests.cs" />

@@ -25,5 +25,25 @@
         {
             return this.name;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+
+            if (obj is Symbol)
+            {
+                var symbol = (Symbol)obj;
+
+                return this.Name.Equals(symbol.Name);
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name.GetHashCode() + 17;
+        }
     }
 }
