@@ -40,6 +40,9 @@
             if (token.Type == TokenType.Separator && token.Value == "[")
                 return this.ParseVector();
 
+            if (token.Type == TokenType.Separator && token.Value == "{")
+                return this.ParseMap();
+
             if (token.Type == TokenType.Integer)
                 return int.Parse(token.Value);
 
@@ -65,7 +68,7 @@
             Stack<object> elements = new Stack<object>();
             var token = this.lexer.NextToken();
 
-            while (token.Type != TokenType.Separator || token.Value != ")")
+            while (token != null && token.Type != TokenType.Separator || token.Value != ")")
             {
                 this.lexer.PushToken(token);
                 elements.Push(this.ParseExpression());
@@ -85,7 +88,7 @@
             List<object> elements = new List<object>();
             var token = this.lexer.NextToken();
 
-            while (token.Type != TokenType.Separator || token.Value != "]")
+            while (token != null && token.Type != TokenType.Separator || token.Value != "]")
             {
                 this.lexer.PushToken(token);
                 elements.Add(this.ParseExpression());
@@ -93,6 +96,21 @@
             }
 
             return new Vector(elements);
+        }
+
+        private Map ParseMap()
+        {
+            List<object> elements = new List<object>();
+            var token = this.lexer.NextToken();
+
+            while (token != null && token.Type != TokenType.Separator || token.Value != "}")
+            {
+                this.lexer.PushToken(token);
+                elements.Add(this.ParseExpression());
+                token = this.lexer.NextToken();
+            }
+
+            return new Map(elements);
         }
     }
 }

@@ -193,5 +193,22 @@
             Assert.AreEqual("a", keyword.Name);
             Assert.AreEqual(":a", keyword.ToString());
         }
+
+        [TestMethod]
+        public void ParseMap()
+        {
+            Parser parser = new Parser("{:a 1 :b 2}");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(Map));
+
+            var map = (Map)expr;
+
+            Assert.AreEqual(1, map.GetValue(new Keyword("a")));
+            Assert.AreEqual(2, map.GetValue(new Keyword("b")));
+            Assert.IsNull(map.GetValue(new Keyword("c")));
+        }
     }
 }
