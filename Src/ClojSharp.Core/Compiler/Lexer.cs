@@ -10,6 +10,8 @@
     {
         private const string Separators = "()[]{}";
         private const char StringQuote = '"';
+        private const char KeywordChar = ':';
+
         private TextReader reader;
         private Stack<int> chars = new Stack<int>();
         private Stack<Token> tokens = new Stack<Token>();
@@ -40,6 +42,9 @@
 
             if (chr == StringQuote)
                 return this.NextString();
+
+            if (chr == KeywordChar)
+                return this.NextName(chr);
 
             if (Separators.Contains(chr))
                 return new Token(TokenType.Separator, chr.ToString());

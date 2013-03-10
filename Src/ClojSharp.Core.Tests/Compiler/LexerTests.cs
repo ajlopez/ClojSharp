@@ -255,5 +255,19 @@
 
             Assert.IsNull(lexer.NextToken());
         }
+
+        [TestMethod]
+        public void GetKeywordAsName()
+        {
+            Lexer lexer = new Lexer(":a");
+
+            Token token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual(":a", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
     }
 }
