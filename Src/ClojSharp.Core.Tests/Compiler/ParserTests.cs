@@ -177,5 +177,21 @@
 
             Assert.AreEqual(true, expr);
         }
+
+        [TestMethod]
+        public void ParseKeyword()
+        {
+            Parser parser = new Parser(":a");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(Keyword));
+
+            var keyword = (Keyword)expr;
+
+            Assert.AreEqual("a", keyword.Name);
+            Assert.AreEqual(":a", keyword.ToString());
+        }
     }
 }

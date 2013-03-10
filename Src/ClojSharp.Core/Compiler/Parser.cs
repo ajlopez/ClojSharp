@@ -53,6 +53,8 @@
                     return false;
                 if (token.Value == TrueName)
                     return true;
+                if (token.Value[0] == ':')
+                    return new Keyword(token.Value.Substring(1));
             }
 
             return new Symbol(token.Value);
