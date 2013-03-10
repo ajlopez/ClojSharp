@@ -8,7 +8,7 @@
 
     public class Lexer
     {
-        private const string Separators = "()[]";
+        private const string Separators = "()[]{}";
         private const char StringQuote = '"';
         private TextReader reader;
         private Stack<int> chars = new Stack<int>();
