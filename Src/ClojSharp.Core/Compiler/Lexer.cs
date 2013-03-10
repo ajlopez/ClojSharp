@@ -9,6 +9,7 @@
     public class Lexer
     {
         private const string Separators = "()[]";
+        private const char StringQuote = '"';
         private TextReader reader;
         private Stack<int> chars = new Stack<int>();
         private Stack<Token> tokens = new Stack<Token>();
@@ -36,6 +37,9 @@
                 return null;
 
             char chr = (char)ch;
+
+            if (chr == StringQuote)
+                return this.NextString();
 
             if (Separators.Contains(chr))
                 return new Token(TokenType.Separator, chr.ToString());
@@ -65,6 +69,18 @@
             this.PushChar(ch);
 
             return new Token(TokenType.Name, value);
+        }
+
+        private Token NextString()
+        {
+            string value = string.Empty;
+
+            int ch;
+
+            for (ch = this.NextChar(); ch >= 0 && (char)ch != StringQuote; ch = this.NextChar())
+                value += (char)ch;
+
+            return new Token(TokenType.String, value);
         }
 
         private Token NextSymbolName(char chr)

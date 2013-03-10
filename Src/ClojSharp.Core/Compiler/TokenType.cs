@@ -9,6 +9,7 @@
     {
         Name = 1,
         Integer = 2,
-        Separator = 3
+        String = 3,
+        Separator = 4
     }
 }
