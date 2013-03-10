@@ -12,6 +12,8 @@
         private static Symbol Quote = new Symbol("quote");
         private static string QuoteChar = "'";
         private static string NilName = "nil";
+        private static string TrueName = "true";
+        private static string FalseName = "false";
 
         private Lexer lexer;
 
@@ -47,6 +49,10 @@
                     return new List(Quote, new List(this.ParseExpression(), null));
                 if (token.Value == NilName)
                     return null;
+                if (token.Value == FalseName)
+                    return false;
+                if (token.Value == TrueName)
+                    return true;
             }
 
             return new Symbol(token.Value);

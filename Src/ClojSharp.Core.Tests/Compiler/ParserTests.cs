@@ -157,5 +157,25 @@
 
             Assert.IsNull(expr);
         }
+
+        [TestMethod]
+        public void ParseFalseAsFalse()
+        {
+            Parser parser = new Parser("false");
+
+            var expr = parser.ParseExpression();
+
+            Assert.AreEqual(false, expr);
+        }
+
+        [TestMethod]
+        public void ParseTrueAsTrue()
+        {
+            Parser parser = new Parser("true");
+
+            var expr = parser.ParseExpression();
+
+            Assert.AreEqual(true, expr);
+        }
     }
 }
