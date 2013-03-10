@@ -11,10 +11,10 @@
     {
         public object Evaluate(Context context, IList<object> arguments)
         {
-            Vector vector = (Vector)arguments[0];
+            var elements = ((VectorValue)arguments[0]).Expressions;
             IList<string> names = new List<string>();
 
-            foreach (var element in vector.Elements)
+            foreach (var element in elements)
                 names.Add(((Symbol)element).Name);
 
             object body = arguments[1];

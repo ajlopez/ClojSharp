@@ -119,16 +119,23 @@
         }
 
         [TestMethod]
-        public void ParseVectorWithTwoIntegers()
+        public void ParseAndEvaluateVectorWithTwoIntegers()
         {
             Parser parser = new Parser("[1 2]");
 
             var expr = parser.ParseExpression();
 
             Assert.IsNotNull(expr);
-            Assert.IsInstanceOfType(expr, typeof(Vector));
+            Assert.IsInstanceOfType(expr, typeof(VectorValue));
 
-            var vector = (Vector)expr;
+            var vectorvalue = (VectorValue)expr;
+
+            var value = vectorvalue.Evaluate(null);
+
+            Assert.IsNotNull(value);
+            Assert.IsInstanceOfType(value, typeof(Vector));
+
+            var vector = (Vector)value;
 
             Assert.IsNotNull(vector.Elements);
             Assert.AreEqual(2, vector.Elements.Count);
