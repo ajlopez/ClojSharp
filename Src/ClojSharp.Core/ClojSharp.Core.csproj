@@ -63,6 +63,7 @@
     <Compile Include="Forms\Multiply.cs" />
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\Subtract.cs" />
+    <Compile Include="Language\Keyword.cs" />
     <Compile Include="Language\EmptyList.cs" />
     <Compile Include="Language\IEvaluable.cs" />
     <Compile Include="Language\ISeq.cs" />
