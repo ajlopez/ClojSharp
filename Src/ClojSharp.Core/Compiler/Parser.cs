@@ -98,19 +98,19 @@
             return new Vector(elements);
         }
 
-        private Map ParseMap()
+        private MapValue ParseMap()
         {
-            List<object> elements = new List<object>();
+            List<object> expressions = new List<object>();
             var token = this.lexer.NextToken();
 
             while (token != null && token.Type != TokenType.Separator || token.Value != "}")
             {
                 this.lexer.PushToken(token);
-                elements.Add(this.ParseExpression());
+                expressions.Add(this.ParseExpression());
                 token = this.lexer.NextToken();
             }
 
-            return new Map(elements);
+            return new MapValue(expressions);
         }
     }
 }

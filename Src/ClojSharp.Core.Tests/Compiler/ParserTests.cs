@@ -195,16 +195,23 @@
         }
 
         [TestMethod]
-        public void ParseMap()
+        public void ParseAndEvaluateMap()
         {
             Parser parser = new Parser("{:a 1 :b 2}");
 
             var expr = parser.ParseExpression();
 
             Assert.IsNotNull(expr);
-            Assert.IsInstanceOfType(expr, typeof(Map));
+            Assert.IsInstanceOfType(expr, typeof(MapValue));
 
-            var map = (Map)expr;
+            var mapvalue = (MapValue)expr;
+
+            var value = mapvalue.Evaluate(null);
+
+            Assert.IsNotNull(value);
+            Assert.IsInstanceOfType(value, typeof(Map));
+
+            var map = (Map)value;
 
             Assert.AreEqual(1, map.GetValue(new Keyword("a")));
             Assert.AreEqual(2, map.GetValue(new Keyword("b")));
