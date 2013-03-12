@@ -33,6 +33,34 @@
         }
 
         [TestMethod]
+        public void GetNameAndComment()
+        {
+            Lexer lexer = new Lexer("name ; comment");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("name", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
+        public void GetCommentAndName()
+        {
+            Lexer lexer = new Lexer("; a comment \r\nname");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("name", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetNameWithSpaces()
         {
             Lexer lexer = new Lexer("  name   ");

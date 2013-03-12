@@ -11,6 +11,7 @@
         private const string Separators = "()[]{}";
         private const char StringQuote = '"';
         private const char KeywordChar = ':';
+        private const char CommentChar = ';';
 
         private TextReader reader;
         private Stack<int> chars = new Stack<int>();
@@ -130,7 +131,13 @@
             if (this.chars.Count > 0)
                 return this.chars.Pop();
 
-            return this.reader.Read();
+            int ich = this.reader.Read();
+
+            if (ich >= 0 && (char)ich == CommentChar)
+                for (ich = this.reader.Read(); ich >= 0 && (char)ich != '\n'; )
+                    ich = this.reader.Read();
+
+            return ich;
         }
 
         private void PushChar(int ch)
