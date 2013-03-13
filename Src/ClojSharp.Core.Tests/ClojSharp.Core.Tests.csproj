@@ -60,6 +60,7 @@
     <Compile Include="MachineTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecialForms\DefTests.cs" />
+    <Compile Include="SpecialForms\DoTests.cs" />
     <Compile Include="SpecialForms\QuoteTests.cs" />
   </ItemGroup>
   <ItemGroup>

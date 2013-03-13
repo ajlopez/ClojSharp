@@ -78,6 +78,7 @@
     <Compile Include="Machine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecialForms\Def.cs" />
+    <Compile Include="SpecialForms\Do.cs" />
     <Compile Include="SpecialForms\Fn.cs" />
     <Compile Include="SpecialForms\Quote.cs" />
   </ItemGroup>
