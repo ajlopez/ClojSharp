@@ -51,6 +51,7 @@
     <Compile Include="Compiler\TokenType.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Exceptions\ArityException.cs" />
+    <Compile Include="Exceptions\IllegalArgumentException.cs" />
     <Compile Include="Exceptions\RuntimeException.cs" />
     <Compile Include="Forms\Add.cs" />
     <Compile Include="Forms\BaseForm.cs" />

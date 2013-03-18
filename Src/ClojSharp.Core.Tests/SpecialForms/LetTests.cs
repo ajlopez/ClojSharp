@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Compiler;
+    using ClojSharp.Core.Exceptions;
     using ClojSharp.Core.Language;
     using ClojSharp.Core.SpecialForms;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -40,12 +41,18 @@
         }
 
         [TestMethod]
-        public void LetTwoVariables()
+        public void ExceptionWhenOddNumberOfForms()
         {
-            var result = this.EvaluateList("(let [x 1 y x] x)");
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual(1, result);
+            try
+            {
+                this.EvaluateList("(let [x 1 2] x)");
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(IllegalArgumentException));
+                Assert.AreEqual("let requires an even number of forms in binding vector", ex.Message);
+            }
         }
 
         private object EvaluateList(string text)

@@ -6,6 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Forms;
     using ClojSharp.Core.Language;
+    using ClojSharp.Core.Exceptions;
 
     public class Let : IForm
     {
@@ -14,6 +15,10 @@
         public object Evaluate(Context context, IList<object> arguments)
         {
             var elements = ((VectorValue)arguments[0]).Expressions;
+
+            if (elements.Count % 2 != 0)
+                throw new IllegalArgumentException("let requires an even number of forms in binding vector");
+
             IList<string> names = new List<string>();
 
             var newcontext = new Context(context);
