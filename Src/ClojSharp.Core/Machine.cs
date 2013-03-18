@@ -18,6 +18,7 @@
             this.root.SetValue("def", new Def());
             this.root.SetValue("fn", new Fn());
             this.root.SetValue("quote", new Quote());
+            this.root.SetValue("let", new Let());
             this.root.SetValue("cons", new Cons());
             this.root.SetValue("list", new ListForm());
             this.root.SetValue("first", new First());
