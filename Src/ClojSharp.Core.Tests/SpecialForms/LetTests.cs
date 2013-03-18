@@ -12,15 +12,19 @@
     [TestClass]
     public class LetTests
     {
+        private Context context;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            this.context = new Context();
+            this.context.SetValue("let", new Let());
+        }
+
         [TestMethod]
         public void LetOneVariable()
         {
-            Parser parser = new Parser("(let [x 1] x)");
-            Context context = new Context();
-            context.SetValue("let", new Let());
-            var list = (List)parser.ParseExpression();
-
-            var result = list.Evaluate(context);
+            var result = this.EvaluateList("(let [x 1] x)");
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result);
@@ -29,15 +33,26 @@
         [TestMethod]
         public void LetTwoVariables()
         {
-            Parser parser = new Parser("(let [x 1 y x] y)");
-            Context context = new Context();
-            context.SetValue("let", new Let());
-            var list = (List)parser.ParseExpression();
-
-            var result = list.Evaluate(context);
+            var result = this.EvaluateList("(let [x 1 y x] x)");
 
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void LetTwoVariables()
+        {
+            var result = this.EvaluateList("(let [x 1 y x] x)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result);
+        }
+
+        private object EvaluateList(string text)
+        {
+            Parser parser = new Parser(text);
+            var list = (List)parser.ParseExpression();
+            return list.Evaluate(this.context);
         }
     }
 }
