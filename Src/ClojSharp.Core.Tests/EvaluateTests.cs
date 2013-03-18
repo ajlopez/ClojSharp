@@ -196,6 +196,15 @@
             Assert.AreEqual(7, map.GetValue(new Keyword("seven")));
         }
 
+        [TestMethod]
+        public void EvaluateLet()
+        {
+            var result = this.Evaluate("(let [x 1 y (+ x 1)] y)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result);
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);
