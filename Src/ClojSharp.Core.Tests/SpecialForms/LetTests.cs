@@ -55,6 +55,36 @@
             }
         }
 
+        [TestMethod]
+        public void ExceptionWhenFirstArgumentIsNotAVector()
+        {
+            try
+            {
+                this.EvaluateList("(let 1 2 3)");
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(IllegalArgumentException));
+                Assert.AreEqual("let requires a vector for its bindings", ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void ExceptionWhenNoArguments()
+        {
+            try
+            {
+                this.EvaluateList("(let)");
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(ArityException));
+                Assert.AreEqual("Wrong number of args (0) passed to ClojSharp.Core.SpecialForms.Let", ex.Message);
+            }
+        }
+
         private object EvaluateList(string text)
         {
             Parser parser = new Parser(text);

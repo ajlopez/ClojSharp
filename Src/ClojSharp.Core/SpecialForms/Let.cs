@@ -14,7 +14,15 @@
 
         public object Evaluate(Context context, IList<object> arguments)
         {
-            var elements = ((VectorValue)arguments[0]).Expressions;
+            if (arguments.Count == 0)
+                throw new ArityException(typeof(Let), arguments.Count);
+
+            var vector = arguments[0] as VectorValue;
+
+            if (vector == null)
+                throw new IllegalArgumentException("let requires a vector for its bindings");
+
+            var elements = vector.Expressions;
 
             if (elements.Count % 2 != 0)
                 throw new IllegalArgumentException("let requires an even number of forms in binding vector");
