@@ -39,5 +39,10 @@
 
             return obj;
         }
+
+        public static bool IsFalse(object obj)
+        {
+            return obj == null || obj.Equals(false);
+        }
     }
 }
