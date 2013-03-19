@@ -205,6 +205,41 @@
             Assert.AreEqual(2, result);
         }
 
+        [TestMethod]
+        public void EvaluateIfNil()
+        {
+            var result = this.Evaluate("(if nil 1 2)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
+        public void EvaluateIfTrue()
+        {
+            var result = this.Evaluate("(if true 1 2)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void EvaluateIfOneWithoutElse()
+        {
+            var result = this.Evaluate("(if 1 2)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
+        public void EvaluateIfFalseWithoutElse()
+        {
+            var result = this.Evaluate("(if false 1)");
+
+            Assert.IsNull(result);
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);

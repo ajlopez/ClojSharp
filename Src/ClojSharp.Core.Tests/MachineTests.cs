@@ -46,6 +46,7 @@
             this.IsSpecialForm("fn");
             this.IsSpecialForm("quote");
             this.IsSpecialForm("let");
+            this.IsSpecialForm("if");
         }
 
         [TestMethod]
