@@ -1,11 +1,12 @@
 ﻿namespace ClojSharp.Core.Tests.Language
 {
     using System;
-    using System.Text;
     using System.Collections.Generic;
     using System.Linq;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Text;
+    using ClojSharp.Core.Exceptions;
     using ClojSharp.Core.Language;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class SymbolTests
@@ -17,6 +18,39 @@
 
             Assert.AreEqual("a", symbol.Name);
             Assert.AreEqual("a", symbol.ToString());
+            Assert.IsNull(symbol.Metadata);
+        }
+
+        [TestMethod]
+        public void SetGetMetadata()
+        {
+            Symbol symbol = new Symbol("a");
+            Map map = new Map(new object[] { });
+
+            symbol.Metadata = map;
+
+            Assert.AreSame(map, symbol.Metadata);
+        }
+
+        [TestMethod]
+        public void ExceptionWhenResetMetadata()
+        {
+            Symbol symbol = new Symbol("a");
+            Map map = new Map(new object[] { });
+            Map newmap = new Map(new object[] { });
+
+            symbol.Metadata = map;
+
+            try
+            {
+                symbol.Metadata = newmap;
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(RuntimeException));
+                Assert.AreEqual("metadata already set", ex.Message);
+            }
         }
 
         [TestMethod]

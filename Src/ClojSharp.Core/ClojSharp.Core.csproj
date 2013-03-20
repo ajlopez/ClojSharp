@@ -65,6 +65,7 @@
     <Compile Include="Forms\Multiply.cs" />
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\Subtract.cs" />
+    <Compile Include="Language\IMeta.cs" />
     <Compile Include="Language\VectorValue.cs" />
     <Compile Include="Language\Keyword.cs" />
     <Compile Include="Language\EmptyList.cs" />

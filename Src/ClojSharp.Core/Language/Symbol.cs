@@ -4,10 +4,12 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using ClojSharp.Core.Exceptions;
 
-    public class Symbol : IEvaluable
+    public class Symbol : IEvaluable, IMeta
     {
         private string name;
+        private Map metadata;
 
         public Symbol(string name)
         {
@@ -15,6 +17,22 @@
         }
 
         public string Name { get { return this.name; } }
+
+        public Map Metadata
+        {
+            get
+            {
+                return this.metadata;
+            }
+
+            set
+            {
+                if (this.metadata != null)
+                    throw new RuntimeException("metadata already set");
+
+                this.metadata = value;
+            }
+        }
 
         public object Evaluate(Context context)
         {
