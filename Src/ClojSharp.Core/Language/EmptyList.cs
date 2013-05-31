@@ -9,12 +9,12 @@
     {
         private static EmptyList instance = new EmptyList();
 
-        public static EmptyList Instance { get { return instance; } }
-
         private EmptyList()
             : base(null, null)
         {
         }
+
+        public static EmptyList Instance { get { return instance; } }
 
         public override string ToString()
         {

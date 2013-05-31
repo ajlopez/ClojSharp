@@ -4,9 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using ClojSharp.Core.Exceptions;
     using ClojSharp.Core.Forms;
     using ClojSharp.Core.Language;
-    using ClojSharp.Core.Exceptions;
 
     public class Let : IForm
     {

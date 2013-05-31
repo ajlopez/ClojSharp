@@ -9,11 +9,11 @@
 
     public class Parser
     {
-        private static Symbol Quote = new Symbol("quote");
-        private static string QuoteChar = "'";
-        private static string NilName = "nil";
-        private static string TrueName = "true";
-        private static string FalseName = "false";
+        private static Symbol quote = new Symbol("quote");
+        private static string quoteChar = "'";
+        private static string nilName = "nil";
+        private static string trueName = "true";
+        private static string falseName = "false";
 
         private Lexer lexer;
 
@@ -48,13 +48,13 @@
 
             if (token.Type == TokenType.Name)
             {
-                if (token.Value == QuoteChar)
-                    return new List(Quote, new List(this.ParseExpression(), null));
-                if (token.Value == NilName)
+                if (token.Value == quoteChar)
+                    return new List(quote, new List(this.ParseExpression(), null));
+                if (token.Value == nilName)
                     return null;
-                if (token.Value == FalseName)
+                if (token.Value == falseName)
                     return false;
-                if (token.Value == TrueName)
+                if (token.Value == trueName)
                     return true;
                 if (token.Value[0] == ':')
                     return new Keyword(token.Value.Substring(1));
@@ -68,7 +68,7 @@
             Stack<object> elements = new Stack<object>();
             var token = this.lexer.NextToken();
 
-            while (token != null && token.Type != TokenType.Separator || token.Value != ")")
+            while (token != null && (token.Type != TokenType.Separator || token.Value != ")"))
             {
                 this.lexer.PushToken(token);
                 elements.Push(this.ParseExpression());
@@ -88,7 +88,7 @@
             List<object> expressions = new List<object>();
             var token = this.lexer.NextToken();
 
-            while (token != null && token.Type != TokenType.Separator || token.Value != "]")
+            while (token != null && (token.Type != TokenType.Separator || token.Value != "]"))
             {
                 this.lexer.PushToken(token);
                 expressions.Add(this.ParseExpression());
@@ -103,7 +103,7 @@
             List<object> expressions = new List<object>();
             var token = this.lexer.NextToken();
 
-            while (token != null && token.Type != TokenType.Separator || token.Value != "}")
+            while (token != null && (token.Type != TokenType.Separator || token.Value != "}"))
             {
                 this.lexer.PushToken(token);
                 expressions.Add(this.ParseExpression());

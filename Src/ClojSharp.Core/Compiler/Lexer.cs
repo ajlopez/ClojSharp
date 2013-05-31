@@ -134,7 +134,7 @@
             int ich = this.reader.Read();
 
             if (ich >= 0 && (char)ich == CommentChar)
-                for (ich = this.reader.Read(); ich >= 0 && (char)ich != '\n'; )
+                for (ich = this.reader.Read(); ich >= 0 && (char)ich != '\n';)
                     ich = this.reader.Read();
 
             return ich;

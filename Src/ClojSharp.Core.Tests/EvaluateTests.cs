@@ -6,8 +6,8 @@
     using System.Text;
     using ClojSharp.Core.Compiler;
     using ClojSharp.Core.Exceptions;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ClojSharp.Core.Language;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class EvaluateTests

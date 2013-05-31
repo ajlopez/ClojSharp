@@ -16,10 +16,10 @@
 
         public object Evaluate(Context context)
         {
-            object[] values = new object[expressions.Count];
+            object[] values = new object[this.expressions.Count];
 
             for (var k = 0; k < values.Length; k++)
-                values[k] = Machine.Evaluate(expressions[k], context);
+                values[k] = Machine.Evaluate(this.expressions[k], context);
 
             return new Map(values);
         }

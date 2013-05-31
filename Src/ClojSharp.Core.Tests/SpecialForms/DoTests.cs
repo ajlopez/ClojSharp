@@ -4,9 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using ClojSharp.Core.Language;
     using ClojSharp.Core.SpecialForms;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using ClojSharp.Core.Language;
 
     [TestClass]
     public class DoTests

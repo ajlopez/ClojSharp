@@ -16,7 +16,7 @@
         public void ConsIntegerToNil()
         {
             Cons cons = new Cons();
-            var result= cons.Evaluate(null, new object[] { 1, null });
+            var result = cons.Evaluate(null, new object[] { 1, null });
 
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(ISeq));

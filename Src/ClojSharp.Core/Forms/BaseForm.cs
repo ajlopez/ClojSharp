@@ -4,11 +4,15 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using ClojSharp.Core.Language;
     using ClojSharp.Core.Exceptions;
+    using ClojSharp.Core.Language;
 
     public abstract class BaseForm : IForm
     {
+        public abstract int RequiredArity { get; }
+
+        public virtual bool VariableArity { get { return true; } }
+
         public object Evaluate(Context context, IList<object> arguments)
         {
             int arity = arguments == null ? 0 : arguments.Count;
@@ -31,9 +35,5 @@
         }
 
         public abstract object EvaluateForm(Context context, IList<object> arguments);
-
-        public abstract int RequiredArity { get; }
-
-        public virtual bool VariableArity { get { return true; } }
     }
 }

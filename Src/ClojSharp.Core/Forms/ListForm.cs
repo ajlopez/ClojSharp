@@ -16,7 +16,7 @@
                 return EmptyList.Instance;
 
             List result = null;
-            for (var k = arguments.Count; k-- > 0; )
+            for (var k = arguments.Count; k-- > 0;)
                 result = new List(arguments[k], result);
             return result;
         }
