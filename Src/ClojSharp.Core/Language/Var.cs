@@ -16,6 +16,11 @@
         {
         }
 
+        public Var(string name, object value)
+            : this("user", name, value)
+        {
+        }
+
         public Var(string @namespace, string name, object value)
         {
             this.@namespace = @namespace;
