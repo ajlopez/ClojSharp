@@ -55,6 +55,7 @@
     <Compile Include="Language\MapTests.cs" />
     <Compile Include="Language\SymbolTests.cs" />
     <Compile Include="Language\KeywordTests.cs" />
+    <Compile Include="Language\VarTests.cs" />
     <Compile Include="Language\VectorTests.cs" />
     <Compile Include="Language\ListTests.cs" />
     <Compile Include="MachineTests.cs" />
