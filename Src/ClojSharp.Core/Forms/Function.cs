@@ -57,7 +57,7 @@
                 newcontext = new Context(newcontext);
 
             if (this.restname != null)
-                newcontext.SetValue(restname, this.MakeList(this.arity, arguments));
+                newcontext.SetValue(this.restname, this.MakeList(this.arity, arguments));
 
             return this.evalbody.Evaluate(newcontext);
         }
