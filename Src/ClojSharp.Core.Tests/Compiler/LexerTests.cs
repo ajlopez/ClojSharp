@@ -33,6 +33,20 @@
         }
 
         [TestMethod]
+        public void GetQualifiedName()
+        {
+            Lexer lexer = new Lexer("clojsharp.core");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("clojsharp.core", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetNameAndComment()
         {
             Lexer lexer = new Lexer("name ; comment");
