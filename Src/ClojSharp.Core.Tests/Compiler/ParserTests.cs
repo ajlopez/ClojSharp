@@ -241,5 +241,39 @@
                 Assert.AreEqual(ex.Message, "Unclosed list");
             }
         }
+
+        [TestMethod]
+        public void RaiseWhenUnclosedVector()
+        {
+            Parser parser = new Parser("[1 2 3");
+
+            try
+            {
+                parser.ParseExpression();
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(ParserException));
+                Assert.AreEqual(ex.Message, "Unclosed vector");
+            }
+        }
+
+        [TestMethod]
+        public void RaiseWhenUnclosedMap()
+        {
+            Parser parser = new Parser("{1 2 3");
+
+            try
+            {
+                parser.ParseExpression();
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(ParserException));
+                Assert.AreEqual(ex.Message, "Unclosed map");
+            }
+        }
     }
 }

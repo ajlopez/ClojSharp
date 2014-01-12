@@ -98,6 +98,9 @@
                 token = this.lexer.NextToken();
             }
 
+            if (token == null)
+                throw new ParserException("Unclosed vector");
+
             return new VectorValue(expressions);
         }
 
@@ -112,6 +115,9 @@
                 expressions.Add(this.ParseExpression());
                 token = this.lexer.NextToken();
             }
+
+            if (token == null)
+                throw new ParserException("Unclosed map");
 
             return new MapValue(expressions);
         }
