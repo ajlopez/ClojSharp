@@ -59,5 +59,48 @@
 
             Assert.AreEqual(3, function.Evaluate(null, new object[] { 2 }));
         }
+
+        [TestMethod]
+        public void FunctionWithVariableArity()
+        {
+            Function function = new Function(null, null, "rest", null);
+
+            Assert.IsTrue(function.VariableArity);
+        }
+
+        [TestMethod]
+        public void EvaluateFunctionWithVariableArity()
+        {
+            Function function = new Function(null, null, "rest", new Symbol("rest"));
+
+            var result = function.Evaluate(null, new object[] { 1, 2, 3 });
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ISeq));
+
+            var seq = (ISeq)result;
+
+            Assert.AreEqual(1, seq.First);
+            Assert.AreEqual(2, seq.Next.First);
+            Assert.AreEqual(3, seq.Next.Next.First);
+            Assert.IsNull(seq.Next.Next.Next);
+        }
+
+        [TestMethod]
+        public void EvaluateFunctionWithArgumentsAndVariableArity()
+        {
+            Function function = new Function(null, new string[] { "x", "y" }, "rest", new Symbol("rest"));
+
+            var result = function.Evaluate(null, new object[] { 1, 2, 3, 4 });
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ISeq));
+
+            var seq = (ISeq)result;
+
+            Assert.AreEqual(3, seq.First);
+            Assert.AreEqual(4, seq.Next.First);
+            Assert.IsNull(seq.Next.Next);
+        }
     }
 }

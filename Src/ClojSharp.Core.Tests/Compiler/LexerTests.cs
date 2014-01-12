@@ -89,6 +89,20 @@
         }
 
         [TestMethod]
+        public void GetAmpersandAsName()
+        {
+            Lexer lexer = new Lexer("&");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("&", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetTwoSymbolsAsName()
         {
             Lexer lexer = new Lexer("+=");
