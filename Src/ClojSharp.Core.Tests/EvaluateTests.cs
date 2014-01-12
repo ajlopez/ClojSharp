@@ -252,6 +252,21 @@
             Assert.IsNull(result);
         }
 
+        [TestMethod]
+        public void ExceptionWhenOddNumberOfForms()
+        {
+            try
+            {
+                this.Evaluate("{1 2 3}");
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(RuntimeException));
+                Assert.AreEqual("Map literal must contain an even number of forms", ex.Message);
+            }
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);

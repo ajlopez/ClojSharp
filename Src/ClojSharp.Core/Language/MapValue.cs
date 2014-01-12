@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using ClojSharp.Core.Exceptions;
 
     public class MapValue : IEvaluable
     {
@@ -16,6 +17,9 @@
 
         public object Evaluate(Context context)
         {
+            if (this.expressions.Count % 2 != 0)
+                throw new RuntimeException("Map literal must contain an even number of forms");
+
             object[] values = new object[this.expressions.Count];
 
             for (var k = 0; k < values.Length; k++)
