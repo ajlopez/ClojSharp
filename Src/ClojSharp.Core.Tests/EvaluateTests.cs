@@ -87,6 +87,18 @@
         }
 
         [TestMethod]
+        public void EvaluateFnWithVariableArity()
+        {
+            Assert.AreEqual("(1 2 3)", this.Evaluate("((fn [& rest] rest) 1 2 3)").ToString());
+        }
+
+        [TestMethod]
+        public void EvaluateFnWithArgumentsAndVariableArity()
+        {
+            Assert.AreEqual("(3 4)", this.Evaluate("((fn [x y & rest] rest) 1 2 3 4)").ToString());
+        }
+
+        [TestMethod]
         public void EvaluateFnWithArgumentAndFreeVariable()
         {
             this.machine.RootContext.SetValue("one", 1);
