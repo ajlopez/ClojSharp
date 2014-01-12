@@ -75,6 +75,9 @@
                 token = this.lexer.NextToken();
             }
 
+            if (token == null)
+                throw new ParserException("Unclosed list");
+
             List list = null;
 
             while (elements.Count > 0)

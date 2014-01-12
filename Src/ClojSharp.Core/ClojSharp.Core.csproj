@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Compiler\Lexer.cs" />
     <Compile Include="Compiler\Parser.cs" />
+    <Compile Include="Compiler\ParserException.cs" />
     <Compile Include="Compiler\Token.cs" />
     <Compile Include="Compiler\TokenType.cs" />
     <Compile Include="Context.cs" />

@@ -224,5 +224,22 @@
             Assert.AreEqual(2, map.GetValue(new Keyword("b")));
             Assert.IsNull(map.GetValue(new Keyword("c")));
         }
+
+        [TestMethod]
+        public void RaiseWhenUnclosedList()
+        {
+            Parser parser = new Parser("(1 2 3");
+
+            try
+            {
+                parser.ParseExpression();
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(ParserException));
+                Assert.AreEqual(ex.Message, "Unclosed list");
+            }
+        }
     }
 }
