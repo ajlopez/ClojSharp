@@ -267,6 +267,15 @@
             }
         }
 
+        [TestMethod]
+        public void EvaluateDo()
+        {
+            var result = this.Evaluate("(do 1 2 3)");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(3, result);
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);
