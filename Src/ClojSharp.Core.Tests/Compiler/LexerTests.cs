@@ -89,6 +89,34 @@
         }
 
         [TestMethod]
+        public void GetQuoteAsName()
+        {
+            Lexer lexer = new Lexer("'");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("'", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
+        public void GetNumeralQuoteAsName()
+        {
+            Lexer lexer = new Lexer("#'");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("#'", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetPlusAsName()
         {
             Lexer lexer = new Lexer("+");

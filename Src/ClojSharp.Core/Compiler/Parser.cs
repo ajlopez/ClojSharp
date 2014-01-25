@@ -11,6 +11,8 @@
     {
         private static Symbol quote = new Symbol("quote");
         private static string quoteChar = "'";
+        private static Symbol var = new Symbol("var");
+        private static string varChar = "#'";
         private static string nilName = "nil";
         private static string trueName = "true";
         private static string falseName = "false";
@@ -50,6 +52,8 @@
             {
                 if (token.Value == quoteChar)
                     return new List(quote, new List(this.ParseExpression(), null));
+                if (token.Value == varChar)
+                    return new List(var, new List(this.ParseExpression(), null));
                 if (token.Value == nilName)
                     return null;
                 if (token.Value == falseName)

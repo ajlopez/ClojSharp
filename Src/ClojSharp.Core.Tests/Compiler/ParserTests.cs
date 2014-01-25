@@ -156,6 +156,18 @@
         }
 
         [TestMethod]
+        public void ParseVarMacro()
+        {
+            Parser parser = new Parser("#'x");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(List));
+            Assert.AreEqual("(var x)", expr.ToString());
+        }
+
+        [TestMethod]
         public void ParseNilAsNull()
         {
             Parser parser = new Parser("nil");
