@@ -38,12 +38,12 @@
         }
 
         [TestMethod]
-        public void SetRootValue()
+        public void SetVarValue()
         {
             Context parent = new Context();
             Context context = new Context(parent);
 
-            context.SetRootValue("one", 1);
+            context.SetVarValue("one", 1);
             Assert.AreEqual(1, context.GetValue("one"));
             Assert.AreEqual(1, parent.GetValue("one"));
         }

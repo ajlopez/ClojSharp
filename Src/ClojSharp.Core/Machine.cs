@@ -22,6 +22,7 @@
             this.root.SetValue("let", new Let());
             this.root.SetValue("if", new If());
             this.root.SetValue("do", new Do());
+            this.root.SetValue("var", new VarF());
 
             this.root.SetValue("cons", new Cons());
             this.root.SetValue("list", new ListForm());

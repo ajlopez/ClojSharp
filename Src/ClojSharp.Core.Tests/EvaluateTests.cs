@@ -276,6 +276,38 @@
             Assert.AreEqual(3, result);
         }
 
+        [TestMethod]
+        public void EvaluateDefinedVar()
+        {
+            var machine = new Machine();
+            this.Evaluate("(def one 1)", machine.RootContext);
+            var result = this.Evaluate("(var one)", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Var));
+
+            var var = (Var)result;
+            Assert.AreEqual("one", var.Name);
+            Assert.AreEqual("user/one", var.FullName);
+            Assert.AreEqual(1, var.Value);
+        }
+
+        [TestMethod]
+        public void RaiseWhenEvaluateUndefinedVar()
+        {
+            var machine = new Machine();
+
+            try
+            {
+                this.Evaluate("(var one)", machine.RootContext);
+                Assert.Fail();
+            }
+            catch (RuntimeException ex)
+            {
+                Assert.AreEqual("Unable to resolve var: one in this context", ex.Message);
+            }
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);

@@ -6,25 +6,20 @@
     using System.Text;
     using ClojSharp.Core.Forms;
     using ClojSharp.Core.Language;
+    using ClojSharp.Core.Exceptions;
 
-    public class Def : IForm
+    public class VarF : IForm
     {
         public object Evaluate(Context context, IList<object> arguments)
         {
             Symbol symbol = (Symbol)arguments[0];
-            object value = null;
 
-            if (arguments.Count == 2) 
-            {
-                value = arguments[1];
+            var var = context.GetVar(symbol.Name);
 
-                if (value is IEvaluable)
-                    value = ((IEvaluable)value).Evaluate(context);
-            }
+            if (var == null)
+                throw new RuntimeException(string.Format("Unable to resolve var: {0} in this context", symbol.Name));
 
-            context.SetVarValue(symbol.Name, value);
-
-            return context.GetVar(symbol.Name);
+            return var;
         }
     }
 }

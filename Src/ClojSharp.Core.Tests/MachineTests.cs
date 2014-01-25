@@ -48,6 +48,7 @@
             this.IsSpecialForm("let");
             this.IsSpecialForm("if");
             this.IsSpecialForm("do");
+            this.IsSpecialForm("var");
         }
 
         [TestMethod]
