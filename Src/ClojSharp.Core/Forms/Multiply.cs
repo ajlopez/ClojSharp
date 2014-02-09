@@ -13,7 +13,7 @@
             get { return 0; }
         }
 
-        public override object EvaluateForm(Context context, IList<object> arguments)
+        public override object EvaluateForm(IContext context, IList<object> arguments)
         {
             int result = 1;
 

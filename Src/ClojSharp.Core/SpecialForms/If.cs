@@ -9,7 +9,7 @@
 
     public class If : IForm
     {
-        public object Evaluate(Context context, IList<object> arguments)
+        public object Evaluate(IContext context, IList<object> arguments)
         {
             if (arguments.Count < 2)
                 throw new RuntimeException("Too few arguments to if");

@@ -6,19 +6,25 @@
     using System.Text;
     using ClojSharp.Core.Language;
 
-    public class Context
+    public class Context : ClojSharp.Core.IContext
     {
         private IDictionary<string, object> values = new Dictionary<string, object>();
-        private Context parent;
+        private IContext parent;
+        private VarContext topcontext;
 
         public Context()
             : this(null)
         {
         }
 
-        public Context(Context parent)
+        public VarContext TopContext { get { return this.topcontext; } }
+
+        public Context(IContext parent)
         {
             this.parent = parent;
+
+            if (parent != null)
+                this.topcontext = parent.TopContext;
         }
 
         public void SetValue(string name, object value)
@@ -27,25 +33,6 @@
                 this.values[name] = new Var(name, value);
             else
                 this.values[name] = value;
-        }
-
-        public void SetVarValue(string name, object value)
-        {
-            if (this.parent != null)
-                this.parent.SetVarValue(name, value);
-            else
-                this.SetValue(name, value);
-        }
-
-        public Var GetVar(string name)
-        {
-            if (this.parent != null)
-                return this.parent.GetVar(name);
-
-            if (this.values.ContainsKey(name))
-                return (Var)this.values[name];
-
-            return null;
         }
 
         public object GetValue(string name)

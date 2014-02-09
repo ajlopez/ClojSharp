@@ -10,11 +10,11 @@
 
     public class Machine
     {
-        private Context root;
+        private IContext root;
 
         public Machine()
         {
-            this.root = new Context();
+            this.root = new VarContext();
 
             this.root.SetValue("def", new Def());
             this.root.SetValue("fn", new Fn());
@@ -35,9 +35,9 @@
             this.root.SetValue("/", new Divide());
         }
 
-        public Context RootContext { get { return this.root; } }
+        public IContext RootContext { get { return this.root; } }
 
-        public static object Evaluate(object obj, Context context)
+        public static object Evaluate(object obj, IContext context)
         {
             if (obj is IEvaluable)
                 return ((IEvaluable)obj).Evaluate(context);

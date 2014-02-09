@@ -87,6 +87,7 @@
     <Compile Include="Forms\Multiply.cs" />
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\Subtract.cs" />
+    <Compile Include="IContext.cs" />
     <Compile Include="Language\IMeta.cs" />
     <Compile Include="Language\VectorValue.cs" />
     <Compile Include="Language\Keyword.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="SpecialForms\Do.cs" />
     <Compile Include="SpecialForms\Fn.cs" />
     <Compile Include="SpecialForms\Quote.cs" />
+    <Compile Include="VarContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

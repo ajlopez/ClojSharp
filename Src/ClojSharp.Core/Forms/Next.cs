@@ -12,7 +12,7 @@
 
         public override bool VariableArity { get { return false; } }
 
-        public override object EvaluateForm(Context context, IList<object> arguments)
+        public override object EvaluateForm(IContext context, IList<object> arguments)
         {
             if (arguments[0] == null)
                 return null;

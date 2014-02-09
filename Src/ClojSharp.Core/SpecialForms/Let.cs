@@ -12,7 +12,7 @@
     {
         private static IForm @do = new Do();
 
-        public object Evaluate(Context context, IList<object> arguments)
+        public object Evaluate(IContext context, IList<object> arguments)
         {
             if (arguments.Count == 0)
                 throw new ArityException(typeof(Let), arguments.Count);

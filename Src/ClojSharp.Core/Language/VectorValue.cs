@@ -16,7 +16,7 @@
 
         public IList<object> Expressions { get { return this.expressions; } }
 
-        public object Evaluate(Context context)
+        public object Evaluate(IContext context)
         {
             object[] values = new object[this.expressions.Count];
 

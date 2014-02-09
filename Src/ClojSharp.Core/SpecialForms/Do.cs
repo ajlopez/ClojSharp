@@ -8,7 +8,7 @@
 
     public class Do : IForm
     {
-        public object Evaluate(Context context, IList<object> arguments)
+        public object Evaluate(IContext context, IList<object> arguments)
         {
             object result = null;
 

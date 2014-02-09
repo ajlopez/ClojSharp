@@ -13,7 +13,7 @@
 
         public virtual bool VariableArity { get { return true; } }
 
-        public object Evaluate(Context context, IList<object> arguments)
+        public object Evaluate(IContext context, IList<object> arguments)
         {
             int arity = arguments == null ? 0 : arguments.Count;
 
@@ -34,6 +34,6 @@
             return this.EvaluateForm(context, arguments);
         }
 
-        public abstract object EvaluateForm(Context context, IList<object> arguments);
+        public abstract object EvaluateForm(IContext context, IList<object> arguments);
     }
 }

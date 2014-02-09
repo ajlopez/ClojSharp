@@ -313,7 +313,7 @@
             return this.Evaluate(text, this.machine.RootContext);
         }
 
-        private object Evaluate(string text, Context context)
+        private object Evaluate(string text, IContext context)
         {
             Parser parser = new Parser(text);
             var expr = parser.ParseExpression();

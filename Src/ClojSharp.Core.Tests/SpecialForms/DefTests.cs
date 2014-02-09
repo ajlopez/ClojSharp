@@ -15,7 +15,7 @@
         [TestMethod]
         public void DefIntegerVariable()
         {
-            Context context = new Context();
+            IContext context = new VarContext();
             Symbol symbol = new Symbol("one");
             Def def = new Def();
 
@@ -34,7 +34,7 @@
         [TestMethod]
         public void DefVariableWithoutInitialValue()
         {
-            Context context = new Context();
+            IContext context = new VarContext();
             Symbol symbol = new Symbol("one");
             Def def = new Def();
 
@@ -53,7 +53,7 @@
         [TestMethod]
         public void DefVariableFromASymbol()
         {
-            Context context = new Context();
+            IContext context = new VarContext();
             context.SetValue("uno", 1);
             Symbol symbol = new Symbol("one");
             Symbol uno = new Symbol("uno");
@@ -74,7 +74,7 @@
         [TestMethod]
         public void DefVariableFromAListExpression()
         {
-            Context context = new Context();
+            IContext context = new VarContext();
             context.SetValue("add", new Add());
             Symbol symbol = new Symbol("three");
             List list = new List(new Symbol("add"), new List(1, new List(2, null)));
@@ -95,8 +95,8 @@
         [TestMethod]
         public void DefIntegerVariableAtRootContext()
         {
-            Context root = new Context();
-            Context context = new Context(root);
+            IContext root = new VarContext();
+            IContext context = new Context(root);
             Symbol symbol = new Symbol("one");
             Def def = new Def();
 

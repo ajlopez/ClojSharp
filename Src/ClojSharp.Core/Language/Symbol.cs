@@ -34,7 +34,7 @@
             }
         }
 
-        public object Evaluate(Context context)
+        public object Evaluate(IContext context)
         {
             return context.GetValue(this.name);
         }

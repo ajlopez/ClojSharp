@@ -16,7 +16,7 @@
 
         public override bool VariableArity { get { return false; } }
 
-        public override object EvaluateForm(Context context, IList<object> arguments)
+        public override object EvaluateForm(IContext context, IList<object> arguments)
         {
             if (arguments[1] != null && !(arguments[1] is ISeq))
                 throw new ArgumentException(string.Format("Don't know how to create ISeq from {0}", arguments[1].GetType().FullName));

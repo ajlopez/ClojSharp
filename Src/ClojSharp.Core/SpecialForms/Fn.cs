@@ -9,7 +9,7 @@
 
     public class Fn : IForm
     {
-        public object Evaluate(Context context, IList<object> arguments)
+        public object Evaluate(IContext context, IList<object> arguments)
         {
             var elements = ((VectorValue)arguments[0]).Expressions;
             IList<string> names = new List<string>();

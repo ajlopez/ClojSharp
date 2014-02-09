@@ -15,7 +15,7 @@
             this.expressions = expressions;
         }
 
-        public object Evaluate(Context context)
+        public object Evaluate(IContext context)
         {
             if (this.expressions.Count % 2 != 0)
                 throw new RuntimeException("Map literal must contain an even number of forms");

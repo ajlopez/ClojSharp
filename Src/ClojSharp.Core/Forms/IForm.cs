@@ -7,6 +7,6 @@
 
     public interface IForm
     {
-        object Evaluate(Context context, IList<object> arguments);
+        object Evaluate(IContext context, IList<object> arguments);
     }
 }

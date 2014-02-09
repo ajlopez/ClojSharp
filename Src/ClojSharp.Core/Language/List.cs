@@ -23,7 +23,7 @@
 
         public ISeq Rest { get { return this.rest == null ? EmptyList.Instance : this.rest; } }
 
-        public object Evaluate(Context context)
+        public object Evaluate(IContext context)
         {
             IForm fn;
             fn = (IForm)((IEvaluable)this.first).Evaluate(context);

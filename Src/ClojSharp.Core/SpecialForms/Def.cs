@@ -9,7 +9,7 @@
 
     public class Def : IForm
     {
-        public object Evaluate(Context context, IList<object> arguments)
+        public object Evaluate(IContext context, IList<object> arguments)
         {
             Symbol symbol = (Symbol)arguments[0];
             object value = null;
@@ -22,9 +22,9 @@
                     value = ((IEvaluable)value).Evaluate(context);
             }
 
-            context.SetVarValue(symbol.Name, value);
+            context.TopContext.SetValue(symbol.Name, value);
 
-            return context.GetVar(symbol.Name);
+            return context.TopContext.GetVar(symbol.Name);
         }
     }
 }

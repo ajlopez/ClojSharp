@@ -9,19 +9,19 @@
 
     public class Function : BaseForm
     {
-        private Context closure;
+        private IContext closure;
         private IList<string> names;
         private string restname;
         private object body;
         private IEvaluable evalbody;
         private int arity;
 
-        public Function(Context closure, IList<string> names, object body)
+        public Function(IContext closure, IList<string> names, object body)
             : this(closure, names, null, body)
         {
         }
 
-        public Function(Context closure, IList<string> names, string restname, object body)
+        public Function(IContext closure, IList<string> names, string restname, object body)
         {
             this.closure = closure;
             this.names = names;
@@ -40,12 +40,12 @@
 
         public override bool VariableArity { get { return this.restname != null; } }
 
-        public override object EvaluateForm(Context context, IList<object> arguments)
+        public override object EvaluateForm(IContext context, IList<object> arguments)
         {
             if (this.evalbody == null)
                 return this.body;
 
-            Context newcontext = this.closure;
+            IContext newcontext = this.closure;
 
             if (this.names != null && this.names.Count > 0)
             {

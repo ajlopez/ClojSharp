@@ -10,7 +10,7 @@
     {
         public override int RequiredArity { get { return 0; } }
 
-        public override object EvaluateForm(Context context, IList<object> arguments)
+        public override object EvaluateForm(IContext context, IList<object> arguments)
         {
             if (arguments == null || arguments.Count == 0)
                 return EmptyList.Instance;

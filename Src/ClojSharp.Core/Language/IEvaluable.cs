@@ -7,6 +7,6 @@
 
     public interface IEvaluable
     {
-        object Evaluate(Context context);
+        object Evaluate(IContext context);
     }
 }

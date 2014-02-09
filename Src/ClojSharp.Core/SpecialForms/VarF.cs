@@ -10,11 +10,11 @@
 
     public class VarF : IForm
     {
-        public object Evaluate(Context context, IList<object> arguments)
+        public object Evaluate(IContext context, IList<object> arguments)
         {
             Symbol symbol = (Symbol)arguments[0];
 
-            var var = context.GetVar(symbol.Name);
+            var var = context.TopContext.GetVar(symbol.Name);
 
             if (var == null)
                 throw new RuntimeException(string.Format("Unable to resolve var: {0} in this context", symbol.Name));
