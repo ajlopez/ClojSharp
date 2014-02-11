@@ -14,21 +14,21 @@
 
         public object GetValue(string name)
         {
-            if (variables.ContainsKey(name))
-                return variables[name].Value;
+            if (this.variables.ContainsKey(name))
+                return this.variables[name].Value;
 
             return null;
         }
 
         public void SetValue(string name, object value)
         {
-            variables[name] = new Var(name, value);
+            this.variables[name] = new Var(name, value);
         }
 
         public Var GetVar(string name)
         {
-            if (variables.ContainsKey(name))
-                return variables[name];
+            if (this.variables.ContainsKey(name))
+                return this.variables[name];
 
             return null;
         }

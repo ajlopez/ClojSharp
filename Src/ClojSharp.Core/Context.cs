@@ -17,8 +17,6 @@
         {
         }
 
-        public VarContext TopContext { get { return this.topcontext; } }
-
         public Context(IContext parent)
         {
             this.parent = parent;
@@ -26,6 +24,8 @@
             if (parent != null)
                 this.topcontext = parent.TopContext;
         }
+
+        public VarContext TopContext { get { return this.topcontext; } }
 
         public void SetValue(string name, object value)
         {
