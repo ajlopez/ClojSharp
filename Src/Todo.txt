@@ -1,0 +1,5 @@
+
+More recur tess
+	for fn (rest, number of arguments != number of names, etc)
+	for loop
+

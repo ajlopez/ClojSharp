@@ -59,7 +59,26 @@
             if (this.restname != null)
                 newcontext.SetValue(this.restname, this.MakeList(this.arity, arguments));
 
-            return this.evalbody.Evaluate(newcontext);
+            var result = this.evalbody.Evaluate(newcontext);
+
+            while (result is RecurValues)
+            {
+                var rv = (RecurValues)result;
+                newcontext = new Context(newcontext);
+                int nelems = rv.Elements.Count;
+                int nnames = this.names.Count;
+                int k;
+
+                for (k = 0; k < nelems && k < nnames; k++)
+                    newcontext.SetValue(this.names[k], rv.Elements[k]);
+
+                for (; k < nnames; k++)
+                    newcontext.SetValue(this.names[k], null);
+
+                result = this.evalbody.Evaluate(newcontext);
+            }
+
+            return result;
         }
 
         private List MakeList(int nelement, IList<object> elements)

@@ -66,6 +66,7 @@
     <Compile Include="Compiler\ParserTests.cs" />
     <Compile Include="ContextTests.cs" />
     <Compile Include="Forms\RecurTests.cs" />
+    <Compile Include="SpecialForms\FnTests.cs" />
     <Compile Include="SpecialForms\LoopTests.cs" />
     <Compile Include="VarContextTests.cs" />
     <Compile Include="EvaluateTests.cs" />
