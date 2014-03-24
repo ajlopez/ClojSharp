@@ -6,6 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
     using ClojSharp.Core.Forms;
+    using ClojSharp.Core.Language;
 
     public class If : IForm
     {
@@ -21,7 +22,7 @@
 
             var result = Machine.Evaluate(condition, context);
 
-            if (!Machine.IsFalse(result))
+            if (Predicates.IsTrue(result))
                 return Machine.Evaluate(arguments[1], context);
 
             if (arguments.Count > 2)

@@ -29,5 +29,35 @@
             Assert.IsFalse(Predicates.Equals(1, 2.0));
             Assert.IsFalse(Predicates.Equals("foo", "FOO"));
         }
+
+        [TestMethod]
+        public void IsFalse()
+        {
+            Assert.IsTrue(Predicates.IsFalse(null));
+            Assert.IsTrue(Predicates.IsFalse(false));
+
+            Assert.IsFalse(Predicates.IsFalse(1));
+            Assert.IsFalse(Predicates.IsFalse(0));
+            Assert.IsFalse(Predicates.IsFalse(0.0));
+            Assert.IsFalse(Predicates.IsFalse(1.0));
+            Assert.IsFalse(Predicates.IsFalse(string.Empty));
+            Assert.IsFalse(Predicates.IsFalse(" "));
+            Assert.IsFalse(Predicates.IsFalse("foo"));
+        }
+
+        [TestMethod]
+        public void IsTrue()
+        {
+            Assert.IsFalse(Predicates.IsTrue(null));
+            Assert.IsFalse (Predicates.IsTrue(false));
+
+            Assert.IsTrue(Predicates.IsTrue(1));
+            Assert.IsTrue(Predicates.IsTrue(0));
+            Assert.IsTrue(Predicates.IsTrue(0.0));
+            Assert.IsTrue(Predicates.IsTrue(1.0));
+            Assert.IsTrue(Predicates.IsTrue(string.Empty));
+            Assert.IsTrue(Predicates.IsTrue(" "));
+            Assert.IsTrue(Predicates.IsTrue("foo"));
+        }
     }
 }

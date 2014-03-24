@@ -21,6 +21,16 @@
             return obj1.Equals(obj2);
         }
 
+        public static bool IsFalse(object obj)
+        {
+            return obj == null || obj.Equals(false);
+        }
+
+        public static bool IsTrue(object obj)
+        {
+            return !IsFalse(obj);
+        }
+
         private static bool IsReal(object obj)
         {
             return obj is double || obj is float;
