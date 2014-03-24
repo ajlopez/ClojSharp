@@ -31,10 +31,14 @@
             this.root.SetValue("first", new First());
             this.root.SetValue("rest", new Rest());
             this.root.SetValue("next", new Next());
+
             this.root.SetValue("+", new Add());
             this.root.SetValue("-", new Subtract());
             this.root.SetValue("*", new Multiply());
             this.root.SetValue("/", new Divide());
+
+            this.root.SetValue("and", new And());
+            this.root.SetValue("or", new Or());
         }
 
         public IContext RootContext { get { return this.root; } }

@@ -308,6 +308,42 @@
             }
         }
 
+        [TestMethod]
+        public void EvaluateOr()
+        {
+            Assert.AreEqual(null, this.Evaluate("(or)"));
+            Assert.AreEqual(true, this.Evaluate("(or true)"));
+            Assert.AreEqual(true, this.Evaluate("(or true (bad))"));
+            Assert.AreEqual(true, this.Evaluate("(or true true)"));
+            Assert.AreEqual(1, this.Evaluate("(or 1 true)"));
+            Assert.AreEqual(1, this.Evaluate("(or 1 (bad))"));
+            Assert.AreEqual(true, this.Evaluate("(or true 1)"));
+            Assert.AreEqual(1, this.Evaluate("(or false 1)"));
+            Assert.AreEqual(1, this.Evaluate("(or false 1 2)"));
+            Assert.AreEqual(1, this.Evaluate("(or false 1 2)"));
+
+            Assert.AreEqual(false, this.Evaluate("(or false)"));
+            Assert.AreEqual(null, this.Evaluate("(or nil)"));
+            Assert.AreEqual(true, this.Evaluate("(or true nil)"));
+            Assert.AreEqual(true, this.Evaluate("(or true false)"));
+        }
+
+        [TestMethod]
+        public void EvaluateAnd()
+        {
+            Assert.AreEqual(true, this.Evaluate("(and)"));
+            Assert.AreEqual(true, this.Evaluate("(and true)"));
+            Assert.AreEqual(true, this.Evaluate("(and true true)"));
+            Assert.AreEqual(1, this.Evaluate("(and true 1)"));
+
+            Assert.AreEqual(false, this.Evaluate("(and false)"));
+            Assert.AreEqual(false, this.Evaluate("(and false (bad))"));
+            Assert.AreEqual(null, this.Evaluate("(and nil)"));
+            Assert.AreEqual(null, this.Evaluate("(and nil (bad))"));
+            Assert.AreEqual(null, this.Evaluate("(and true nil)"));
+            Assert.AreEqual(false, this.Evaluate("(and true false)"));
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);

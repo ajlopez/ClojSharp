@@ -32,6 +32,7 @@
             this.IsForm("-");
             this.IsForm("*");
             this.IsForm("/");
+
             this.IsForm("cons");
             this.IsForm("list");
             this.IsForm("first");
@@ -49,6 +50,9 @@
             this.IsSpecialForm("if");
             this.IsSpecialForm("do");
             this.IsSpecialForm("var");
+
+            this.IsSpecialForm("and");
+            this.IsSpecialForm("or");
         }
 
         [TestMethod]
