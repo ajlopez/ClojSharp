@@ -7,6 +7,8 @@
     using ClojSharp.Core.Forms;
     using ClojSharp.Core.Language;
     using ClojSharp.Core.SpecialForms;
+    using System.IO;
+    using ClojSharp.Core.Compiler;
 
     public class Machine
     {
@@ -36,6 +38,23 @@
         }
 
         public IContext RootContext { get { return this.root; } }
+
+        public object EvaluateFile(string filename)
+        {
+            return EvaluateFile(filename, this.RootContext);
+        }
+
+        public static object EvaluateFile(string filename, IContext context)
+        {
+            TextReader reader = File.OpenText(filename);
+            Parser parser = new Parser(reader);
+            object result = null;
+
+            for (object obj = parser.ParseExpression(); obj != null; obj = parser.ParseExpression())
+                result = Evaluate(obj, context);
+
+            return result;
+        }
 
         public static object Evaluate(object obj, IContext context)
         {
