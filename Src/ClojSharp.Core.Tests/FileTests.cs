@@ -23,5 +23,12 @@
             Machine machine = new Machine();
             Assert.AreEqual(1, machine.EvaluateFile("Files\\one.clj"));
         }
+
+        [TestMethod]
+        public void EvaluateTrue()
+        {
+            Machine machine = new Machine();
+            Assert.AreEqual(true, machine.EvaluateFile("Files\\true.clj"));
+        }
     }
 }

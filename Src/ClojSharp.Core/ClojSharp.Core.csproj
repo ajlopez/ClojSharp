@@ -90,6 +90,7 @@
     <Compile Include="Forms\Subtract.cs" />
     <Compile Include="IContext.cs" />
     <Compile Include="Language\IMeta.cs" />
+    <Compile Include="Language\Predicates.cs" />
     <Compile Include="Language\RecurValues.cs" />
     <Compile Include="Language\VectorValue.cs" />
     <Compile Include="Language\Keyword.cs" />

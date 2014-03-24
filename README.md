@@ -16,7 +16,9 @@ A Clojure interpreter written in C#, Work in Progress.
     
 ## References
 
+- [Clojure.org](http://clojure.org)
 - [What does “^:static” do in Clojure?](http://stackoverflow.com/questions/7552632/what-does-static-do-in-clojure)    
+- [Clojure Cheatsheet](http://clojure.org/cheatsheet)
 
 ## Inception
 
