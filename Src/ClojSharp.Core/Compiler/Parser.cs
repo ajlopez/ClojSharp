@@ -48,6 +48,9 @@
             if (token.Type == TokenType.Integer)
                 return int.Parse(token.Value);
 
+            if (token.Type == TokenType.String)
+                return token.Value;
+
             if (token.Type == TokenType.Name)
             {
                 if (token.Value == quoteChar)

@@ -27,6 +27,13 @@
         }
 
         [TestMethod]
+        public void EvaluateString()
+        {
+            Assert.AreEqual(string.Empty, this.Evaluate("\"\"", null));
+            Assert.AreEqual("foo", this.Evaluate("\"foo\"", null));
+        }
+
+        [TestMethod]
         public void EvaluateSymbolInContext()
         {
             Context context = new Context();
@@ -342,6 +349,18 @@
             Assert.AreEqual(null, this.Evaluate("(and nil (bad))"));
             Assert.AreEqual(null, this.Evaluate("(and true nil)"));
             Assert.AreEqual(false, this.Evaluate("(and true false)"));
+        }
+
+        [TestMethod]
+        public void EvaluateNot()
+        {
+            Assert.AreEqual(true, this.Evaluate("(not false)"));
+            Assert.AreEqual(true, this.Evaluate("(not nil)"));
+
+            Assert.AreEqual(false, this.Evaluate("(not 1)"));
+            Assert.AreEqual(false, this.Evaluate("(not 0)"));
+            Assert.AreEqual(false, this.Evaluate("(not \"\")"));
+            Assert.AreEqual(false, this.Evaluate("(not \"foo\")"));
         }
 
         private object Evaluate(string text)

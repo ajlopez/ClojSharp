@@ -38,6 +38,8 @@
             this.IsForm("first");
             this.IsForm("rest");
             this.IsForm("next");
+
+            this.IsForm("not");
         }
 
         [TestMethod]

@@ -39,6 +39,7 @@
 
             this.root.SetValue("and", new And());
             this.root.SetValue("or", new Or());
+            this.root.SetValue("not", new Not());
         }
 
         public IContext RootContext { get { return this.root; } }

@@ -72,6 +72,23 @@
         }
 
         [TestMethod]
+        public void ParseString()
+        {
+            Parser parser = new Parser("\"foo\"");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(string));
+
+            var value = (string)expr;
+
+            Assert.AreEqual("foo", value);
+
+            Assert.IsNull(parser.ParseExpression());
+        }
+
+        [TestMethod]
         public void ParseListWithOneSymbol()
         {
             Parser parser = new Parser("(name)");
