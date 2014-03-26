@@ -6,6 +6,7 @@ A Clojure interpreter written in C#, Work in Progress.
 
 - [Clojure.org](http://clojure.org)
 - [Clojure Cheatsheet](http://clojure.org/cheatsheet)
+- [Values and Change - Clojure's approach to Identity and State](http://clojure.org/state)
 - [Reader](http://clojure.org/reader)
 - [Special Forms](http://clojure.org/special_forms)
 - [Extensible Data Notation](https://github.com/edn-format/edn)
