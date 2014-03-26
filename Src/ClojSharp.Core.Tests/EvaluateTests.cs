@@ -376,6 +376,16 @@
             Assert.AreEqual(false, this.Evaluate("(nil? \"foo\")"));
         }
 
+        [TestMethod]
+        public void EvaluateStr()
+        {
+            Assert.AreEqual(string.Empty, this.Evaluate("(str)"));
+            Assert.AreEqual(string.Empty, this.Evaluate("(str nil)"));
+            Assert.AreEqual("1", this.Evaluate("(str 1)"));
+            Assert.AreEqual("123", this.Evaluate("(str 1 2 3)"));
+            Assert.AreEqual("1symbol:keyword", this.Evaluate("(str 1 'symbol :keyword)"));
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);

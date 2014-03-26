@@ -41,6 +41,7 @@
 
             this.IsForm("not");
             this.IsForm("nil?");
+            this.IsForm("str");
         }
 
         [TestMethod]
