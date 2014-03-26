@@ -363,6 +363,19 @@
             Assert.AreEqual(false, this.Evaluate("(not \"foo\")"));
         }
 
+        [TestMethod]
+        public void EvaluateNilP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(nil? nil)"));
+
+            Assert.AreEqual(false, this.Evaluate("(nil? false)"));
+            Assert.AreEqual(false, this.Evaluate("(nil? true)"));
+            Assert.AreEqual(false, this.Evaluate("(nil? 0)"));
+            Assert.AreEqual(false, this.Evaluate("(nil? 1)"));
+            Assert.AreEqual(false, this.Evaluate("(nil? \"\")"));
+            Assert.AreEqual(false, this.Evaluate("(nil? \"foo\")"));
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);

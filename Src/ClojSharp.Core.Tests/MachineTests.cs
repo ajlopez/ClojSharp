@@ -40,6 +40,7 @@
             this.IsForm("next");
 
             this.IsForm("not");
+            this.IsForm("nil?");
         }
 
         [TestMethod]

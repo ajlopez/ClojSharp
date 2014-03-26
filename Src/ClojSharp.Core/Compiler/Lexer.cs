@@ -72,7 +72,10 @@
             for (ch = this.NextChar(); ch >= 0 && (ch == '.' || char.IsLetterOrDigit((char)ch)); ch = this.NextChar())
                 value += (char)ch;
 
-            this.PushChar(ch);
+            if (ch >= 0 && (char)ch == '?')
+                value += (char)ch;
+            else
+                this.PushChar(ch);
 
             return new Token(TokenType.Name, value);
         }

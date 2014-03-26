@@ -21,6 +21,11 @@
             return obj1.Equals(obj2);
         }
 
+        public static bool IsNil(object obj)
+        {
+            return obj == null;
+        }
+
         public static bool IsFalse(object obj)
         {
             return obj == null || obj.Equals(false);

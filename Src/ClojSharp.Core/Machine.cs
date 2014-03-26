@@ -40,6 +40,8 @@
             this.root.SetValue("and", new And());
             this.root.SetValue("or", new Or());
             this.root.SetValue("not", new Not());
+
+            this.root.SetValue("nil?", new NilP());
         }
 
         public IContext RootContext { get { return this.root; } }
