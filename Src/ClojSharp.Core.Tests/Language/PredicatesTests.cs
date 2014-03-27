@@ -1,11 +1,11 @@
 ﻿namespace ClojSharp.Core.Tests.Language
 {
     using System;
-    using System.Text;
     using System.Collections.Generic;
     using System.Linq;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Text;
     using ClojSharp.Core.Language;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class PredicatesTests
@@ -49,7 +49,7 @@
         public void IsTrue()
         {
             Assert.IsFalse(Predicates.IsTrue(null));
-            Assert.IsFalse (Predicates.IsTrue(false));
+            Assert.IsFalse(Predicates.IsTrue(false));
 
             Assert.IsTrue(Predicates.IsTrue(1));
             Assert.IsTrue(Predicates.IsTrue(0));
