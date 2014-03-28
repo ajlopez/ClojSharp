@@ -31,6 +31,50 @@
         }
 
         [TestMethod]
+        public void IsReal()
+        {
+            Assert.IsTrue(Predicates.IsReal(1.0));
+            Assert.IsTrue(Predicates.IsReal((float)1.0));
+
+            Assert.IsFalse(Predicates.IsReal(1));
+            Assert.IsFalse(Predicates.IsReal(null));
+            Assert.IsFalse(Predicates.IsReal(string.Empty));
+            Assert.IsFalse(Predicates.IsReal("foo"));
+        }
+
+        [TestMethod]
+        public void IsInteger()
+        {
+            Assert.IsTrue(Predicates.IsInteger(1));
+            Assert.IsTrue(Predicates.IsInteger((uint)1));
+            Assert.IsTrue(Predicates.IsInteger((short)1));
+            Assert.IsTrue(Predicates.IsInteger((ushort)1));
+            Assert.IsTrue(Predicates.IsInteger((long)1));
+            Assert.IsTrue(Predicates.IsInteger((ulong)1));
+
+            Assert.IsFalse(Predicates.IsInteger(1.0));
+            Assert.IsFalse(Predicates.IsInteger(null));
+            Assert.IsFalse(Predicates.IsInteger(string.Empty));
+            Assert.IsFalse(Predicates.IsInteger("foo"));
+        }
+
+        [TestMethod]
+        public void IsNumeric()
+        {
+            Assert.IsTrue(Predicates.IsNumeric(1));
+            Assert.IsTrue(Predicates.IsNumeric(1.0));
+            Assert.IsTrue(Predicates.IsNumeric((uint)1));
+            Assert.IsTrue(Predicates.IsNumeric((short)1));
+            Assert.IsTrue(Predicates.IsNumeric((ushort)1));
+            Assert.IsTrue(Predicates.IsNumeric((long)1));
+            Assert.IsTrue(Predicates.IsNumeric((ulong)1));
+
+            Assert.IsFalse(Predicates.IsNumeric(null));
+            Assert.IsFalse(Predicates.IsNumeric(string.Empty));
+            Assert.IsFalse(Predicates.IsNumeric("foo"));
+        }
+
+        [TestMethod]
         public void IsFalse()
         {
             Assert.IsTrue(Predicates.IsFalse(null));

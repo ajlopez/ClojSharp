@@ -36,17 +36,17 @@
             return !IsFalse(obj);
         }
 
-        private static bool IsReal(object obj)
+        public static bool IsReal(object obj)
         {
             return obj is double || obj is float;
         }
 
-        private static bool IsInteger(object obj)
+        public static bool IsInteger(object obj)
         {
             return obj is short || obj is int || obj is long || obj is ushort || obj is uint || obj is ulong;
         }
 
-        private static bool IsNumeric(object obj)
+        public static bool IsNumeric(object obj)
         {
             return IsReal(obj) || IsInteger(obj);
         }
