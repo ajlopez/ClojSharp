@@ -47,6 +47,20 @@
         }
 
         [TestMethod]
+        public void GetNameEndingWithInternalMinusSign()
+        {
+            Lexer lexer = new Lexer("bit-and");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("bit-and", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetQualifiedName()
         {
             Lexer lexer = new Lexer("clojsharp.core");

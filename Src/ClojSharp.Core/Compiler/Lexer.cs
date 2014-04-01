@@ -69,7 +69,7 @@
             string value = chr.ToString();
             int ch;
 
-            for (ch = this.NextChar(); ch >= 0 && (ch == '.' || char.IsLetterOrDigit((char)ch)); ch = this.NextChar())
+            for (ch = this.NextChar(); ch >= 0 && (ch == '.' || ch == '-' || char.IsLetterOrDigit((char)ch)); ch = this.NextChar())
                 value += (char)ch;
 
             if (ch >= 0 && (char)ch == '?')
