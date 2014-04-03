@@ -113,9 +113,25 @@
             for (ch = this.NextChar(); ch >= 0 && char.IsDigit((char)ch); ch = this.NextChar())
                 value += (char)ch;
 
+            if (ch >= 0 && (char)ch == '.')
+                return this.NextReal(value);
+
             this.PushChar(ch);
 
             return new Token(TokenType.Integer, value);
+        }
+
+        private Token NextReal(string intvalue)
+        {
+            string value = intvalue + ".";
+            int ch;
+
+            for (ch = this.NextChar(); ch >= 0 && char.IsDigit((char)ch); ch = this.NextChar())
+                value += (char)ch;
+
+            this.PushChar(ch);
+
+            return new Token(TokenType.Real, value);
         }
 
         private int NextCharSkippingSpaces()

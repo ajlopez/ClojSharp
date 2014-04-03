@@ -293,6 +293,20 @@
         }
 
         [TestMethod]
+        public void GetReal()
+        {
+            Lexer lexer = new Lexer("123.45");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Real, token.Type);
+            Assert.AreEqual("123.45", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetLeftParenthesis()
         {
             Lexer lexer = new Lexer("(");

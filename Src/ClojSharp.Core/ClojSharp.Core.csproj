@@ -78,6 +78,7 @@
     <Compile Include="Forms\Add.cs" />
     <Compile Include="Forms\BaseForm.cs" />
     <Compile Include="Forms\Cons.cs" />
+    <Compile Include="Forms\NumberP.cs" />
     <Compile Include="Forms\Str.cs" />
     <Compile Include="Forms\NilP.cs" />
     <Compile Include="Forms\Not.cs" />

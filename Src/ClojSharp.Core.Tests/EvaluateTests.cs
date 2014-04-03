@@ -386,6 +386,16 @@
             Assert.AreEqual("1symbol:keyword", this.Evaluate("(str 1 'symbol :keyword)"));
         }
 
+        [TestMethod]
+        public void EvaluateNumberP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(number? 1)"));
+            Assert.AreEqual(true, this.Evaluate("(number? 1.0)"));
+            Assert.AreEqual(false, this.Evaluate("(number? :a)"));
+            Assert.AreEqual(false, this.Evaluate("(number? nil)"));
+            Assert.AreEqual(false, this.Evaluate("(number? \"foo\")"));
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);

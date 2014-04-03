@@ -42,6 +42,7 @@
             this.root.SetValue("not", new Not());
 
             this.root.SetValue("nil?", new NilP());
+            this.root.SetValue("number?", new NumberP());
 
             this.root.SetValue("str", new Str());
         }

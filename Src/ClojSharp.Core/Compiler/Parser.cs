@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Text;
@@ -46,7 +47,10 @@
                 return this.ParseMap();
 
             if (token.Type == TokenType.Integer)
-                return int.Parse(token.Value);
+                return int.Parse(token.Value, CultureInfo.InvariantCulture);
+
+            if (token.Type == TokenType.Real)
+                return double.Parse(token.Value, CultureInfo.InvariantCulture);
 
             if (token.Type == TokenType.String)
                 return token.Value;
