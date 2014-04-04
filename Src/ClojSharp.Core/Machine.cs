@@ -45,6 +45,7 @@
             this.root.SetValue("number?", new NumberP());
 
             this.root.SetValue("str", new Str());
+            this.root.SetValue("rand", new Rand());
         }
 
         public IContext RootContext { get { return this.root; } }

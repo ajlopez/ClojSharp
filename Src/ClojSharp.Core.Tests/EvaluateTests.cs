@@ -396,6 +396,49 @@
             Assert.AreEqual(false, this.Evaluate("(number? \"foo\")"));
         }
 
+        [TestMethod]
+        public void EvaluateRand()
+        {
+            var result = this.Evaluate("(rand)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(double));
+
+            var value = (double)result;
+
+            Assert.IsTrue(value >= 0);
+            Assert.IsTrue(value < 1);
+        }
+
+        [TestMethod]
+        public void EvaluateRandWithInteger()
+        {
+            var result = this.Evaluate("(rand 10)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(double));
+
+            var value = (double)result;
+
+            Assert.IsTrue(value >= 0);
+            Assert.IsTrue(value < 10);
+        }
+
+        [TestMethod]
+        public void RaiseIfInvalidArityInRand()
+        {
+            try
+            {
+                this.Evaluate("(rand 1 2)");
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(ArityException));
+                Assert.AreEqual("Wrong number of args (2) passed to ClojSharp.Core.Forms.Rand", ex.Message);
+            }
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);
