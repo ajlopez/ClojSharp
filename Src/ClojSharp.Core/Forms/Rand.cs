@@ -23,6 +23,9 @@
             if (arity == 0)
                 return random.NextDouble();
 
+            if (Predicates.IsReal(arguments[0]))
+                return random.NextDouble() * Convert.ToDouble(arguments[0]);
+
             return random.NextDouble() * (int)arguments[0];
         }
     }

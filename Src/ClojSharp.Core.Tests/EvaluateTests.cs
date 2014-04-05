@@ -425,6 +425,20 @@
         }
 
         [TestMethod]
+        public void EvaluateRandWithReal()
+        {
+            var result = this.Evaluate("(rand 2.5)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(double));
+
+            var value = (double)result;
+
+            Assert.IsTrue(value >= 0);
+            Assert.IsTrue(value < 2.5);
+        }
+
+        [TestMethod]
         public void RaiseIfInvalidArityInRand()
         {
             try
