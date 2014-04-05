@@ -48,6 +48,9 @@
             Assert.AreEqual(6, this.Evaluate("(+ 1 2 3)"));
             Assert.AreEqual(5, this.Evaluate("(+ 5)"));
             Assert.AreEqual(0, this.Evaluate("(+)"));
+            Assert.AreEqual(3.2, this.Evaluate("(+ 1.2 2)"));
+            Assert.AreEqual(3.4, this.Evaluate("(+ 1 2.4)"));
+            Assert.AreEqual(3.5, this.Evaluate("(+ 1.1 2.4)"));
         }
 
         [TestMethod]
