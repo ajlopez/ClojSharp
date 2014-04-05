@@ -15,13 +15,32 @@
 
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
-            int result = 0;
-
             if (arguments != null)
-                foreach (var value in arguments)
-                    result += (int)value;
+            {
+                if (arguments.Any(arg => Predicates.IsReal(arg)))
+                {
+                    double result = 0;
 
-            return result;
+                    foreach (var value in arguments)
+                        result += Convert.ToDouble(value);
+
+                    return result;
+                }
+                else
+                {
+                    long result = 0;
+
+                    foreach (var value in arguments)
+                        result += Convert.ToInt64(value);
+
+                    if (result <= int.MaxValue && result >= int.MinValue)
+                        return (int)result;
+
+                    return result;
+                }
+            }
+
+            return 0;
         }
     }
 }

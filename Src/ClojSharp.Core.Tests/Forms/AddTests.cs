@@ -19,6 +19,30 @@
         }
 
         [TestMethod]
+        public void AddIntegerAndReal()
+        {
+            Add add = new Add();
+
+            Assert.AreEqual(3.5, add.Evaluate(null, new object[] { 1, 2.5 }));
+        }
+
+        [TestMethod]
+        public void AddRealAndInteger()
+        {
+            Add add = new Add();
+
+            Assert.AreEqual(3.2, add.Evaluate(null, new object[] { 1.2, 2 }));
+        }
+
+        [TestMethod]
+        public void AddTwoReals()
+        {
+            Add add = new Add();
+
+            Assert.AreEqual(3.3, add.Evaluate(null, new object[] { 1.2, 2.1 }));
+        }
+
+        [TestMethod]
         public void AddNoIntegerIsZero()
         {
             Add add = new Add();
