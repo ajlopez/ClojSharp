@@ -26,6 +26,27 @@
         }
 
         [TestMethod]
+        public void SubtractIntegerAndReal()
+        {
+            Subtract subtract = new Subtract();
+            Assert.AreEqual(1 - 2.5, subtract.Evaluate(null, new object[] { 1, 2.5 }));
+        }
+
+        [TestMethod]
+        public void SubtractRealAndInteger()
+        {
+            Subtract subtract = new Subtract();
+            Assert.AreEqual(1.2 - 2, subtract.Evaluate(null, new object[] { 1.2, 2 }));
+        }
+
+        [TestMethod]
+        public void SubtractTwoReals()
+        {
+            Subtract subtract = new Subtract();
+            Assert.AreEqual(1.2 - 2.1, subtract.Evaluate(null, new object[] { 1.2, 2.1 }));
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArityException))]
         public void RaiseIfSubtractNoInteger()
         {
