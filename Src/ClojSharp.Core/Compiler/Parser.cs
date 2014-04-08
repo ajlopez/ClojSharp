@@ -55,6 +55,9 @@
             if (token.Type == TokenType.String)
                 return token.Value;
 
+            if (token.Type == TokenType.Keyword)
+                return new Keyword(token.Value);
+
             if (token.Type == TokenType.Name)
             {
                 if (token.Value == quoteChar)
@@ -67,8 +70,6 @@
                     return false;
                 if (token.Value == trueName)
                     return true;
-                if (token.Value[0] == ':')
-                    return new Keyword(token.Value.Substring(1));
             }
 
             return new Symbol(token.Value);

@@ -45,7 +45,7 @@
                 return this.NextString();
 
             if (chr == KeywordChar)
-                return this.NextName(chr);
+                return this.NextKeyword();
 
             if (Separators.Contains(chr))
                 return new Token(TokenType.Separator, chr.ToString());
@@ -78,6 +78,22 @@
                 this.PushChar(ch);
 
             return new Token(TokenType.Name, value);
+        }
+
+        private Token NextKeyword()
+        {
+            string value = string.Empty;
+            int ch;
+
+            for (ch = this.NextChar(); ch >= 0 && (ch == '.' || ch == '-' || char.IsLetterOrDigit((char)ch)); ch = this.NextChar())
+                value += (char)ch;
+
+            if (ch >= 0 && (char)ch == '?')
+                value += (char)ch;
+            else
+                this.PushChar(ch);
+
+            return new Token(TokenType.Keyword, value);
         }
 
         private Token NextString()

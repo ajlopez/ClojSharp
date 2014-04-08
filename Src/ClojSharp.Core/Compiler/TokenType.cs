@@ -11,6 +11,7 @@
         Integer = 2,
         Real = 3,
         String = 4,
-        Separator = 5
+        Separator = 5,
+        Keyword = 6
     }
 }

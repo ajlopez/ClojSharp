@@ -403,15 +403,15 @@
         }
 
         [TestMethod]
-        public void GetKeywordAsName()
+        public void GetKeyword()
         {
             Lexer lexer = new Lexer(":a");
 
             Token token = lexer.NextToken();
 
             Assert.IsNotNull(token);
-            Assert.AreEqual(TokenType.Name, token.Type);
-            Assert.AreEqual(":a", token.Value);
+            Assert.AreEqual(TokenType.Keyword, token.Type);
+            Assert.AreEqual("a", token.Value);
 
             Assert.IsNull(lexer.NextToken());
         }
