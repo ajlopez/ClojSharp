@@ -29,19 +29,13 @@
 
         public void SetValue(string name, object value)
         {
-            if (this.parent == null)
-                this.values[name] = new Var(name, value);
-            else
-                this.values[name] = value;
+            this.values[name] = value;
         }
 
         public object GetValue(string name)
         {
             if (this.values.ContainsKey(name))
-                if (this.parent == null)
-                    return ((Var)this.values[name]).Value;
-                else
-                    return this.values[name];
+                return this.values[name];
 
             if (this.parent != null)
                 return this.parent.GetValue(name);
