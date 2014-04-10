@@ -395,6 +395,23 @@
         }
 
         [TestMethod]
+        public void RaiseIfUnclosedString()
+        {
+            Lexer lexer = new Lexer("\"foo");
+
+            try
+            {
+                lexer.NextToken();
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(LexerException));
+                Assert.AreEqual("Unclosed string", ex.Message);
+            }
+        }
+
+        [TestMethod]
         public void CommaIsWhiteSpace()
         {
             Lexer lexer = new Lexer(", ,, ,,,");
@@ -412,6 +429,20 @@
             Assert.IsNotNull(token);
             Assert.AreEqual(TokenType.Keyword, token.Type);
             Assert.AreEqual("a", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
+        public void GetKeywordEndingWithQuestionMark()
+        {
+            Lexer lexer = new Lexer(":a?");
+
+            Token token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Keyword, token.Type);
+            Assert.AreEqual("a?", token.Value);
 
             Assert.IsNull(lexer.NextToken());
         }

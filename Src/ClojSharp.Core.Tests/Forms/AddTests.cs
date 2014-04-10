@@ -19,6 +19,14 @@
         }
 
         [TestMethod]
+        public void AddTwoIntegersGivingLong()
+        {
+            Add add = new Add();
+
+            Assert.AreEqual(1 + (long)int.MaxValue, add.Evaluate(null, new object[] { int.MaxValue, 1 }));
+        }
+
+        [TestMethod]
         public void AddIntegerAndReal()
         {
             Add add = new Add();

@@ -105,6 +105,9 @@
             for (ch = this.NextChar(); ch >= 0 && (char)ch != StringQuote; ch = this.NextChar())
                 value += (char)ch;
 
+            if (ch < 0)
+                throw new LexerException("Unclosed string");
+
             return new Token(TokenType.String, value);
         }
 
