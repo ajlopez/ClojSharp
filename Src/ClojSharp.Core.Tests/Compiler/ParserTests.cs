@@ -190,6 +190,18 @@
         }
 
         [TestMethod]
+        public void ParseMetadata()
+        {
+            Parser parser = new Parser("^{:a 1 :b 2} [1 2 3]");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(List));
+            Assert.AreEqual("(with-meta [1 2 3] {:a 1 :b 2})", expr.ToString());
+        }
+
+        [TestMethod]
         public void ParseVarMacro()
         {
             Parser parser = new Parser("#'x");

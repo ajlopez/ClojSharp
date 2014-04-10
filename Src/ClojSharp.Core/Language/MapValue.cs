@@ -27,5 +27,22 @@
 
             return new Map(values);
         }
+
+        public override string ToString()
+        {
+            string result = "{";
+
+            for (int k = 0; k < this.expressions.Count; k++)
+            {
+                var expr = this.expressions[k];
+
+                if (k > 0)
+                    result += " ";
+
+                result += expr.ToString();
+            }
+
+            return result + "}";
+        }
     }
 }
