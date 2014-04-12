@@ -15,6 +15,8 @@
         private static Symbol withMeta = new Symbol("with-meta");
         private static string metaChar = "^";
         private static Symbol var = new Symbol("var");
+        private static string derefChar = "@";
+        private static Symbol deref = new Symbol("deref");
         private static string varChar = "#'";
         private static string nilName = "nil";
         private static string trueName = "true";
@@ -71,6 +73,9 @@
                     var obj = this.ParseExpression();
                     return new List(withMeta, new List(obj, new List(metadata, null)));
                 }
+
+                if (token.Value == derefChar)
+                    return new List(deref, new List(this.ParseExpression(), null));
 
                 if (token.Value == varChar)
                     return new List(var, new List(this.ParseExpression(), null));

@@ -202,6 +202,18 @@
         }
 
         [TestMethod]
+        public void ParseDeref()
+        {
+            Parser parser = new Parser("@foo");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(List));
+            Assert.AreEqual("(deref foo)", expr.ToString());
+        }
+
+        [TestMethod]
         public void ParseVarMacro()
         {
             Parser parser = new Parser("#'x");
