@@ -69,9 +69,10 @@
 
                 if (token.Value == metaChar)
                 {
-                    var metadata = this.ParseExpression();
+                    var metaexpr = this.ParseExpression();
+                    var metadata = (Map)((MapValue)metaexpr).Evaluate(null);
                     var obj = this.ParseExpression();
-                    return new List(withMeta, new List(obj, new List(metadata, null)));
+                    return ((IObj)obj).WithMeta(metadata);
                 }
 
                 if (token.Value == derefChar)

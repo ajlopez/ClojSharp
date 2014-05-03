@@ -6,12 +6,20 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
 
-    public class Map
+    public class Map : IMeta
     {
         private IDictionary<object, object> keyvalues = new Dictionary<object, object>();
+        private Map metadata;
 
         public Map(IList<object> keyvalues)
+            : this(keyvalues, null)
         {
+        }
+
+        internal Map(IList<object> keyvalues, Map metadata)
+        {
+            this.metadata = metadata;
+
             if (keyvalues != null)
             {
                 if (keyvalues.Count % 2 != 0)
@@ -28,6 +36,11 @@
                 return this.keyvalues[name];
 
             return null;
+        }
+
+        public Map Metadata
+        {
+            get { return this.metadata; }
         }
     }
 }

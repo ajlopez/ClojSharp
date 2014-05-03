@@ -5,8 +5,8 @@
     using System.Linq;
     using System.Text;
 
-    public interface IMeta
+    public interface IObj: IMeta
     {
-        Map Metadata { get; }
+        IObj WithMeta(Map map);
     }
 }

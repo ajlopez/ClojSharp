@@ -6,14 +6,20 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
 
-    public class Symbol : IEvaluable, IMeta
+    public class Symbol : IEvaluable, IObj
     {
         private string name;
         private Map metadata;
 
         public Symbol(string name)
+            : this(name, null)
+        {
+        }
+
+        private Symbol(string name, Map metadata)
         {
             this.name = name;
+            this.metadata = metadata;
         }
 
         public string Name { get { return this.name; } }
@@ -23,14 +29,6 @@
             get
             {
                 return this.metadata;
-            }
-
-            set
-            {
-                if (this.metadata != null)
-                    throw new RuntimeException("metadata already set");
-
-                this.metadata = value;
             }
         }
 
@@ -62,6 +60,11 @@
         public override int GetHashCode()
         {
             return this.Name.GetHashCode() + 17;
+        }
+
+        public IObj WithMeta(Map map)
+        {
+            return new Symbol(this.name, map);
         }
     }
 }

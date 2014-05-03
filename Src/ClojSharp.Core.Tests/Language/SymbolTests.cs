@@ -22,35 +22,20 @@
         }
 
         [TestMethod]
-        public void SetGetMetadata()
+        public void WithMetadata()
         {
             Symbol symbol = new Symbol("a");
             Map map = new Map(new object[] { });
 
-            symbol.Metadata = map;
+            var result = symbol.WithMeta(map);
 
-            Assert.AreSame(map, symbol.Metadata);
-        }
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Symbol));
 
-        [TestMethod]
-        public void ExceptionWhenResetMetadata()
-        {
-            Symbol symbol = new Symbol("a");
-            Map map = new Map(new object[] { });
-            Map newmap = new Map(new object[] { });
+            var newsymbol = (Symbol)result;
 
-            symbol.Metadata = map;
-
-            try
-            {
-                symbol.Metadata = newmap;
-                Assert.Fail();
-            }
-            catch (Exception ex)
-            {
-                Assert.IsInstanceOfType(ex, typeof(RuntimeException));
-                Assert.AreEqual("metadata already set", ex.Message);
-            }
+            Assert.AreSame(map, newsymbol.Metadata);
+            Assert.IsNull(symbol.Metadata);
         }
 
         [TestMethod]

@@ -164,12 +164,47 @@
 
             var vectorvalue = (VectorValue)expr;
 
+            Assert.IsNull(vectorvalue.Metadata);
+
             var value = vectorvalue.Evaluate(null);
 
             Assert.IsNotNull(value);
             Assert.IsInstanceOfType(value, typeof(Vector));
 
             var vector = (Vector)value;
+
+            Assert.IsNull(vector.Metadata);
+
+            Assert.IsNotNull(vector.Elements);
+            Assert.AreEqual(2, vector.Elements.Count);
+            Assert.AreEqual(1, vector.Elements[0]);
+            Assert.AreEqual(2, vector.Elements[1]);
+        }
+
+        [TestMethod]
+        public void ParseAndEvaluateVectorWithTwoIntegersAndMetadata()
+        {
+            Parser parser = new Parser("^{:foo true} [1 2]");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(VectorValue));
+
+            var vectorvalue = (VectorValue)expr;
+
+            Assert.IsNotNull(vectorvalue.Metadata);
+            Assert.AreEqual(true, vectorvalue.Metadata.GetValue(new Keyword("foo")));
+
+            var value = vectorvalue.Evaluate(null);
+
+            Assert.IsNotNull(value);
+            Assert.IsInstanceOfType(value, typeof(Vector));
+
+            var vector = (Vector)value;
+
+            Assert.IsNotNull(vector.Metadata);
+            Assert.AreEqual(true, vector.Metadata.GetValue(new Keyword("foo")));
 
             Assert.IsNotNull(vector.Elements);
             Assert.AreEqual(2, vector.Elements.Count);
@@ -197,8 +232,14 @@
             var expr = parser.ParseExpression();
 
             Assert.IsNotNull(expr);
-            Assert.IsInstanceOfType(expr, typeof(List));
-            Assert.AreEqual("(with-meta [1 2 3] {:a 1 :b 2})", expr.ToString());
+            Assert.IsInstanceOfType(expr, typeof(VectorValue));
+            Assert.AreEqual("[1 2 3]", expr.ToString());
+
+            var value = (VectorValue)expr;
+
+            Assert.IsNotNull(value.Metadata);
+            Assert.AreEqual(1, value.Metadata.GetValue(new Keyword("a")));
+            Assert.AreEqual(2, value.Metadata.GetValue(new Keyword("b")));
         }
 
         [TestMethod]
@@ -283,12 +324,44 @@
 
             var mapvalue = (MapValue)expr;
 
+            Assert.IsNull(mapvalue.Metadata);
+
             var value = mapvalue.Evaluate(null);
 
             Assert.IsNotNull(value);
             Assert.IsInstanceOfType(value, typeof(Map));
 
             var map = (Map)value;
+
+            Assert.AreEqual(1, map.GetValue(new Keyword("a")));
+            Assert.AreEqual(2, map.GetValue(new Keyword("b")));
+            Assert.IsNull(map.GetValue(new Keyword("c")));
+        }
+
+        [TestMethod]
+        public void ParseAndEvaluateMapWithMetadata()
+        {
+            Parser parser = new Parser("^{:foo true} {:a 1 :b 2}");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(MapValue));
+
+            var mapvalue = (MapValue)expr;
+
+            Assert.IsNotNull(mapvalue.Metadata);
+            Assert.AreEqual(true, mapvalue.Metadata.GetValue(new Keyword("foo")));
+
+            var value = mapvalue.Evaluate(null);
+
+            Assert.IsNotNull(value);
+            Assert.IsInstanceOfType(value, typeof(Map));
+
+            var map = (Map)value;
+
+            Assert.IsNotNull(map.Metadata);
+            Assert.AreEqual(true, map.Metadata.GetValue(new Keyword("foo")));
 
             Assert.AreEqual(1, map.GetValue(new Keyword("a")));
             Assert.AreEqual(2, map.GetValue(new Keyword("b")));

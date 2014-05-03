@@ -95,6 +95,7 @@
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\Subtract.cs" />
     <Compile Include="IContext.cs" />
+    <Compile Include="Language\IObj.cs" />
     <Compile Include="Language\IMeta.cs" />
     <Compile Include="Language\Predicates.cs" />
     <Compile Include="Language\RecurValues.cs" />

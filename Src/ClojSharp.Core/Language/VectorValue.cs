@@ -5,13 +5,20 @@
     using System.Linq;
     using System.Text;
 
-    public class VectorValue : IEvaluable
+    public class VectorValue : IEvaluable, IObj
     {
         private IList<object> expressions;
+        private Map metadata;
 
         public VectorValue(IList<object> expressions)
+            : this(expressions, null)
+        {
+        }
+
+        private VectorValue(IList<object> expressions, Map metadata)
         {
             this.expressions = expressions;
+            this.metadata = metadata;
         }
 
         public IList<object> Expressions { get { return this.expressions; } }
@@ -23,7 +30,7 @@
             for (var k = 0; k < values.Length; k++)
                 values[k] = Machine.Evaluate(this.expressions[k], context);
 
-            return new Vector(values);
+            return new Vector(values, this.metadata);
         }
 
         public override string ToString()
@@ -41,6 +48,16 @@
             }
 
             return result + "]";
+        }
+
+        public IObj WithMeta(Map map)
+        {
+            return new VectorValue(this.expressions, map);
+        }
+
+        public Map Metadata
+        {
+            get { return this.metadata; }
         }
     }
 }

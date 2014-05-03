@@ -6,13 +6,20 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
 
-    public class MapValue : IEvaluable
+    public class MapValue : IEvaluable, IObj
     {
         private IList<object> expressions;
+        private Map metadata;
 
         public MapValue(IList<object> expressions)
+            : this(expressions, null)
+        {
+        }
+
+        private MapValue(IList<object> expressions, Map metadata)
         {
             this.expressions = expressions;
+            this.metadata = metadata;
         }
 
         public object Evaluate(IContext context)
@@ -25,7 +32,7 @@
             for (var k = 0; k < values.Length; k++)
                 values[k] = Machine.Evaluate(this.expressions[k], context);
 
-            return new Map(values);
+            return new Map(values, this.metadata);
         }
 
         public override string ToString()
@@ -43,6 +50,16 @@
             }
 
             return result + "}";
+        }
+
+        public IObj WithMeta(Map map)
+        {
+            return new MapValue(this.expressions, map);
+        }
+
+        public Map Metadata
+        {
+            get { return this.metadata; }
         }
     }
 }
