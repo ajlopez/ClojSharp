@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public interface IMeta
+    public interface IMetadata
     {
         Map Metadata { get; }
     }

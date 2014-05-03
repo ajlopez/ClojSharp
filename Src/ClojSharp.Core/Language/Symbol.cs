@@ -6,7 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
 
-    public class Symbol : IEvaluable, IObj
+    public class Symbol : IEvaluable, IObject
     {
         private string name;
         private Map metadata;
@@ -62,7 +62,7 @@
             return this.Name.GetHashCode() + 17;
         }
 
-        public IObj WithMeta(Map map)
+        public IObject WithMetadata(Map map)
         {
             return new Symbol(this.name, map);
         }

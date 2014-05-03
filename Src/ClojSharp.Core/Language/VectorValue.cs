@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class VectorValue : IEvaluable, IObj
+    public class VectorValue : IEvaluable, IObject
     {
         private IList<object> expressions;
         private Map metadata;
@@ -55,7 +55,7 @@
             return result + "]";
         }
 
-        public IObj WithMeta(Map map)
+        public IObject WithMetadata(Map map)
         {
             return new VectorValue(this.expressions, map);
         }

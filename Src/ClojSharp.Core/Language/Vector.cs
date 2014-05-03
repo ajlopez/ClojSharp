@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class Vector : IMeta
+    public class Vector : IMetadata
     {
         private IList<object> elements;
         private Map metadata;

@@ -325,6 +325,7 @@
             var mapvalue = (MapValue)expr;
 
             Assert.IsNull(mapvalue.Metadata);
+            Assert.AreEqual("{:a 1 :b 2}", mapvalue.ToString()); 
 
             var value = mapvalue.Evaluate(null);
 

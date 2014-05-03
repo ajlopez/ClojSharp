@@ -27,7 +27,7 @@
             Symbol symbol = new Symbol("a");
             Map map = new Map(new object[] { });
 
-            var result = symbol.WithMeta(map);
+            var result = symbol.WithMetadata(map);
 
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(Symbol));

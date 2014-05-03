@@ -6,7 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
 
-    public class MapValue : IEvaluable, IObj
+    public class MapValue : IEvaluable, IObject
     {
         private IList<object> expressions;
         private Map metadata;
@@ -57,7 +57,7 @@
             return result + "}";
         }
 
-        public IObj WithMeta(Map map)
+        public IObject WithMetadata(Map map)
         {
             return new MapValue(this.expressions, map);
         }

@@ -72,7 +72,7 @@
                     var metaexpr = this.ParseExpression();
                     var metadata = (Map)((MapValue)metaexpr).Evaluate(null);
                     var obj = this.ParseExpression();
-                    return ((IObj)obj).WithMeta(metadata);
+                    return ((IObject)obj).WithMetadata(metadata);
                 }
 
                 if (token.Value == derefChar)

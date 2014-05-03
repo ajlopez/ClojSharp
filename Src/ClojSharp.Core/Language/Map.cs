@@ -6,7 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
 
-    public class Map : IMeta
+    public class Map : IMetadata
     {
         private IDictionary<object, object> keyvalues = new Dictionary<object, object>();
         private Map metadata;
