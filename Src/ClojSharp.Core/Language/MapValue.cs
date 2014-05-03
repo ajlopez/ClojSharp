@@ -22,6 +22,11 @@
             this.metadata = metadata;
         }
 
+        public Map Metadata
+        {
+            get { return this.metadata; }
+        }
+
         public object Evaluate(IContext context)
         {
             if (this.expressions.Count % 2 != 0)
@@ -55,11 +60,6 @@
         public IObj WithMeta(Map map)
         {
             return new MapValue(this.expressions, map);
-        }
-
-        public Map Metadata
-        {
-            get { return this.metadata; }
         }
     }
 }

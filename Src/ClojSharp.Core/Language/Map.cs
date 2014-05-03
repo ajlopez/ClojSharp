@@ -30,17 +30,17 @@
             }
         }
 
+        public Map Metadata
+        {
+            get { return this.metadata; }
+        }
+
         public object GetValue(object name)
         {
             if (this.keyvalues.ContainsKey(name))
                 return this.keyvalues[name];
 
             return null;
-        }
-
-        public Map Metadata
-        {
-            get { return this.metadata; }
         }
     }
 }

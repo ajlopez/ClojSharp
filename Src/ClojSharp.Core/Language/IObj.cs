@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public interface IObj: IMeta
+    public interface IObj : IMeta
     {
         IObj WithMeta(Map map);
     }

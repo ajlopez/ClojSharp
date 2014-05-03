@@ -23,6 +23,11 @@
 
         public IList<object> Expressions { get { return this.expressions; } }
 
+        public Map Metadata
+        {
+            get { return this.metadata; }
+        }
+
         public object Evaluate(IContext context)
         {
             object[] values = new object[this.expressions.Count];
@@ -53,11 +58,6 @@
         public IObj WithMeta(Map map)
         {
             return new VectorValue(this.expressions, map);
-        }
-
-        public Map Metadata
-        {
-            get { return this.metadata; }
         }
     }
 }
