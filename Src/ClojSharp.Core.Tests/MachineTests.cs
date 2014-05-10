@@ -57,6 +57,7 @@
             this.IsSpecialForm("if");
             this.IsSpecialForm("do");
             this.IsSpecialForm("var");
+            this.IsSpecialForm("ns");
 
             this.IsSpecialForm("and");
             this.IsSpecialForm("or");

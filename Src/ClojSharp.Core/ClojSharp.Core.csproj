@@ -97,6 +97,7 @@
     <Compile Include="IContext.cs" />
     <Compile Include="Language\IObject.cs" />
     <Compile Include="Language\IMetadata.cs" />
+    <Compile Include="Language\Namespace.cs" />
     <Compile Include="Language\Predicates.cs" />
     <Compile Include="Language\RecurValues.cs" />
     <Compile Include="Language\VectorValue.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Machine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecialForms\And.cs" />
+    <Compile Include="SpecialForms\Ns.cs" />
     <Compile Include="SpecialForms\Or.cs" />
     <Compile Include="SpecialForms\Loop.cs" />
     <Compile Include="SpecialForms\VarF.cs" />
