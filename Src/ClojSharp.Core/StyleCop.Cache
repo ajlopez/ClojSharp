@@ -369,15 +369,6 @@
     <milliseconds>810</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>05/03/2014 19:27:58</timestamp>
-    <milliseconds>574</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="TokenType.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -441,24 +432,6 @@
     <milliseconds>278</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Symbol.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>05/03/2014 19:25:11</timestamp>
-    <milliseconds>848</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Vector.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>05/03/2014 19:34:42</timestamp>
-    <milliseconds>714</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="Predicates.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -466,15 +439,6 @@
     </settings>
     <timestamp>03/28/2014 19:57:26</timestamp>
     <milliseconds>274</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>04/05/2014 15:43:22</timestamp>
-    <milliseconds>642</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="IObj.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -486,13 +450,43 @@
     <milliseconds>131</milliseconds>
     <violations />
   </sourcecode>
+  <project key="-1333396368">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="IMetadata.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>05/03/2014 19:40:35</timestamp>
+    <milliseconds>683</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="IObject.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>05/03/2014 19:41:02</timestamp>
+    <milliseconds>278</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>05/03/2014 19:41:02</timestamp>
+    <milliseconds>284</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="Map.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
       <milliseconds>243</milliseconds>
     </settings>
-    <timestamp>05/03/2014 19:38:51</timestamp>
-    <milliseconds>483</milliseconds>
+    <timestamp>05/03/2014 19:40:35</timestamp>
+    <milliseconds>670</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="MapValue.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -500,20 +494,62 @@
       <timestamp>03/03/2013 09:18:26</timestamp>
       <milliseconds>243</milliseconds>
     </settings>
-    <timestamp>05/03/2014 19:38:51</timestamp>
-    <milliseconds>471</milliseconds>
+    <timestamp>05/03/2014 19:41:02</timestamp>
+    <milliseconds>293</milliseconds>
     <violations />
   </sourcecode>
-  <project key="-1333396368">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
+  <sourcecode name="Namespace.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>05/10/2014 19:33:28</timestamp>
+    <milliseconds>915</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Vector.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>05/03/2014 19:40:35</timestamp>
+    <milliseconds>677</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Symbol.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>05/03/2014 19:41:02</timestamp>
+    <milliseconds>289</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>05/10/2014 19:37:55</timestamp>
+    <milliseconds>70</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="VectorValue.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
       <milliseconds>243</milliseconds>
     </settings>
-    <timestamp>05/03/2014 19:39:02</timestamp>
-    <milliseconds>117</milliseconds>
+    <timestamp>05/03/2014 19:41:02</timestamp>
+    <milliseconds>274</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Ns.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>05/10/2014 19:34:13</timestamp>
+    <milliseconds>243</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>
