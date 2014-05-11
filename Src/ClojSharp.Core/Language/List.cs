@@ -59,5 +59,19 @@
 
             return sb.ToString();
         }
+
+        public IList<object> ToList()
+        {
+            IList<object> result = new List<object>();
+            ISeq seq = this;
+
+            while (seq != null) 
+            {
+                result.Add(seq.First);
+                seq = seq.Next;
+            }
+
+            return result;
+        }
     }
 }

@@ -72,6 +72,18 @@
         }
 
         [TestMethod]
+        public void SimpleListToList()
+        {
+            List list = new List(1, new List(2, null));
+            var result = list.ToList();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result.Count);
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(2, result[1]);
+        }
+
+        [TestMethod]
         public void ListWithNilToString()
         {
             List list = new List(null, null);
