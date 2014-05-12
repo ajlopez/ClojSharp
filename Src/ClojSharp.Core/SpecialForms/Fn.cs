@@ -11,6 +11,21 @@
     {
         public object Evaluate(IContext context, IList<object> arguments)
         {
+            if (arguments[0] is List)
+            {
+                IList<Function> functions = new List<Function>();
+
+                foreach (var arg in arguments)
+                    functions.Add(this.EvaluateFunction(context, ((List)arg).ToList()));
+
+                return new MultiFunction(functions);
+            }
+            else
+                return this.EvaluateFunction(context, arguments);
+        }
+
+        private Function EvaluateFunction(IContext context, IList<object> arguments)
+        {
             var elements = ((VectorValue)arguments[0]).Expressions;
             IList<string> names = new List<string>();
             string restname = null;

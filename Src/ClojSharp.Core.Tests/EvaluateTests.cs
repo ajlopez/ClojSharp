@@ -141,6 +141,13 @@
         }
 
         [TestMethod]
+        public void EvaluateFnWithMultiFunction()
+        {
+            Assert.AreEqual(3, this.Evaluate("((fn ([x] (+ 1 x)) ([x y] (+ x y))) 2)"));
+            Assert.AreEqual(5, this.Evaluate("((fn ([x] (+ 1 x)) ([x y] (+ x y))) 2 3)"));
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArityException))]
         public void RaiseArityExceptionWhenEvaluateDivideWithoutArguments()
         {
