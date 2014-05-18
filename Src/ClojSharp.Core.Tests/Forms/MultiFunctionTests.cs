@@ -1,12 +1,12 @@
 ﻿namespace ClojSharp.Core.Tests.Forms
 {
     using System;
-    using System.Text;
     using System.Collections.Generic;
     using System.Linq;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using ClojSharp.Core.Forms;
+    using System.Text;
     using ClojSharp.Core.Exceptions;
+    using ClojSharp.Core.Forms;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class MultiFunctionTests
