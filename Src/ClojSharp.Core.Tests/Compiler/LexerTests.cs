@@ -460,5 +460,70 @@
 
             Assert.IsNull(lexer.NextToken());
         }
+
+        [TestMethod]
+        public void GetAnonymousArgument()
+        {
+            Lexer lexer = new Lexer("%1");
+
+            Token token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("%1", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
+        public void RaiseIfAnonymousCharacter()
+        {
+            Lexer lexer = new Lexer("%");
+
+            try
+            {
+                lexer.NextToken();
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(LexerException));
+                Assert.AreEqual("Unexpected '%'", ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void RaiseIfAnonymousCharacterAndSpace()
+        {
+            Lexer lexer = new Lexer("% ");
+
+            try
+            {
+                lexer.NextToken();
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(LexerException));
+                Assert.AreEqual("Unexpected '%'", ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void RaiseIfAnonymousCharacterAndLetter()
+        {
+            Lexer lexer = new Lexer("%a");
+
+            try
+            {
+                lexer.NextToken();
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(LexerException));
+                Assert.AreEqual("Unexpected '%a'", ex.Message);
+            }
+        }
     }
 }

@@ -12,6 +12,7 @@
         private const char StringQuote = '"';
         private const char KeywordChar = ':';
         private const char CommentChar = ';';
+        private const char AnonymousChar = '%';
 
         private TextReader reader;
         private Stack<int> chars = new Stack<int>();
@@ -46,6 +47,22 @@
 
             if (chr == KeywordChar)
                 return this.NextKeyword();
+
+            if (chr == AnonymousChar)
+            {
+                int ch2 = this.NextChar();
+
+                if (ch2 < 0)
+                    throw new LexerException("Unexpected '%'");
+
+                if (!char.IsDigit((char)ch2))
+                    if (char.IsWhiteSpace((char)ch2))
+                        throw new LexerException("Unexpected '%'");
+                    else
+                        throw new LexerException(string.Format("Unexpected '{0}'", chr.ToString() + ((char)ch2).ToString()));
+
+                return new Token(TokenType.Name, chr.ToString() + ((char)ch2).ToString());
+            }
 
             if (Separators.Contains(chr))
                 return new Token(TokenType.Separator, chr.ToString());
