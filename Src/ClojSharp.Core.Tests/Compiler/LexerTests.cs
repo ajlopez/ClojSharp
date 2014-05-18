@@ -462,7 +462,7 @@
         }
 
         [TestMethod]
-        public void GetAnonymousArgument()
+        public void GetAnonymousArgumentWithDigit()
         {
             Lexer lexer = new Lexer("%1");
 
@@ -471,6 +471,20 @@
             Assert.IsNotNull(token);
             Assert.AreEqual(TokenType.Name, token.Type);
             Assert.AreEqual("%1", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
+        public void GetAnonymousRestArgument()
+        {
+            Lexer lexer = new Lexer("%&");
+
+            Token token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("%&", token.Value);
 
             Assert.IsNull(lexer.NextToken());
         }

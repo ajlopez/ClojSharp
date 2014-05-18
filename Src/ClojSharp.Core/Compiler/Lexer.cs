@@ -55,13 +55,15 @@
                 if (ch2 < 0)
                     throw new LexerException("Unexpected '%'");
 
-                if (!char.IsDigit((char)ch2))
-                    if (char.IsWhiteSpace((char)ch2))
+                char chr2 = (char)ch2;
+
+                if (!char.IsDigit(chr2) && chr2 != '&')
+                    if (char.IsWhiteSpace(chr2))
                         throw new LexerException("Unexpected '%'");
                     else
-                        throw new LexerException(string.Format("Unexpected '{0}'", chr.ToString() + ((char)ch2).ToString()));
+                        throw new LexerException(string.Format("Unexpected '{0}'", chr.ToString() + (chr2).ToString()));
 
-                return new Token(TokenType.Name, chr.ToString() + ((char)ch2).ToString());
+                return new Token(TokenType.Name, chr.ToString() + (chr2).ToString());
             }
 
             if (Separators.Contains(chr))
