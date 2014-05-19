@@ -12,6 +12,7 @@ A Clojure interpreter written in C#, Work in Progress.
 - [Extensible Data Notation](https://github.com/edn-format/edn)
 - [What does “^:static” do in Clojure?](http://stackoverflow.com/questions/7552632/what-does-static-do-in-clojure)    
 - [Lazy Sequences in Clojure](http://theatticlight.net/posts/Lazy-Sequences-in-Clojure/)
+- [The Weird and Wonderful Characters of Clojure](http://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/)
 
 ## Notes
 
