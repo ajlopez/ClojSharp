@@ -13,6 +13,7 @@
         private const char KeywordChar = ':';
         private const char CommentChar = ';';
         private const char AnonymousChar = '%';
+        private const char DispatchChar = '#';
 
         private TextReader reader;
         private Stack<int> chars = new Stack<int>();
@@ -47,6 +48,18 @@
 
             if (chr == KeywordChar)
                 return this.NextKeyword();
+
+            if (chr == DispatchChar)
+            {
+                int ch2 = this.NextChar();
+
+                if (ch2 < 0)
+                    throw new LexerException("Unexpected '#'");
+
+                char chr2 = (char)ch2;
+
+                return new Token(TokenType.Name, chr.ToString() + chr2.ToString());
+            }
 
             if (chr == AnonymousChar)
             {

@@ -15,9 +15,11 @@
         private static Symbol withMeta = new Symbol("with-meta");
         private static string metaChar = "^";
         private static Symbol var = new Symbol("var");
+        private static Symbol fn = new Symbol("fn");
         private static string derefChar = "@";
         private static Symbol deref = new Symbol("deref");
-        private static string varChar = "#'";
+        private static string varDispatch = "#'";
+        private static string anonfnDispatch = "#(";
         private static string nilName = "nil";
         private static string trueName = "true";
         private static string falseName = "false";
@@ -78,8 +80,11 @@
                 if (token.Value == derefChar)
                     return new List(deref, new List(this.ParseExpression(), null));
 
-                if (token.Value == varChar)
+                if (token.Value == varDispatch)
                     return new List(var, new List(this.ParseExpression(), null));
+
+                if (token.Value == anonfnDispatch)
+                    return new List(fn, new List(new VectorValue(new object[] { }), new List(this.ParseList(), null)));
 
                 if (token.Value == nilName)
                     return null;
