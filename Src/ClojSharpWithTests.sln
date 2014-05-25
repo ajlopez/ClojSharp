@@ -12,23 +12,51 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClojSharp.Core", "ClojSharp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClojSharp.Core.Tests", "ClojSharp.Core.Tests\ClojSharp.Core.Tests.csproj", "{8724CFD5-5878-4B17-AE78-4837CABFDECD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClojSharp.Console", "ClojSharp.Console\ClojSharp.Console.csproj", "{B8056DF0-2D17-4CCB-BD40-4934AC887608}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = ClojSharp.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E1436398-7939-4D6B-8978-C6246A94B3FB}.Release|x86.ActiveCfg = Release|Any CPU
 		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8724CFD5-5878-4B17-AE78-4837CABFDECD}.Release|x86.ActiveCfg = Release|Any CPU
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Debug|x86.ActiveCfg = Debug|x86
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Debug|x86.Build.0 = Debug|x86
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Release|Any CPU.ActiveCfg = Release|x86
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Release|Mixed Platforms.Build.0 = Release|x86
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Release|x86.ActiveCfg = Release|x86
+		{B8056DF0-2D17-4CCB-BD40-4934AC887608}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
