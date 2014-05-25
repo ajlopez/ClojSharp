@@ -298,6 +298,28 @@
         }
 
         [TestMethod]
+        public void EvaluateDefinedDefValue()
+        {
+            var machine = new Machine();
+            this.Evaluate("(def one 1)", machine.RootContext);
+            var result = this.Evaluate("one", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void EvaluateDefinedDefFunction()
+        {
+            var machine = new Machine();
+            this.Evaluate("(def inc (fn [x] (+ x 1)))", machine.RootContext);
+            var result = this.Evaluate("(inc 1)", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
         public void EvaluateDefinedVar()
         {
             var machine = new Machine();
