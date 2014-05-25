@@ -336,6 +336,20 @@
         }
 
         [TestMethod]
+        public void EvaluateDefinedVarWithMetadata()
+        {
+            var machine = new Machine();
+            this.Evaluate("(def ^{:m true} one 1)", machine.RootContext);
+            var result = this.Evaluate("(meta (var one))", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Map));
+
+            var map = (Map)result;
+            Assert.AreEqual(true, map.GetValue(new Keyword("m")));
+        }
+
+        [TestMethod]
         public void RaiseWhenEvaluateUndefinedVar()
         {
             var machine = new Machine();

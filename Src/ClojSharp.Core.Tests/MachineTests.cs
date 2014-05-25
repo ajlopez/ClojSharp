@@ -45,6 +45,8 @@
 
             this.IsForm("str");
             this.IsForm("rand");
+
+            this.IsForm("meta");
         }
 
         [TestMethod]

@@ -6,11 +6,11 @@
     using System.Text;
     using ClojSharp.Core.Language;
 
-    public class Not : BaseUnaryForm
+    public class Meta : BaseUnaryForm
     {
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
-            return Predicates.IsFalse(arguments[0]);
+            return ((IMetadata)arguments[0]).Metadata;
         }
     }
 }

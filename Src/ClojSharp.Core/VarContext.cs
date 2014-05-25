@@ -25,6 +25,11 @@
             this.variables[name] = new Var(name, value);
         }
 
+        public void SetVar(Var var)
+        {
+            this.variables[var.Name] = var;
+        }
+
         public Var GetVar(string name)
         {
             if (this.variables.ContainsKey(name))

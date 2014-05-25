@@ -22,7 +22,12 @@
                     value = ((IEvaluable)value).Evaluate(context);
             }
 
-            context.TopContext.SetValue(symbol.Name, value);
+            var variable = new Var(symbol.Name, value);
+
+            if (symbol.Metadata != null)
+                variable = (Var)variable.WithMetadata(symbol.Metadata);
+
+            context.TopContext.SetVar(variable);
 
             return context.TopContext.GetVar(symbol.Name);
         }

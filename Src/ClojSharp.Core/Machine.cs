@@ -47,6 +47,8 @@
 
             this.root.SetValue("str", new Str());
             this.root.SetValue("rand", new Rand());
+
+            this.root.SetValue("meta", new Meta());
         }
 
         public IContext RootContext { get { return this.root; } }
