@@ -12,7 +12,7 @@
 
     public class Machine
     {
-        private IContext root;
+        private VarContext root;
 
         public Machine()
         {

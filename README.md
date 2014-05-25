@@ -14,6 +14,8 @@ A Clojure interpreter written in C#, Work in Progress.
 - [Lazy Sequences in Clojure](http://theatticlight.net/posts/Lazy-Sequences-in-Clojure/)
 - [The Weird and Wonderful Characters of Clojure](http://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/)
 - [Clojure differences between Ref, Var, Agent, Atom, with examples](http://stackoverflow.com/questions/9132346/clojure-differences-between-ref-var-agent-atom-with-examples)
+- [Vars and the Global Environment](http://clojure.org/vars)
+- [Var Interning](http://clojure.org/vars#Interning)
 
 ## Notes
 
