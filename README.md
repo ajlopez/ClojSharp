@@ -16,6 +16,8 @@ A Clojure interpreter written in C#, Work in Progress.
 - [Clojure differences between Ref, Var, Agent, Atom, with examples](http://stackoverflow.com/questions/9132346/clojure-differences-between-ref-var-agent-atom-with-examples)
 - [Vars and the Global Environment](http://clojure.org/vars)
 - [Var Interning](http://clojure.org/vars#Interning)
+- [How Clojure Babies Are Made: Compiling and Running a Java Program](http://www.flyingmachinestudios.com/programming/how-clojure-babies-are-made-the-java-cycle/)
+- [Clojure: Ahead-of-time Compilation and Class Generation](http://clojure.org/compilation)
 
 ## Notes
 
