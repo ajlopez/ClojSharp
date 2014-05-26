@@ -7,10 +7,13 @@
 
     public class Var : IObject
     {
+        private static Keyword macrokw = new Keyword("macro");
+
         private string @namespace;
         private string name;
         private object value;
         private Map metadata;
+        private bool ismacro;
 
         public Var(string name)
             : this("user", name, null)
@@ -33,6 +36,11 @@
             this.name = name;
             this.value = value;
             this.metadata = metadata;
+
+            if (metadata != null && true.Equals(metadata.GetValue(macrokw)))
+                this.ismacro = true;
+            else
+                this.ismacro = false;
         }
 
         public string Name { get { return this.name; } }
@@ -47,5 +55,7 @@
         }
 
         public Map Metadata { get { return this.metadata; } }
+
+        public bool IsMacro { get { return this.ismacro; } }
     }
 }

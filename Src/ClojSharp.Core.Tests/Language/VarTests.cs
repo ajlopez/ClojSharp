@@ -47,5 +47,16 @@
             Assert.AreEqual("one", var2.Name);
             Assert.AreEqual("user/one", var2.FullName);
         }
+
+        [TestMethod]
+        public void IsMacro()
+        {
+            Var var = new Var("one", 1);
+            Map map = new Map(new object[] { new Keyword("macro"), true });
+            Var var2 = (Var)var.WithMetadata(map);
+
+            Assert.IsFalse(var.IsMacro);
+            Assert.IsTrue(var2.IsMacro);
+        }
     }
 }
