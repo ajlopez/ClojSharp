@@ -18,6 +18,7 @@ A Clojure interpreter written in C#, Work in Progress.
 - [Var Interning](http://clojure.org/vars#Interning)
 - [How Clojure Babies Are Made: Compiling and Running a Java Program](http://www.flyingmachinestudios.com/programming/how-clojure-babies-are-made-the-java-cycle/)
 - [Clojure: Ahead-of-time Compilation and Class Generation](http://clojure.org/compilation)
+- [Quoting Without Confusion](http://blog.8thlight.com/colin-jones/2012/05/22/quoting-without-confusion.html)
 
 ## Notes
 
