@@ -427,6 +427,32 @@
         }
 
         [TestMethod]
+        public void EvaluateFalseP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(false? false)"));
+
+            Assert.AreEqual(false, this.Evaluate("(false? nil)"));
+            Assert.AreEqual(false, this.Evaluate("(false? true)"));
+            Assert.AreEqual(false, this.Evaluate("(false? 0)"));
+            Assert.AreEqual(false, this.Evaluate("(false? 1)"));
+            Assert.AreEqual(false, this.Evaluate("(false? \"\")"));
+            Assert.AreEqual(false, this.Evaluate("(false? \"foo\")"));
+        }
+
+        [TestMethod]
+        public void EvaluateTrueP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(true? true)"));
+
+            Assert.AreEqual(false, this.Evaluate("(true? nil)"));
+            Assert.AreEqual(false, this.Evaluate("(true? false)"));
+            Assert.AreEqual(false, this.Evaluate("(true? 0)"));
+            Assert.AreEqual(false, this.Evaluate("(true? 1)"));
+            Assert.AreEqual(false, this.Evaluate("(true? \"\")"));
+            Assert.AreEqual(false, this.Evaluate("(true? \"foo\")"));
+        }
+
+        [TestMethod]
         public void EvaluateStr()
         {
             Assert.AreEqual(string.Empty, this.Evaluate("(str)"));
