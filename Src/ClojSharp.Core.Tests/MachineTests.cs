@@ -44,6 +44,7 @@
             this.IsForm("number?");
             this.IsForm("false?");
             this.IsForm("true?");
+            this.IsForm("zero?");
 
             this.IsForm("str");
             this.IsForm("rand");

@@ -43,6 +43,23 @@
         }
 
         [TestMethod]
+        public void IsZero()
+        {
+            Assert.IsTrue(Predicates.IsZero(0.0));
+            Assert.IsTrue(Predicates.IsZero((float)0.0));
+            Assert.IsTrue(Predicates.IsZero(0));
+            Assert.IsTrue(Predicates.IsZero((short)0));
+            Assert.IsTrue(Predicates.IsZero((long)0));
+
+            Assert.IsFalse(Predicates.IsZero(1));
+            Assert.IsFalse(Predicates.IsZero(null));
+            Assert.IsFalse(Predicates.IsZero(string.Empty));
+            Assert.IsFalse(Predicates.IsZero("foo"));
+            Assert.IsFalse(Predicates.IsZero(1));
+            Assert.IsFalse(Predicates.IsZero(1.2));
+        }
+
+        [TestMethod]
         public void IsInteger()
         {
             Assert.IsTrue(Predicates.IsInteger(1));

@@ -46,6 +46,7 @@
             this.root.SetValue("number?", new NumberP());
             this.root.SetValue("false?", new FalseP());
             this.root.SetValue("true?", new TrueP());
+            this.root.SetValue("zero?", new ZeroP());
 
             this.root.SetValue("str", new Str());
             this.root.SetValue("rand", new Rand());

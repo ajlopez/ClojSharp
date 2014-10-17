@@ -440,6 +440,20 @@
         }
 
         [TestMethod]
+        public void EvaluateZeroP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(zero? 0)"));
+            Assert.AreEqual(true, this.Evaluate("(zero? 0.0)"));
+
+            Assert.AreEqual(false, this.Evaluate("(zero? nil)"));
+            Assert.AreEqual(false, this.Evaluate("(zero? true)"));
+            Assert.AreEqual(false, this.Evaluate("(zero? 0.1)"));
+            Assert.AreEqual(false, this.Evaluate("(zero? 1)"));
+            Assert.AreEqual(false, this.Evaluate("(zero? \"\")"));
+            Assert.AreEqual(false, this.Evaluate("(zero? \"foo\")"));
+        }
+
+        [TestMethod]
         public void EvaluateTrueP()
         {
             Assert.AreEqual(true, this.Evaluate("(true? true)"));
