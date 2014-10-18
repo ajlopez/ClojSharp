@@ -28,7 +28,7 @@
 
         public static bool IsZero(object obj)
         {
-            return 0.Equals(obj) || 0.0.Equals(obj) || ((float)0.0).Equals(obj) || ((short)0).Equals(obj) || ((long)0).Equals(obj);
+            return 0.Equals(obj) || 0.0.Equals(obj) || ((float)0.0).Equals(obj) || ((short)0).Equals(obj) || ((long)0).Equals(obj) || ((uint)0).Equals(obj) || ((ushort)0).Equals(obj) || ((ulong)0).Equals(obj);
         }
 
         public static bool IsFalse(object obj)

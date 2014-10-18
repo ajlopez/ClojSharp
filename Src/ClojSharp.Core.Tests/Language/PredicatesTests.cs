@@ -50,6 +50,9 @@
             Assert.IsTrue(Predicates.IsZero(0));
             Assert.IsTrue(Predicates.IsZero((short)0));
             Assert.IsTrue(Predicates.IsZero((long)0));
+            Assert.IsTrue(Predicates.IsZero((uint)0));
+            Assert.IsTrue(Predicates.IsZero((ushort)0));
+            Assert.IsTrue(Predicates.IsZero((ulong)0));
 
             Assert.IsFalse(Predicates.IsZero(1));
             Assert.IsFalse(Predicates.IsZero(null));
