@@ -454,6 +454,19 @@
         }
 
         [TestMethod]
+        public void EvaluateIntegerP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(integer? 0)"));
+            Assert.AreEqual(true, this.Evaluate("(integer? 42)"));
+
+            Assert.AreEqual(false, this.Evaluate("(integer? nil)"));
+            Assert.AreEqual(false, this.Evaluate("(integer? true)"));
+            Assert.AreEqual(false, this.Evaluate("(integer? 0.1)"));
+            Assert.AreEqual(false, this.Evaluate("(integer? \"\")"));
+            Assert.AreEqual(false, this.Evaluate("(integer? \"foo\")"));
+        }
+
+        [TestMethod]
         public void EvaluateTrueP()
         {
             Assert.AreEqual(true, this.Evaluate("(true? true)"));
