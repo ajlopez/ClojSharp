@@ -467,6 +467,19 @@
         }
 
         [TestMethod]
+        public void EvaluateFloatP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(float? 12.34)"));
+            Assert.AreEqual(true, this.Evaluate("(float? 0.0)"));
+
+            Assert.AreEqual(false, this.Evaluate("(float? nil)"));
+            Assert.AreEqual(false, this.Evaluate("(float? true)"));
+            Assert.AreEqual(false, this.Evaluate("(float? 1)"));
+            Assert.AreEqual(false, this.Evaluate("(float? \"\")"));
+            Assert.AreEqual(false, this.Evaluate("(float? \"foo\")"));
+        }
+
+        [TestMethod]
         public void EvaluateTrueP()
         {
             Assert.AreEqual(true, this.Evaluate("(true? true)"));

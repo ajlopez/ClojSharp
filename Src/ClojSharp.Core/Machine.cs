@@ -48,6 +48,7 @@
             this.root.SetValue("true?", new TrueP());
             this.root.SetValue("zero?", new ZeroP());
             this.root.SetValue("integer?", new IntegerP());
+            this.root.SetValue("float?", new FloatP());
 
             this.root.SetValue("str", new Str());
             this.root.SetValue("rand", new Rand());

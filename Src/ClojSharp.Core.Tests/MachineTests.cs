@@ -46,6 +46,7 @@
             this.IsForm("true?");
             this.IsForm("zero?");
             this.IsForm("integer?");
+            this.IsForm("float?");
 
             this.IsForm("str");
             this.IsForm("rand");
