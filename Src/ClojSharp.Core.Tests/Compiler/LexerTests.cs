@@ -145,6 +145,20 @@
         }
 
         [TestMethod]
+        public void GetChar()
+        {
+            Lexer lexer = new Lexer("\\a");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Character, token.Type);
+            Assert.AreEqual("a", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetNumeralQuoteAsName()
         {
             Lexer lexer = new Lexer("#'");

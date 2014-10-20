@@ -10,6 +10,7 @@
     {
         private const string Separators = "()[]{}";
         private const char StringQuote = '"';
+        private const char CharacterChar = '\\';
         private const char KeywordChar = ':';
         private const char CommentChar = ';';
         private const char AnonymousChar = '%';
@@ -48,6 +49,12 @@
 
             if (chr == KeywordChar)
                 return this.NextKeyword();
+
+            if (chr == CharacterChar)
+            {
+                chr = (char)this.NextChar();
+                return new Token(TokenType.Character, chr.ToString());
+            }
 
             if (chr == DispatchChar)
             {
