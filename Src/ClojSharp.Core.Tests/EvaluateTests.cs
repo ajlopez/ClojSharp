@@ -480,6 +480,18 @@
         }
 
         [TestMethod]
+        public void EvaluateCharP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(char? \\a)"));
+
+            Assert.AreEqual(false, this.Evaluate("(char? nil)"));
+            Assert.AreEqual(false, this.Evaluate("(char? true)"));
+            Assert.AreEqual(false, this.Evaluate("(char? 1)"));
+            Assert.AreEqual(false, this.Evaluate("(char? \"\")"));
+            Assert.AreEqual(false, this.Evaluate("(char? \"foo\")"));
+        }
+
+        [TestMethod]
         public void EvaluateTrueP()
         {
             Assert.AreEqual(true, this.Evaluate("(true? true)"));

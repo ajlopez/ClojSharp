@@ -58,6 +58,9 @@
             if (token.Type == TokenType.Real)
                 return double.Parse(token.Value, CultureInfo.InvariantCulture);
 
+            if (token.Type == TokenType.Character)
+                return token.Value[0];
+
             if (token.Type == TokenType.String)
                 return token.Value;
 

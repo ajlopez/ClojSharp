@@ -289,6 +289,17 @@
         }
 
         [TestMethod]
+        public void ParseCharacter()
+        {
+            Parser parser = new Parser("\\a");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsTrue(expr is char);
+        }
+
+        [TestMethod]
         public void ParseFalseAsFalse()
         {
             Parser parser = new Parser("false");
