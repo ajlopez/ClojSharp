@@ -81,6 +81,7 @@
     <Compile Include="Forms\Cons.cs" />
     <Compile Include="Forms\BaseUnaryForm.cs" />
     <Compile Include="Forms\CharP.cs" />
+    <Compile Include="Forms\StringP.cs" />
     <Compile Include="Forms\FloatP.cs" />
     <Compile Include="Forms\IntegerP.cs" />
     <Compile Include="Forms\ZeroP.cs" />

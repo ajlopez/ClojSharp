@@ -505,6 +505,17 @@
         }
 
         [TestMethod]
+        public void EvaluateStringP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(string? \"foo\")"));
+
+            Assert.AreEqual(false, this.Evaluate("(string? \\a)"));
+            Assert.AreEqual(false, this.Evaluate("(string? false)"));
+            Assert.AreEqual(false, this.Evaluate("(string? 0)"));
+            Assert.AreEqual(false, this.Evaluate("(string? 1)"));
+        }
+
+        [TestMethod]
         public void EvaluateStr()
         {
             Assert.AreEqual(string.Empty, this.Evaluate("(str)"));
