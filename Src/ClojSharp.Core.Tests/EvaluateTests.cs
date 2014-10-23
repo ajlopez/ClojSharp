@@ -536,6 +536,16 @@
         }
 
         [TestMethod]
+        public void EvaluateSymbolP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(symbol? 'a)"));
+            Assert.AreEqual(false, this.Evaluate("(symbol? 1.0)"));
+            Assert.AreEqual(false, this.Evaluate("(symbol? :a)"));
+            Assert.AreEqual(false, this.Evaluate("(symbol? nil)"));
+            Assert.AreEqual(false, this.Evaluate("(symbol? \"foo\")"));
+        }
+
+        [TestMethod]
         public void EvaluateRand()
         {
             var result = this.Evaluate("(rand)");

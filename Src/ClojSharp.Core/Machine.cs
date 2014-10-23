@@ -51,6 +51,7 @@
             this.root.SetValue("float?", new FloatP());
             this.root.SetValue("char?", new CharP());
             this.root.SetValue("string?", new StringP());
+            this.root.SetValue("symbol?", new SymbolP());
 
             this.root.SetValue("str", new Str());
             this.root.SetValue("rand", new Rand());
