@@ -546,6 +546,16 @@
         }
 
         [TestMethod]
+        public void EvaluateSeqP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(seq? '(a b))"));
+            Assert.AreEqual(false, this.Evaluate("(seq? 1.0)"));
+            Assert.AreEqual(false, this.Evaluate("(seq? :a)"));
+            Assert.AreEqual(false, this.Evaluate("(seq? nil)"));
+            Assert.AreEqual(false, this.Evaluate("(seq? \"foo\")"));
+        }
+
+        [TestMethod]
         public void EvaluateRand()
         {
             var result = this.Evaluate("(rand)");

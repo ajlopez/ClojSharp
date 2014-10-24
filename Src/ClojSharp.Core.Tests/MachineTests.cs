@@ -49,6 +49,7 @@
             this.IsForm("float?");
             this.IsForm("char?");
             this.IsForm("symbol?");
+            this.IsForm("seq?");
 
             this.IsForm("str");
             this.IsForm("rand");
