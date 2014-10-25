@@ -556,6 +556,19 @@
         }
 
         [TestMethod]
+        public void EvaluateBlankP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(blank? nil)"));
+            Assert.AreEqual(true, this.Evaluate("(blank? \"\")"));
+            Assert.AreEqual(true, this.Evaluate("(blank? \"  \")"));
+
+            Assert.AreEqual(false, this.Evaluate("(blank? 1.0)"));
+            Assert.AreEqual(false, this.Evaluate("(blank? :a)"));
+            Assert.AreEqual(false, this.Evaluate("(blank? 42)"));
+            Assert.AreEqual(false, this.Evaluate("(blank? \"foo\")"));
+        }
+
+        [TestMethod]
         public void EvaluateRand()
         {
             var result = this.Evaluate("(rand)");

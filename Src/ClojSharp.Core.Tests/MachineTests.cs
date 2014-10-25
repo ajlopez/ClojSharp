@@ -50,6 +50,7 @@
             this.IsForm("char?");
             this.IsForm("symbol?");
             this.IsForm("seq?");
+            this.IsForm("blank?");
 
             this.IsForm("str");
             this.IsForm("rand");

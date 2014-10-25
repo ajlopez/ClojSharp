@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClojSharp.Core</RootNamespace>
     <AssemblyName>ClojSharp.Core</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -31,6 +31,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -81,6 +82,7 @@
     <Compile Include="Forms\Cons.cs" />
     <Compile Include="Forms\BaseUnaryForm.cs" />
     <Compile Include="Forms\CharP.cs" />
+    <Compile Include="Forms\BlankP.cs" />
     <Compile Include="Forms\SeqP.cs" />
     <Compile Include="Forms\SymbolP.cs" />
     <Compile Include="Forms\StringP.cs" />
