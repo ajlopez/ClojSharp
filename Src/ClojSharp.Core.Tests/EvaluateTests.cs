@@ -583,6 +583,16 @@
         }
 
         [TestMethod]
+        public void EvaluateAtom()
+        {
+            var result = this.Evaluate("(atom 42)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Atom));
+            Assert.AreEqual(42, ((Atom)result).Value);
+        }
+
+        [TestMethod]
         public void EvaluateRandWithInteger()
         {
             var result = this.Evaluate("(rand 10)");
