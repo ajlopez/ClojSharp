@@ -55,6 +55,7 @@
             this.IsForm("str");
             this.IsForm("rand");
             this.IsForm("atom");
+            this.IsForm("deref");
 
             this.IsForm("meta");
         }

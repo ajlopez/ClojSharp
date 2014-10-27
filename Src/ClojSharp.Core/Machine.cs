@@ -58,7 +58,7 @@
             this.root.SetValue("str", new Str());
             this.root.SetValue("rand", new Rand());
             this.root.SetValue("atom", new AtomF());
-
+            this.root.SetValue("deref", new Deref());
             this.root.SetValue("meta", new Meta());
         }
 

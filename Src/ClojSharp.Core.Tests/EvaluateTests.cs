@@ -593,6 +593,15 @@
         }
 
         [TestMethod]
+        public void EvaluateDeref()
+        {
+            var result = this.Evaluate("(deref (atom 42))");
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(42, result);
+        }
+
+        [TestMethod]
         public void EvaluateRandWithInteger()
         {
             var result = this.Evaluate("(rand 10)");
