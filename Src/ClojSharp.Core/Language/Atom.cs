@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class Atom
+    public class Atom : IReference
     {
         private object value;
 

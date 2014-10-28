@@ -593,12 +593,23 @@
         }
 
         [TestMethod]
-        public void EvaluateDeref()
+        public void EvaluateDerefAtom()
         {
             var result = this.Evaluate("(deref (atom 42))");
 
             Assert.IsNotNull(result);
             Assert.AreEqual(42, result);
+        }
+
+        [TestMethod]
+        public void EvaluateDerefVar()
+        {
+            var machine = new Machine();
+            this.Evaluate("(def one 1)", machine.RootContext);
+            var result = this.Evaluate("(deref (var one))", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result);
         }
 
         [TestMethod]

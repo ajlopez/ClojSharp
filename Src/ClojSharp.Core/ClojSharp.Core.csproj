@@ -112,6 +112,7 @@
     <Compile Include="Forms\Subtract.cs" />
     <Compile Include="IContext.cs" />
     <Compile Include="Language\Atom.cs" />
+    <Compile Include="Language\IReference.cs" />
     <Compile Include="Language\IObject.cs" />
     <Compile Include="Language\IMetadata.cs" />
     <Compile Include="Language\Namespace.cs" />

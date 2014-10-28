@@ -10,7 +10,7 @@
     {
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
-            return ((Atom)arguments[0]).Value;
+            return ((IReference)arguments[0]).Value;
         }
     }
 }

@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class Var : IObject
+    public class Var : IObject, IReference
     {
         private static Keyword macrokw = new Keyword("macro");
 
