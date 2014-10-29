@@ -32,6 +32,7 @@
             this.IsForm("-");
             this.IsForm("*");
             this.IsForm("/");
+            this.IsForm("mod");
 
             this.IsForm("cons");
             this.IsForm("list");

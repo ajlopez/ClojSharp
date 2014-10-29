@@ -83,6 +83,14 @@
         }
 
         [TestMethod]
+        public void EvaluateMod()
+        {
+            Assert.AreEqual(1, this.Evaluate("(mod 10 3)"));
+            Assert.AreEqual(2, this.Evaluate("(mod -10 3)"));
+            Assert.AreEqual(1, this.Evaluate("(mod 5 2)"));
+        }
+
+        [TestMethod]
         public void EvaluateSimpleFn()
         {
             Assert.AreEqual(1, this.Evaluate("((fn [] 1))"));
