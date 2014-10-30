@@ -89,6 +89,15 @@
             if (Separators.Contains(chr))
                 return new Token(TokenType.Separator, chr.ToString());
 
+            if (chr == '-')
+            {
+                int ch2 = this.NextChar();
+                this.PushChar(ch2);
+
+                if (ch2 >= 0 && char.IsDigit((char)ch2))
+                    return this.NextInteger(chr);
+            }
+
             if (char.IsDigit(chr))
                 return this.NextInteger(chr);
 

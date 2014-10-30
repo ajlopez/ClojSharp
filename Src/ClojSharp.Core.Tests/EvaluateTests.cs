@@ -27,6 +27,12 @@
         }
 
         [TestMethod]
+        public void EvaluateNegativeInteger()
+        {
+            Assert.AreEqual(-123, this.Evaluate("-123", null));
+        }
+
+        [TestMethod]
         public void EvaluateString()
         {
             Assert.AreEqual(string.Empty, this.Evaluate("\"\"", null));

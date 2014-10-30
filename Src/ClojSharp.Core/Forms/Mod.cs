@@ -15,7 +15,12 @@
 
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
-            return (int)arguments[0] % (int)arguments[1];
+            var result = (int)arguments[0] % (int)arguments[1];
+
+            if (result < 0)
+                result += (int)arguments[1];
+
+            return result;
         }
     }
 }

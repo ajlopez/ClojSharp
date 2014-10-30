@@ -309,6 +309,20 @@
         }
 
         [TestMethod]
+        public void GetNegativeInteger()
+        {
+            Lexer lexer = new Lexer("-123");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Integer, token.Type);
+            Assert.AreEqual("-123", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetIntegerInParentheses()
         {
             Lexer lexer = new Lexer("(123)");
@@ -344,6 +358,20 @@
             Assert.IsNotNull(token);
             Assert.AreEqual(TokenType.Real, token.Type);
             Assert.AreEqual("123.45", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
+        public void GetNegativeReal()
+        {
+            Lexer lexer = new Lexer("-123.45");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Real, token.Type);
+            Assert.AreEqual("-123.45", token.Value);
 
             Assert.IsNull(lexer.NextToken());
         }
