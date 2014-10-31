@@ -97,6 +97,14 @@
         }
 
         [TestMethod]
+        public void EvaluateRem()
+        {
+            Assert.AreEqual(1, this.Evaluate("(rem 10 3)"));
+            Assert.AreEqual(-1, this.Evaluate("(rem -10 3)"));
+            Assert.AreEqual(1, this.Evaluate("(rem 5 2)"));
+        }
+
+        [TestMethod]
         public void EvaluateSimpleFn()
         {
             Assert.AreEqual(1, this.Evaluate("((fn [] 1))"));

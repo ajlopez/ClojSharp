@@ -84,6 +84,7 @@
     <Compile Include="Forms\CharP.cs" />
     <Compile Include="Forms\BlankP.cs" />
     <Compile Include="Forms\AtomF.cs" />
+    <Compile Include="Forms\Rem.cs" />
     <Compile Include="Forms\Mod.cs" />
     <Compile Include="Forms\Deref.cs" />
     <Compile Include="Forms\SeqP.cs" />

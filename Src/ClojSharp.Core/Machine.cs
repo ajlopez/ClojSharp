@@ -38,6 +38,7 @@
             this.root.SetValue("*", new Multiply());
             this.root.SetValue("/", new Divide());
             this.root.SetValue("mod", new Mod());
+            this.root.SetValue("rem", new Rem());
 
             this.root.SetValue("and", new And());
             this.root.SetValue("or", new Or());
