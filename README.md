@@ -19,6 +19,8 @@ A Clojure interpreter written in C#, Work in Progress.
 - [How Clojure Babies Are Made: Compiling and Running a Java Program](http://www.flyingmachinestudios.com/programming/how-clojure-babies-are-made-the-java-cycle/)
 - [Clojure: Ahead-of-time Compilation and Class Generation](http://clojure.org/compilation)
 - [Quoting Without Confusion](http://blog.8thlight.com/colin-jones/2012/05/22/quoting-without-confusion.html)
+- [What is fn* and how does Clojure bootstrap?](http://stackoverflow.com/questions/10767305/what-is-fn-and-how-does-clojure-bootstrap)
+- [Clojure: how is defn different from fn?](http://stackoverflow.com/questions/16956767/clojure-how-is-defn-different-from-fn)
 
 ## Notes
 
