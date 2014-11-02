@@ -18,6 +18,10 @@
         {
             this.root = new VarContext();
 
+            var ns = new Namespace("clojsharp.core");
+
+            this.root.SetValue("*ns*", ns);
+
             this.root.SetValue("def", new Def());
             this.root.SetValue("fn", new Fn());
             this.root.SetValue("quote", new Quote());

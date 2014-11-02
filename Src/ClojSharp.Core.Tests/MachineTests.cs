@@ -26,6 +26,19 @@
         }
 
         [TestMethod]
+        public void InitialNamespace()
+        {
+            var result = this.machine.RootContext.GetValue("*ns*");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Namespace));
+
+            var ns = (Namespace)result;
+
+            Assert.AreEqual("clojsharp.core", ns.Name);
+        }
+
+        [TestMethod]
         public void MachineHasDefinedForms()
         {
             this.IsForm("+");
