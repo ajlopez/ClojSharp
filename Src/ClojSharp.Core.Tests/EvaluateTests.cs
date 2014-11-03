@@ -635,6 +635,15 @@
         }
 
         [TestMethod]
+        public void EvaluateClass()
+        {
+            Assert.AreEqual(typeof(string), this.Evaluate("(class \"foo\")"));
+            Assert.AreEqual(typeof(int), this.Evaluate("(class 42)"));
+            Assert.AreEqual(typeof(ClojSharp.Core.Language.List), this.Evaluate("(class '(1 2))"));
+            Assert.IsNull(this.Evaluate("(class nil)"));
+        }
+
+        [TestMethod]
         public void EvaluateRandWithInteger()
         {
             var result = this.Evaluate("(rand 10)");

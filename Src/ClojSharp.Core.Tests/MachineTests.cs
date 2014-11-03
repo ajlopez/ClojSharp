@@ -73,6 +73,7 @@
             this.IsForm("deref");
 
             this.IsForm("meta");
+            this.IsForm("class");
         }
 
         [TestMethod]

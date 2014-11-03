@@ -66,6 +66,7 @@
             this.root.SetValue("atom", new AtomF());
             this.root.SetValue("deref", new Deref());
             this.root.SetValue("meta", new Meta());
+            this.root.SetValue("class", new Class());
         }
 
         public IContext RootContext { get { return this.root; } }
