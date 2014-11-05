@@ -74,6 +74,8 @@
 
             this.IsForm("meta");
             this.IsForm("class");
+
+            this.IsForm("max");
         }
 
         [TestMethod]

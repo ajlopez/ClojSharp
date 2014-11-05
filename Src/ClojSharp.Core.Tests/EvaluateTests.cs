@@ -591,6 +591,15 @@
         }
 
         [TestMethod]
+        public void EvaluateMax()
+        {
+            Assert.AreEqual(1, this.Evaluate("(max 1)"));
+            Assert.AreEqual(2, this.Evaluate("(max 1 2)"));
+            Assert.AreEqual(2, this.Evaluate("(max 2 1 2)"));
+            Assert.AreEqual(3, this.Evaluate("(max 2 1 3 2)"));
+        }
+
+        [TestMethod]
         public void EvaluateRand()
         {
             var result = this.Evaluate("(rand)");

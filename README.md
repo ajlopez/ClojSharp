@@ -22,6 +22,7 @@ A Clojure interpreter written in C#, Work in Progress.
 - [What is fn* and how does Clojure bootstrap?](http://stackoverflow.com/questions/10767305/what-is-fn-and-how-does-clojure-bootstrap)
 - [Clojure: how is defn different from fn?](http://stackoverflow.com/questions/16956767/clojure-how-is-defn-different-from-fn)
 - [Pythoninc Clojure](http://www.pixelmonkey.org/2014/11/02/clojonic)
+- [Clojure: what is difference between resolve and var?](http://stackoverflow.com/questions/11887852/clojure-what-is-difference-between-resolve-and-var)
 
 ## Notes
 
