@@ -9,6 +9,8 @@ A Clojure interpreter written in C#, Work in Progress.
 - [Values and Change - Clojure's approach to Identity and State](http://clojure.org/state)
 - [Reader](http://clojure.org/reader)
 - [Special Forms](http://clojure.org/special_forms)
+- [Java Interop](http://clojure.org/java_interop)
+- [Learning Clojure/Special Forms](http://en.wikibooks.org/wiki/Learning_Clojure/Special_Forms)
 - [Extensible Data Notation](https://github.com/edn-format/edn)
 - [What does “^:static” do in Clojure?](http://stackoverflow.com/questions/7552632/what-does-static-do-in-clojure)    
 - [Lazy Sequences in Clojure](http://theatticlight.net/posts/Lazy-Sequences-in-Clojure/)
