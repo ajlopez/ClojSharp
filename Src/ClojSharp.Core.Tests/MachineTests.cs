@@ -76,6 +76,7 @@
             this.IsForm("class");
 
             this.IsForm("max");
+            this.IsForm("min");
         }
 
         [TestMethod]

@@ -600,6 +600,15 @@
         }
 
         [TestMethod]
+        public void EvaluateMin()
+        {
+            Assert.AreEqual(1, this.Evaluate("(min 1)"));
+            Assert.AreEqual(1, this.Evaluate("(min 1 2)"));
+            Assert.AreEqual(1, this.Evaluate("(min 2 1 2)"));
+            Assert.AreEqual(1, this.Evaluate("(min 2 1 3 2)"));
+        }
+
+        [TestMethod]
         public void EvaluateRand()
         {
             var result = this.Evaluate("(rand)");

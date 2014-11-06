@@ -68,6 +68,7 @@
             this.root.SetValue("meta", new Meta());
             this.root.SetValue("class", new Class());
             this.root.SetValue("max", new Max());
+            this.root.SetValue("min", new Min());
         }
 
         public IContext RootContext { get { return this.root; } }
