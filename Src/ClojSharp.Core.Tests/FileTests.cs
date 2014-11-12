@@ -30,5 +30,12 @@
             Machine machine = new Machine();
             Assert.AreEqual(true, machine.EvaluateFile("Files\\true.clj"));
         }
+
+        [TestMethod]
+        public void EvaluateDefnAsMacro()
+        {
+            Machine machine = new Machine();
+            Assert.AreEqual(2, machine.EvaluateFile("Files\\defn.clj"));
+        }
     }
 }

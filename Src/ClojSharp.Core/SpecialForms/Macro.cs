@@ -11,12 +11,14 @@
     {
         private IContext closure;
         private IList<string> names;
+        private string restname;
         private object body;
 
-        public Macro(IContext closure, IList<string> names, object body)
+        public Macro(IContext closure, IList<string> names, string restname, object body)
         {
             this.closure = closure;
             this.names = names;
+            this.restname = restname;
             this.body = body;
         }
 
@@ -27,6 +29,9 @@
             if (this.names != null && this.names.Count > 0)
                 for (int k = 0; k < this.names.Count; k++)
                     newcontext.SetValue(this.names[k], arguments[k]);
+
+            if (this.restname != null)
+                newcontext.SetValue(this.restname, this.MakeList(this.names != null ? this.names.Count : 0, arguments));
 
             return Machine.Evaluate(Machine.Evaluate(this.body, newcontext), context);
         }
