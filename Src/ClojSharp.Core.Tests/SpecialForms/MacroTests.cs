@@ -7,6 +7,7 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ClojSharp.Core.Compiler;
     using ClojSharp.Core.Forms;
+    using ClojSharp.Core.SpecialForms;
 
     [TestClass]
     public class MacroTests

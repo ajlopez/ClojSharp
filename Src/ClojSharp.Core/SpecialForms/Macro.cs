@@ -1,4 +1,4 @@
-﻿namespace ClojSharp.Core.Forms
+﻿namespace ClojSharp.Core.SpecialForms
 {
     using System;
     using System.Collections.Generic;
@@ -7,7 +7,7 @@
     using ClojSharp.Core.Exceptions;
     using ClojSharp.Core.Language;
 
-    public class Macro : IForm
+    public class Macro : IMacro
     {
         private IContext closure;
         private IList<string> names;
@@ -24,6 +24,11 @@
 
         public object Evaluate(IContext context, IList<object> arguments)
         {
+            return Machine.Evaluate(this.Expand(arguments), context);
+        }
+
+        public object Expand(IList<object> arguments)
+        {
             IContext newcontext = new Context(this.closure);
 
             if (this.names != null && this.names.Count > 0)
@@ -33,7 +38,7 @@
             if (this.restname != null)
                 newcontext.SetValue(this.restname, this.MakeList(this.names != null ? this.names.Count : 0, arguments));
 
-            return Machine.Evaluate(Machine.Evaluate(this.body, newcontext), context);
+            return Machine.Evaluate(this.body, newcontext);
         }
 
         private List MakeList(int nelement, IList<object> elements)

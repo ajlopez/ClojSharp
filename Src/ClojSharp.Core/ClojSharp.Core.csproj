@@ -137,6 +137,7 @@
     <Compile Include="Machine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecialForms\And.cs" />
+    <Compile Include="SpecialForms\IMacro.cs" />
     <Compile Include="SpecialForms\MFn.cs" />
     <Compile Include="SpecialForms\Macro.cs" />
     <Compile Include="SpecialForms\Ns.cs" />
