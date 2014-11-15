@@ -101,7 +101,7 @@
             if (char.IsDigit(chr))
                 return this.NextInteger(chr);
 
-            if (char.IsLetter(chr))
+            if (chr == '.' || char.IsLetter(chr))
                 return this.NextName(chr);
 
             return this.NextSymbolName(chr);
