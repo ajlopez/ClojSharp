@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Exceptions;
+    using ClojSharp.Core.Forms;
 
     public class Symbol : IEvaluable, IObject
     {
@@ -34,7 +35,15 @@
 
         public object Evaluate(IContext context)
         {
-            return context.GetValue(this.name);
+            var result = context.GetValue(this.name);
+
+            if (result == null && this.name[0] == '.')
+            {
+                result = new MethodForm(this.name.Substring(1));
+                context.SetValue(this.name, result);
+            }
+
+            return result;
         }
 
         public override string ToString()

@@ -701,6 +701,14 @@
         }
 
         [TestMethod]
+        public void EvaluateMethodForms()
+        {
+            Assert.AreEqual("42", this.Evaluate("(.ToString 42)"));
+            Assert.AreEqual("FOO", this.Evaluate("(.ToUpper \"foo\")"));
+            Assert.AreEqual("oo", this.Evaluate("(.Substring \"foo\" 1)"));
+        }
+
+        [TestMethod]
         public void RaiseIfInvalidArityInRand()
         {
             try
