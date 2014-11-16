@@ -709,6 +709,12 @@
         }
 
         [TestMethod]
+        public void EvaluateTypeStaticField()
+        {
+            Assert.AreEqual(System.Math.PI, this.Evaluate("System.Math/PI"));
+        }
+
+        [TestMethod]
         public void RaiseIfInvalidArityInRand()
         {
             try

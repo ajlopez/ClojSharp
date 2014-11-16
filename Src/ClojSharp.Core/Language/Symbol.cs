@@ -6,11 +6,14 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
     using ClojSharp.Core.Forms;
+    using System.Reflection;
 
     public class Symbol : IEvaluable, IObject
     {
         private string name;
         private Map metadata;
+        private object value;
+        private bool hasns;
 
         public Symbol(string name)
             : this(name, null)
@@ -21,6 +24,11 @@
         {
             this.name = name;
             this.metadata = metadata;
+
+            if (name[0] == '.')
+                this.value = new MethodForm(this.name.Substring(1));
+
+            this.hasns = name.IndexOf('/') > 0;
         }
 
         public string Name { get { return this.name; } }
@@ -35,13 +43,18 @@
 
         public object Evaluate(IContext context)
         {
-            var result = context.GetValue(this.name);
+            if (this.name[0] == '.')
+                return this.value;
 
-            if (result == null && this.name[0] == '.')
+            if (this.hasns)
             {
-                result = new MethodForm(this.name.Substring(1));
-                context.SetValue(this.name, result);
+                var words = this.name.Split('/');
+                var type = Type.GetType(words[0]);
+                var name = words[1];
+                return type.InvokeMember(name, BindingFlags.Public | BindingFlags.GetField | BindingFlags.GetProperty | BindingFlags.Static, null, type, null);
             }
+
+            var result = context.GetValue(this.name);
 
             return result;
         }
