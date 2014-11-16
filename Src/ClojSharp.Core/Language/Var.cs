@@ -49,13 +49,13 @@
 
         public object Value { get { return this.value; } }
 
+        public Map Metadata { get { return this.metadata; } }
+
+        public bool IsMacro { get { return this.ismacro; } }
+
         public IObject WithMetadata(Map map)
         {
             return new Var(this.@namespace, this.name, this.value, map);
         }
-
-        public Map Metadata { get { return this.metadata; } }
-
-        public bool IsMacro { get { return this.ismacro; } }
     }
 }

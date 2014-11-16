@@ -83,7 +83,7 @@
                     else
                         throw new LexerException(string.Format("Unexpected '{0}'", chr.ToString() + (chr2).ToString()));
 
-                return new Token(TokenType.Name, chr.ToString() + (chr2).ToString());
+                return new Token(TokenType.Name, chr.ToString() + chr2.ToString());
             }
 
             if (Separators.Contains(chr))

@@ -4,8 +4,8 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using ClojSharp.Core.Compiler;
     using ClojSharp.Core;
+    using ClojSharp.Core.Compiler;
 
     public class Program
     {

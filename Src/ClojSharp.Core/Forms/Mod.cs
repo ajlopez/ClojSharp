@@ -6,7 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Language;
 
-    public class Mod: BaseForm
+    public class Mod : BaseForm
     {
         public override int RequiredArity
         {

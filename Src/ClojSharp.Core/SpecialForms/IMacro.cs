@@ -6,7 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Forms;
 
-    public interface IMacro: IForm
+    public interface IMacro : IForm
     {
         object Expand(IList<object> arguments);
     }

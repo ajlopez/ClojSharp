@@ -3,9 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Reflection;
     using System.Text;
     using ClojSharp.Core.Language;
-    using System.Reflection;
 
     public class MethodForm : BaseForm
     {
