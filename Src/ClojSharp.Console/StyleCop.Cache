@@ -9,9 +9,6 @@
     <milliseconds>264</milliseconds>
     <violations />
   </sourcecode>
-  <project key="950536335">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="Program.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>05/25/2014 17:53:24</timestamp>
@@ -21,4 +18,7 @@
     <milliseconds>566</milliseconds>
     <violations />
   </sourcecode>
+  <project key="950536335">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
 </stylecopresultscache>

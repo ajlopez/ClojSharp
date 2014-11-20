@@ -243,15 +243,6 @@
     <milliseconds>182</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="EvaluateTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>01/12/2014 18:16:33</timestamp>
-      <milliseconds>852</milliseconds>
-    </settings>
-    <timestamp>11/16/2014 07:56:05</timestamp>
-    <milliseconds>68</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="FileTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>01/12/2014 18:16:33</timestamp>
@@ -288,15 +279,6 @@
     <milliseconds>779</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="MachineTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>01/12/2014 18:16:33</timestamp>
-      <milliseconds>852</milliseconds>
-    </settings>
-    <timestamp>11/11/2014 07:21:52</timestamp>
-    <milliseconds>809</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="MFnTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>01/12/2014 18:16:33</timestamp>
@@ -306,9 +288,6 @@
     <milliseconds>208</milliseconds>
     <violations />
   </sourcecode>
-  <project key="1081152653">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="MacroTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>01/12/2014 18:16:33</timestamp>
@@ -316,6 +295,27 @@
     </settings>
     <timestamp>11/16/2014 08:10:17</timestamp>
     <milliseconds>563</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="1081152653">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="MachineTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>01/12/2014 18:16:33</timestamp>
+      <milliseconds>852</milliseconds>
+    </settings>
+    <timestamp>11/20/2014 17:53:31</timestamp>
+    <milliseconds>141</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="EvaluateTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>01/12/2014 18:16:33</timestamp>
+      <milliseconds>852</milliseconds>
+    </settings>
+    <timestamp>11/20/2014 17:52:50</timestamp>
+    <milliseconds>661</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>
