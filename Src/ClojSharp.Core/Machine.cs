@@ -48,6 +48,7 @@
             this.root.SetValue("and", new And());
             this.root.SetValue("or", new Or());
             this.root.SetValue("not", new Not());
+            this.root.SetValue("new", new New());
 
             this.root.SetValue("nil?", new NilP());
             this.root.SetValue("number?", new NumberP());

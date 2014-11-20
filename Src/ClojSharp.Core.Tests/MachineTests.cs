@@ -94,6 +94,8 @@
 
             this.IsSpecialForm("and");
             this.IsSpecialForm("or");
+
+            this.IsSpecialForm("new");
         }
 
         [TestMethod]

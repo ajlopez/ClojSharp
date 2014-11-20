@@ -715,6 +715,12 @@
         }
 
         [TestMethod]
+        public void EvaluateNewString()
+        {
+            Assert.AreEqual("ccc", this.Evaluate("(new System.String \\c 3)"));
+        }
+
+        [TestMethod]
         public void RaiseIfInvalidArityInRand()
         {
             try
