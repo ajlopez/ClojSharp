@@ -12,6 +12,10 @@
     {
         private static Symbol quote = new Symbol("quote");
         private static string quoteChar = "'";
+        private static Symbol backquote = new Symbol("backquote");
+        private static string unquoteChar = "~";
+        private static Symbol unquote = new Symbol("unquote");
+        private static string backquoteChar = "`";
         private static Symbol withMeta = new Symbol("with-meta");
         private static string metaChar = "^";
         private static Symbol var = new Symbol("var");
@@ -71,6 +75,12 @@
             {
                 if (token.Value == quoteChar)
                     return new List(quote, new List(this.ParseExpression(), null));
+
+                if (token.Value == backquoteChar)
+                    return new List(backquote, new List(this.ParseExpression(), null));
+
+                if (token.Value == unquoteChar)
+                    return new List(unquote, new List(this.ParseExpression(), null));
 
                 if (token.Value == metaChar)
                 {

@@ -86,6 +86,7 @@
             this.IsSpecialForm("fn");
             this.IsSpecialForm("mfn");
             this.IsSpecialForm("quote");
+            this.IsSpecialForm("backquote");
             this.IsSpecialForm("let");
             this.IsSpecialForm("if");
             this.IsSpecialForm("do");

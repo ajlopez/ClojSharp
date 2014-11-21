@@ -353,6 +353,17 @@
         }
 
         [TestMethod]
+        public void EvaluateDefinedDefMacroUsingBackquote()
+        {
+            var machine = new Machine();
+            this.Evaluate("(def mylist (mfn [x] `(list ~x)))", machine.RootContext);
+            var result = this.Evaluate("(mylist 1)", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("(1)", result.ToString());
+        }
+
+        [TestMethod]
         public void EvaluateDefinedVar()
         {
             var machine = new Machine();

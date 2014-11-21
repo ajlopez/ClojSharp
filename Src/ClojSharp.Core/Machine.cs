@@ -26,6 +26,7 @@
             this.root.SetValue("fn", new Fn());
             this.root.SetValue("mfn", new MFn());
             this.root.SetValue("quote", new Quote());
+            this.root.SetValue("backquote", new BackQuote());
             this.root.SetValue("let", new Let());
             this.root.SetValue("if", new If());
             this.root.SetValue("do", new Do());

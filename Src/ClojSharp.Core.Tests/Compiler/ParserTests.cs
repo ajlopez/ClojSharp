@@ -225,6 +225,30 @@
         }
 
         [TestMethod]
+        public void ParseBackQuotedList()
+        {
+            Parser parser = new Parser("`(1 2)");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(List));
+            Assert.AreEqual("(backquote (1 2))", expr.ToString());
+        }
+
+        [TestMethod]
+        public void UnquotedSymbol()
+        {
+            Parser parser = new Parser("~x");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(List));
+            Assert.AreEqual("(unquote x)", expr.ToString());
+        }
+
+        [TestMethod]
         public void ParseMetadata()
         {
             Parser parser = new Parser("^{:a 1 :b 2} [1 2 3]");
