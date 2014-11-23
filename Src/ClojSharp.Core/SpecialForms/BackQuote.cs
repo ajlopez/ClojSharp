@@ -13,10 +13,28 @@
         {
             var arg = arguments[0];
 
-            if (arg is List)
-                return Expand((List)arg, context);
+            return this.Expand(arg, context);
+        }
 
-            return arg;
+        private object Expand(object obj, IContext context)
+        {
+            if (obj is List)
+                return this.Expand((List)obj, context);
+
+            if (obj is Vector)
+                return this.Expand((Vector)obj, context);
+
+            return obj;
+        }
+
+        private object Expand(Vector vector, IContext context)
+        {
+            IList<object> elements = new List<object>();
+
+            foreach (var element in vector.Elements)
+                elements.Add(this.Expand(element, context));
+
+            return new Vector(elements);
         }
 
         private object Expand(List list, IContext context)
@@ -26,13 +44,9 @@
             if (first is Symbol && ((Symbol)first).Name == "unquote")
                 return context.GetValue(((Symbol)list.Next.First).Name);
 
-            if (first is List)
-                first = Expand((List)first, context);
+            first = this.Expand(first, context);
 
-            object next = list.Next;
-
-            if (next != null && next is List)
-                next = Expand((List)next, context);
+            var next = this.Expand(list.Next, context);
 
             return new List(first, (ISeq)next);
         }
