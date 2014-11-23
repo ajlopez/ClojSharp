@@ -160,9 +160,9 @@
             var expr = parser.ParseExpression();
 
             Assert.IsNotNull(expr);
-            Assert.IsInstanceOfType(expr, typeof(VectorValue));
+            Assert.IsInstanceOfType(expr, typeof(Vector));
 
-            var vectorvalue = (VectorValue)expr;
+            var vectorvalue = (Vector)expr;
 
             Assert.IsNull(vectorvalue.Metadata);
 
@@ -189,9 +189,9 @@
             var expr = parser.ParseExpression();
 
             Assert.IsNotNull(expr);
-            Assert.IsInstanceOfType(expr, typeof(VectorValue));
+            Assert.IsInstanceOfType(expr, typeof(Vector));
 
-            var vectorvalue = (VectorValue)expr;
+            var vectorvalue = (Vector)expr;
 
             Assert.IsNotNull(vectorvalue.Metadata);
             Assert.AreEqual(true, vectorvalue.Metadata.GetValue(new Keyword("foo")));
@@ -256,10 +256,10 @@
             var expr = parser.ParseExpression();
 
             Assert.IsNotNull(expr);
-            Assert.IsInstanceOfType(expr, typeof(VectorValue));
+            Assert.IsInstanceOfType(expr, typeof(Vector));
             Assert.AreEqual("[1 2 3]", expr.ToString());
 
-            var value = (VectorValue)expr;
+            var value = (Vector)expr;
 
             Assert.IsNotNull(value.Metadata);
             Assert.AreEqual(1, value.Metadata.GetValue(new Keyword("a")));

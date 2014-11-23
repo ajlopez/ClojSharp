@@ -11,12 +11,7 @@
     {
         public object Evaluate(IContext context, IList<object> arguments)
         {
-            var argument = arguments[0];
-
-            if (argument is VectorValue)
-                return new Vector(((VectorValue)argument).Expressions);
-
-            return argument;
+            return arguments[0];
         }
     }
 }

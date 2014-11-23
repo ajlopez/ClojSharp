@@ -17,12 +17,12 @@
             if (arguments.Count == 0)
                 throw new ArityException(typeof(Loop), arguments.Count);
 
-            var vector = arguments[0] as VectorValue;
+            var vector = arguments[0] as Vector;
 
             if (vector == null)
                 throw new IllegalArgumentException("loop requires a vector for its bindings");
 
-            var elements = vector.Expressions;
+            var elements = vector.Elements;
 
             if (elements.Count % 2 != 0)
                 throw new IllegalArgumentException("loop requires an even number of forms in binding vector");

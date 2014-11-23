@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class Vector : IMetadata, IEvaluable
+    public class Vector : IMetadata, IEvaluable, IObject
     {
         private IList<object> elements;
         private Map metadata;
@@ -53,6 +53,11 @@
             }
 
             return result + "]";
+        }
+
+        public IObject WithMetadata(Map map)
+        {
+            return new Vector(this.elements, map);
         }
     }
 }

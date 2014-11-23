@@ -97,7 +97,7 @@
                     return new List(var, new List(this.ParseExpression(), null));
 
                 if (token.Value == anonfnDispatch)
-                    return new List(fn, new List(new VectorValue(new object[] { }), new List(this.ParseList(), null)));
+                    return new List(fn, new List(new Vector(new object[] { }), new List(this.ParseList(), null)));
 
                 if (token.Value == nilName)
                     return null;
@@ -135,7 +135,7 @@
             return list;
         }
 
-        private VectorValue ParseVector()
+        private Vector ParseVector()
         {
             List<object> expressions = new List<object>();
             var token = this.lexer.NextToken();
@@ -150,7 +150,7 @@
             if (token == null)
                 throw new ParserException("Unclosed vector");
 
-            return new VectorValue(expressions);
+            return new Vector(expressions);
         }
 
         private MapValue ParseMap()

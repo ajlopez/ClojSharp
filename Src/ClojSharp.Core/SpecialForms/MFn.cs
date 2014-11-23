@@ -16,7 +16,7 @@
 
         private Macro EvaluateMacro(IContext context, IList<object> arguments)
         {
-            var elements = ((VectorValue)arguments[0]).Expressions;
+            var elements = ((Vector)arguments[0]).Elements;
             IList<string> names = new List<string>();
             string restname = null;
             int nelement = 0;

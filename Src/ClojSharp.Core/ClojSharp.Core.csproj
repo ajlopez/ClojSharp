@@ -124,7 +124,6 @@
     <Compile Include="Language\Namespace.cs" />
     <Compile Include="Language\Predicates.cs" />
     <Compile Include="Language\RecurValues.cs" />
-    <Compile Include="Language\VectorValue.cs" />
     <Compile Include="Language\Keyword.cs" />
     <Compile Include="Language\EmptyList.cs" />
     <Compile Include="Language\IEvaluable.cs" />
