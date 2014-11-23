@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class Vector : IMetadata
+    public class Vector : IMetadata, IEvaluable
     {
         private IList<object> elements;
         private Map metadata;
@@ -26,6 +26,33 @@
         public Map Metadata
         {
             get { return this.metadata; }
+        }
+
+        public object Evaluate(IContext context)
+        {
+            object[] values = new object[this.elements.Count];
+
+            for (var k = 0; k < values.Length; k++)
+                values[k] = Machine.Evaluate(this.elements[k], context);
+
+            return new Vector(values, this.metadata);
+        }
+
+        public override string ToString()
+        {
+            string result = "[";
+
+            for (int k = 0; k < this.elements.Count; k++)
+            {
+                var expr = this.elements[k];
+
+                if (k > 0)
+                    result += " ";
+
+                result += expr.ToString();
+            }
+
+            return result + "]";
         }
     }
 }

@@ -5,12 +5,18 @@
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Forms;
+    using ClojSharp.Core.Language;
 
     public class Quote : IForm
     {
         public object Evaluate(IContext context, IList<object> arguments)
         {
-            return arguments[0];
+            var argument = arguments[0];
+
+            if (argument is VectorValue)
+                return new Vector(((VectorValue)argument).Expressions);
+
+            return argument;
         }
     }
 }

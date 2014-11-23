@@ -183,6 +183,26 @@
         }
 
         [TestMethod]
+        public void EvaluateQuoteVector()
+        {
+            var result = this.Evaluate("(quote [1 2 3])");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Vector));
+            Assert.AreEqual("[1 2 3]", result.ToString());
+        }
+
+        [TestMethod]
+        public void EvaluateQuoteVectorWithList()
+        {
+            var result = this.Evaluate("(quote [1 (+ 1 1) 3])");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Vector));
+            Assert.AreEqual("[1 (+ 1 1) 3]", result.ToString());
+        }
+
+        [TestMethod]
         public void EvaluateQuoteList()
         {
             Assert.AreEqual("(1 2)", this.Evaluate("(quote (1 2))").ToString());
@@ -361,6 +381,16 @@
 
             Assert.IsNotNull(result);
             Assert.AreEqual("(1)", result.ToString());
+        }
+
+        [TestMethod]
+        public void EvaluateBackquoteOverVector()
+        {
+            var machine = new Machine();
+            var result = this.Evaluate("(let [x 2] `[1 ~x 3])", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("[1 2 3]", result.ToString());
         }
 
         [TestMethod]
