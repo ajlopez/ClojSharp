@@ -159,6 +159,20 @@
         }
 
         [TestMethod]
+        public void GetUnquoteAsName()
+        {
+            Lexer lexer = new Lexer("~");
+
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Name, token.Type);
+            Assert.AreEqual("~", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetChar()
         {
             Lexer lexer = new Lexer("\\a");
