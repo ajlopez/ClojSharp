@@ -384,6 +384,16 @@
         }
 
         [TestMethod]
+        public void EvaluateBackquoteOverList()
+        {
+            var machine = new Machine();
+            var result = this.Evaluate("(let [x 2] `(1 ~x 3))", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("(1 2 3)", result.ToString());
+        }
+
+        [TestMethod]
         public void EvaluateBackquoteOverVector()
         {
             var machine = new Machine();

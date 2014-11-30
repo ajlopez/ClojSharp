@@ -243,24 +243,6 @@
     <milliseconds>378</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Let.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>02/09/2014 20:22:30</timestamp>
-    <milliseconds>906</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Loop.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>02/10/2014 08:39:33</timestamp>
-    <milliseconds>944</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="Or.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -268,15 +250,6 @@
     </settings>
     <timestamp>03/24/2014 20:08:55</timestamp>
     <milliseconds>821</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Quote.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>02/09/2014 20:22:22</timestamp>
-    <milliseconds>765</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="VarF.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -405,15 +378,6 @@
     <milliseconds>915</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Vector.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>05/03/2014 19:40:35</timestamp>
-    <milliseconds>677</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="VectorValue.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -448,24 +412,6 @@
     </settings>
     <timestamp>05/11/2014 19:33:26</timestamp>
     <milliseconds>321</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Fn.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>05/12/2014 14:41:17</timestamp>
-    <milliseconds>228</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>10/21/2014 07:55:06</timestamp>
-    <milliseconds>284</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="TokenType.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -693,15 +639,6 @@
     <milliseconds>918</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="MFn.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>11/13/2014 09:02:55</timestamp>
-    <milliseconds>264</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="VarContext.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -774,18 +711,6 @@
     <milliseconds>408</milliseconds>
     <violations />
   </sourcecode>
-  <project key="-1333396368">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
-  <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>11/20/2014 17:53:52</timestamp>
-    <milliseconds>464</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="New.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -793,6 +718,90 @@
     </settings>
     <timestamp>11/20/2014 17:51:42</timestamp>
     <milliseconds>14</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="-1333396368">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/23/2014 06:47:14</timestamp>
+    <milliseconds>153</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Vector.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/23/2014 06:50:23</timestamp>
+    <milliseconds>494</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/21/2014 05:58:11</timestamp>
+    <milliseconds>732</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="BackQuote.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/23/2014 07:00:49</timestamp>
+    <milliseconds>829</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Fn.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/23/2014 06:48:11</timestamp>
+    <milliseconds>696</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Let.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/23/2014 06:49:18</timestamp>
+    <milliseconds>791</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Loop.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/23/2014 06:51:56</timestamp>
+    <milliseconds>695</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="MFn.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/23/2014 06:48:38</timestamp>
+    <milliseconds>368</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Quote.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/23/2014 06:53:59</timestamp>
+    <milliseconds>389</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>
