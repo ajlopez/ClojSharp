@@ -249,6 +249,18 @@
         }
 
         [TestMethod]
+        public void UnquoteSplicingSymbol()
+        {
+            Parser parser = new Parser("~@x");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(List));
+            Assert.AreEqual("(unquote-splice x)", expr.ToString());
+        }
+
+        [TestMethod]
         public void ParseMetadata()
         {
             Parser parser = new Parser("^{:a 1 :b 2} [1 2 3]");

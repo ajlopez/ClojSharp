@@ -15,6 +15,8 @@
         private static Symbol backquote = new Symbol("backquote");
         private static string unquoteChar = "~";
         private static Symbol unquote = new Symbol("unquote");
+        private static string unquoteSpliceChar = "~@";
+        private static Symbol unquoteSplice = new Symbol("unquote-splice");
         private static string backquoteChar = "`";
         private static Symbol withMeta = new Symbol("with-meta");
         private static string metaChar = "^";
@@ -81,6 +83,9 @@
 
                 if (token.Value == unquoteChar)
                     return new List(unquote, new List(this.ParseExpression(), null));
+
+                if (token.Value == unquoteSpliceChar)
+                    return new List(unquoteSplice, new List(this.ParseExpression(), null));
 
                 if (token.Value == metaChar)
                 {
