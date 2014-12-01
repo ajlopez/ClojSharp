@@ -23,6 +23,14 @@
 
         public ISeq Rest { get { return this.rest == null ? EmptyList.Instance : this.rest; } }
 
+        public static List AddList(ISeq list1, List list2)
+        {
+            if (list1 == null)
+                return list2;
+
+            return new List(list1.First, AddList(list1.Next, list2));
+        }
+
         public object Evaluate(IContext context)
         {
             IForm fn;

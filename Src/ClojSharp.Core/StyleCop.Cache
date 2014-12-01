@@ -720,18 +720,6 @@
     <milliseconds>14</milliseconds>
     <violations />
   </sourcecode>
-  <project key="-1333396368">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
-  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>11/23/2014 06:47:14</timestamp>
-    <milliseconds>153</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="Vector.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -802,6 +790,18 @@
     </settings>
     <timestamp>11/23/2014 06:53:59</timestamp>
     <milliseconds>389</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="-1333396368">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>11/30/2014 06:14:28</timestamp>
+    <milliseconds>704</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>

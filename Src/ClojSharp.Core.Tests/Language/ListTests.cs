@@ -23,6 +23,18 @@
         }
 
         [TestMethod]
+        public void AddList()
+        {
+            List list1 = new List(1, new List(2, null));
+            List list2 = new List(3, new List(4, null));
+
+            var result = List.AddList(list1, list2);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("(1 2 3 4)", result.ToString());
+        }
+
+        [TestMethod]
         public void EvaluateAddIntegers()
         {
             Context context = new Context();

@@ -44,6 +44,14 @@
             if (first is Symbol && ((Symbol)first).Name == "unquote")
                 return context.GetValue(((Symbol)list.Next.First).Name);
 
+            if (first is List && ((List)first).First is Symbol && ((Symbol)((List)first).First).Name == "unquote-splice")
+            {
+                List lst = (List)first;
+                Symbol symbol = (Symbol)lst.Next.First;
+                ISeq seq = (ISeq)context.GetValue(symbol.Name);
+                return List.AddList(seq, (List)this.Expand(list.Next, context));
+            }
+
             first = this.Expand(first, context);
 
             var next = this.Expand(list.Next, context);
