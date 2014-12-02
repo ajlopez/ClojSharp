@@ -414,13 +414,33 @@
         }
 
         [TestMethod]
-        public void EvaluateBackquoteOverVector()
+        public void EvaluateBackquoteOverVectorWithUnquote()
         {
             var machine = new Machine();
             var result = this.Evaluate("(let [x 2] `[1 ~x 3])", machine.RootContext);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("[1 2 3]", result.ToString());
+        }
+
+        [TestMethod]
+        public void EvaluateBackquoteOverVectorWithUnquoteSplice()
+        {
+            var machine = new Machine();
+            var result = this.Evaluate("(let [x '(2 3)] `[1 ~@x 4])", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("[1 2 3 4]", result.ToString());
+        }
+
+        [TestMethod]
+        public void EvaluateBackquoteOverVectorWithUnquoteSpliceAndUnquote()
+        {
+            var machine = new Machine();
+            var result = this.Evaluate("(let [x '(2 3) y 4] `[1 ~@x ~y])", machine.RootContext);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("[1 2 3 4]", result.ToString());
         }
 
         [TestMethod]

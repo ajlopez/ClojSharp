@@ -32,7 +32,20 @@
             IList<object> elements = new List<object>();
 
             foreach (var element in vector.Elements)
-                elements.Add(this.Expand(element, context));
+                if (element is List && ((List)element).First is Symbol && ((Symbol)((List)element).First).Name == "unquote-splice")
+                {
+                    List lst = (List)element;
+                    Symbol symbol = (Symbol)lst.Next.First;
+                    ISeq seq = (ISeq)context.GetValue(symbol.Name);
+
+                    while (seq != null)
+                    {
+                        elements.Add(seq.First);
+                        seq = seq.Next;
+                    }
+                }
+                else
+                    elements.Add(this.Expand(element, context));
 
             return new Vector(elements);
         }

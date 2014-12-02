@@ -396,15 +396,6 @@
     <milliseconds>243</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="List.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>05/11/2014 19:17:38</timestamp>
-    <milliseconds>535</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="MultiFunction.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -738,15 +729,6 @@
     <milliseconds>732</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="BackQuote.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>11/23/2014 07:00:49</timestamp>
-    <milliseconds>829</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="Fn.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -792,9 +774,6 @@
     <milliseconds>389</milliseconds>
     <violations />
   </sourcecode>
-  <project key="-1333396368">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -802,6 +781,27 @@
     </settings>
     <timestamp>11/30/2014 06:14:28</timestamp>
     <milliseconds>704</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="-1333396368">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="List.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>12/01/2014 06:46:42</timestamp>
+    <milliseconds>123</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="BackQuote.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>12/01/2014 06:56:43</timestamp>
+    <milliseconds>900</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>
