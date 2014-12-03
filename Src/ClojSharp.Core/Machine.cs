@@ -84,7 +84,7 @@
             Parser parser = new Parser(reader);
 
             for (object obj = parser.ParseExpression(); obj != null; obj = parser.ParseExpression())
-                expressions.Add(Evaluate(obj, context));
+                expressions.Add(obj);
 
             return expressions;
         }
