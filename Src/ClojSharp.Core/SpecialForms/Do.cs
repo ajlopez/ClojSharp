@@ -12,8 +12,11 @@
         {
             object result = null;
 
-            foreach (var argument in arguments)
-                result = Machine.Evaluate(argument, context);
+            for (int k = 0; k < arguments.Count; k++)
+            {
+                arguments[k] = Machine.CompileExpression(arguments[k], context);
+                result = Machine.Evaluate(arguments[k], context);
+            }
 
             return result;
         }

@@ -103,6 +103,29 @@
             return obj;
         }
 
+        public static object CompileExpression(object obj, IContext context)
+        {
+            if (!(obj is List))
+                return obj;
+
+            List list = (List)obj;
+
+            if (!(list.First is Symbol))
+                return obj;
+
+            var form = context.GetValue(((Symbol)list.First).Name);
+
+            if (!(form is IMacro))
+                return obj;
+
+            IList<object> arguments = new List<object>();
+
+            for (var args = list.Next; args != null; args = args.Next)
+                arguments.Add(args.First);
+
+            return CompileExpression(((IMacro)form).Expand(arguments), context);
+        }
+
         public object EvaluateFile(string filename)
         {
             return EvaluateFile(filename, this.RootContext);
