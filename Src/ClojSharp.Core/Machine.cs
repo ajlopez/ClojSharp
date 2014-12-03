@@ -76,16 +76,23 @@
 
         public IContext RootContext { get { return this.root; } }
 
-        public static object EvaluateFile(string filename, IContext context)
+        public static IList<object> CompileFile(string filename, IContext context)
         {
+            IList<object> expressions = new List<object>();
+
             TextReader reader = File.OpenText(filename);
             Parser parser = new Parser(reader);
-            object result = null;
 
             for (object obj = parser.ParseExpression(); obj != null; obj = parser.ParseExpression())
-                result = Evaluate(obj, context);
+                expressions.Add(Evaluate(obj, context));
 
-            return result;
+            return expressions;
+        }
+
+        public static object EvaluateFile(string filename, IContext context)
+        {
+            var pgm = new Do();
+            return pgm.Evaluate(context, CompileFile(filename, context));
         }
 
         public static object Evaluate(object obj, IContext context)
