@@ -297,6 +297,15 @@
     <milliseconds>109</milliseconds>
     <violations />
   </sourcecode>
+  <sourcecode name="ListTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>01/12/2014 18:16:33</timestamp>
+      <milliseconds>852</milliseconds>
+    </settings>
+    <timestamp>12/01/2014 06:45:00</timestamp>
+    <milliseconds>348</milliseconds>
+    <violations />
+  </sourcecode>
   <project key="1081152653">
     <configuration>DEBUG;TRACE</configuration>
   </project>
@@ -305,17 +314,8 @@
       <timestamp>01/12/2014 18:16:33</timestamp>
       <milliseconds>852</milliseconds>
     </settings>
-    <timestamp>12/01/2014 06:57:33</timestamp>
-    <milliseconds>873</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="ListTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>01/12/2014 18:16:33</timestamp>
-      <milliseconds>852</milliseconds>
-    </settings>
-    <timestamp>12/01/2014 06:45:00</timestamp>
-    <milliseconds>348</milliseconds>
+    <timestamp>12/02/2014 06:17:59</timestamp>
+    <milliseconds>664</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>

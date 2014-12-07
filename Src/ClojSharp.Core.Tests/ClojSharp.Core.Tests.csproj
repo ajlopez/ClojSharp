@@ -65,6 +65,7 @@
     <Compile Include="Compiler\LexerTests.cs" />
     <Compile Include="Compiler\ParserTests.cs" />
     <Compile Include="ContextTests.cs" />
+    <Compile Include="CoreTests.cs" />
     <Compile Include="FileTests.cs" />
     <Compile Include="Forms\MultiFunctionTests.cs" />
     <Compile Include="Forms\RecurTests.cs" />

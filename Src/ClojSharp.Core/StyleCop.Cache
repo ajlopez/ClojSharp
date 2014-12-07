@@ -225,15 +225,6 @@
     <milliseconds>318</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Do.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>02/09/2014 20:22:48</timestamp>
-    <milliseconds>730</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="If.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -720,15 +711,6 @@
     <milliseconds>494</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>11/21/2014 05:58:11</timestamp>
-    <milliseconds>732</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="Fn.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -783,9 +765,6 @@
     <milliseconds>704</milliseconds>
     <violations />
   </sourcecode>
-  <project key="-1333396368">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="List.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -795,13 +774,34 @@
     <milliseconds>123</milliseconds>
     <violations />
   </sourcecode>
+  <project key="-1333396368">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
   <sourcecode name="BackQuote.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
       <milliseconds>243</milliseconds>
     </settings>
-    <timestamp>12/01/2014 06:56:43</timestamp>
-    <milliseconds>900</milliseconds>
+    <timestamp>12/02/2014 06:17:59</timestamp>
+    <milliseconds>425</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>12/07/2014 03:47:25</timestamp>
+    <milliseconds>702</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Do.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>12/03/2014 08:01:01</timestamp>
+    <milliseconds>461</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>
