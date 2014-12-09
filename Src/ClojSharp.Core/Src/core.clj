@@ -11,3 +11,7 @@
 (defn ffirst [x] (first (first x)))
 
 (defn nfirst [x] (next (first x)))
+
+(defn fnext [x] (first (next x)))
+
+(defn nnext [x] (next (next x)))

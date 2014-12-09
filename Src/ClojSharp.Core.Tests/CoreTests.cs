@@ -36,6 +36,8 @@
             this.IsForm("second");
             this.IsForm("ffirst");
             this.IsForm("nfirst");
+            this.IsForm("fnext");
+            this.IsForm("nnext");
         }
 
         [TestMethod]
@@ -61,6 +63,18 @@
         public void EvaluateNFirst()
         {
             Assert.AreEqual("(2 3)", this.Evaluate("(nfirst '((1 2 3) (4 5 6)))").ToString());
+        }
+
+        [TestMethod]
+        public void EvaluateFNext()
+        {
+            Assert.AreEqual("(4 5 6)", this.Evaluate("(fnext '((1 2 3) (4 5 6)))").ToString());
+        }
+
+        [TestMethod]
+        public void EvaluateNNext()
+        {
+            Assert.IsNull(this.Evaluate("(nnext '((1 2 3) (4 5 6)))"));
         }
 
         private void IsForm(string name)
