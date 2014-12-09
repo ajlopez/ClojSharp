@@ -9,3 +9,5 @@
 (defn second [x] (first (next x)))
 
 (defn ffirst [x] (first (first x)))
+
+(defn nfirst [x] (next (first x)))
