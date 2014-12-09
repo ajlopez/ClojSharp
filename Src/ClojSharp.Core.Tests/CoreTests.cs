@@ -34,6 +34,7 @@
         public void MachineHasForms()
         {
             this.IsForm("second");
+            this.IsForm("ffirst");
         }
 
         [TestMethod]
@@ -47,6 +48,12 @@
         public void EvaluateSecond()
         {
             Assert.AreEqual(2, this.Evaluate("(second '(1 2 3))"));
+        }
+
+        [TestMethod]
+        public void EvaluateFFirst()
+        {
+            Assert.AreEqual(1, this.Evaluate("(ffirst '((1 2 3) (4 5 6)))"));
         }
 
         private void IsForm(string name)

@@ -7,3 +7,5 @@
 )
 
 (defn second [x] (first (next x)))
+
+(defn ffirst [x] (first (first x)))
