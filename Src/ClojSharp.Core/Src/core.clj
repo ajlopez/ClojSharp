@@ -5,3 +5,5 @@
 (defmacro defn [name & fdecl]
 	`(def ~name (fn ~@fdecl))
 )
+
+(defn second [x] (first (next x)))

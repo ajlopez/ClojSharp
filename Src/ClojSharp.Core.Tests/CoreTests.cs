@@ -31,10 +31,30 @@
         }
 
         [TestMethod]
+        public void MachineHasForms()
+        {
+            this.IsForm("second");
+        }
+
+        [TestMethod]
         public void DefineAndEvaluateFunction()
         {
             this.Evaluate("(defn incr [x] (+ x 1))");
             Assert.AreEqual(2, this.Evaluate("(incr 1)"));
+        }
+
+        [TestMethod]
+        public void EvaluateSecond()
+        {
+            Assert.AreEqual(2, this.Evaluate("(second '(1 2 3))"));
+        }
+
+        private void IsForm(string name)
+        {
+            var result = this.machine.RootContext.GetValue(name);
+            Assert.IsNotNull(result, name);
+            Assert.IsInstanceOfType(result, typeof(IForm), name);
+            Assert.IsInstanceOfType(result, typeof(BaseForm), name);
         }
 
         private void IsMacro(string name)
