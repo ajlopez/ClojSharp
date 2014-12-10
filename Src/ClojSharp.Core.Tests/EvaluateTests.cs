@@ -812,6 +812,12 @@
         }
 
         [TestMethod]
+        public void EvaluateSeqOverList()
+        {
+            Assert.AreEqual("(1 2 3)", this.Evaluate("(seq '(1 2 3))").ToString());
+        }
+
+        [TestMethod]
         public void RaiseIfInvalidArityInRand()
         {
             try

@@ -72,6 +72,8 @@
             this.root.SetValue("class", new Class());
             this.root.SetValue("max", new Max());
             this.root.SetValue("min", new Min());
+
+            this.root.SetValue("seq", new Seq());
         }
 
         public IContext RootContext { get { return this.root; } }

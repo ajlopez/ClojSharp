@@ -77,6 +77,8 @@
 
             this.IsForm("max");
             this.IsForm("min");
+
+            this.IsForm("seq");
         }
 
         [TestMethod]
