@@ -128,6 +128,18 @@
             return CompileExpression(((IMacro)form).Expand(arguments), context);
         }
 
+        public static string ToString(object value)
+        {
+            if (value == null)
+                return "nil";
+            if (value.Equals(false))
+                return "false";
+            if (value.Equals(true))
+                return "true";
+
+            return value.ToString();
+        }
+
         public object EvaluateFile(string filename)
         {
             return EvaluateFile(filename, this.RootContext);

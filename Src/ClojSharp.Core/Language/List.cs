@@ -49,18 +49,12 @@
             StringBuilder sb = new StringBuilder();
 
             sb.Append("(");
-            if (this.first == null)
-                sb.Append("nil");
-            else
-                sb.Append(this.first.ToString());
+            sb.Append(Machine.ToString(this.first));
 
             for (var rest = this.rest; rest != null; rest = rest.Next)
             {
                 sb.Append(" ");
-                if (rest.First == null)
-                    sb.Append("nil");
-                else
-                    sb.Append(rest.First.ToString());
+                sb.Append(Machine.ToString(rest.First));
             }
             
             sb.Append(")");

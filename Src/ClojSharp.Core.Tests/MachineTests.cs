@@ -118,6 +118,16 @@
             Assert.AreEqual(1, Machine.Evaluate(new Symbol("one"), context));
         }
 
+        [TestMethod]
+        public void MachineValueToString()
+        {
+            Assert.AreEqual("foo", Machine.ToString("foo"));
+            Assert.AreEqual("42", Machine.ToString(42));
+            Assert.AreEqual("nil", Machine.ToString(null));
+            Assert.AreEqual("false", Machine.ToString(false));
+            Assert.AreEqual("true", Machine.ToString(true));
+        }
+
         private void IsSpecialForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);
