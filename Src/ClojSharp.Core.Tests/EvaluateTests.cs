@@ -40,6 +40,12 @@
         }
 
         [TestMethod]
+        public void EvaluateChar()
+        {
+            Assert.AreEqual('a', this.Evaluate("\\a", null));
+        }
+
+        [TestMethod]
         public void EvaluateSymbolInContext()
         {
             Context context = new Context();
