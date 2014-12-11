@@ -225,6 +225,12 @@
         }
 
         [TestMethod]
+        public void EvaluateListWithChars()
+        {
+            Assert.AreEqual("(\\a \\b \\c)", this.Evaluate("(list \\a \\b \\c)").ToString());
+        }
+
+        [TestMethod]
         public void EvaluateFirst()
         {
             Assert.AreEqual(1, this.Evaluate("(first (list 1 2))"));

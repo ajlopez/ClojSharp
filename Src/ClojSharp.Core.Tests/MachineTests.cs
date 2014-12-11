@@ -128,6 +128,16 @@
             Assert.AreEqual("true", Machine.ToString(true));
         }
 
+        [TestMethod]
+        public void MachineCharToString()
+        {
+            Assert.AreEqual("\\a", Machine.ToString('a'));
+            Assert.AreEqual("\\C", Machine.ToString('C'));
+            Assert.AreEqual("\\\\n", Machine.ToString('\n'));
+            Assert.AreEqual("\\\\r", Machine.ToString('\r'));
+            Assert.AreEqual("\\\\t", Machine.ToString('\t'));
+        }
+
         private void IsSpecialForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

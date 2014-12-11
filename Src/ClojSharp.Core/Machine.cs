@@ -137,6 +137,20 @@
             if (value.Equals(true))
                 return "true";
 
+            if (value is char)
+            {
+                char ch = (char)value;
+
+                if (ch == '\n')
+                    return "\\\\n";
+                if (ch == '\r')
+                    return "\\\\r";
+                if (ch == '\t')
+                    return "\\\\t";
+
+                return "\\" + ch.ToString();
+            }
+
             return value.ToString();
         }
 
