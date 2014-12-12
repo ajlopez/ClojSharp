@@ -201,6 +201,19 @@
         }
 
         [TestMethod]
+        public void GetEscapedChar()
+        {
+            Lexer lexer = new Lexer("\\\\\\ \\\\n \\\\r \\\\t");
+
+            IsToken(lexer, TokenType.Character, "\\");
+            IsToken(lexer, TokenType.Character, "\n");
+            IsToken(lexer, TokenType.Character, "\r");
+            IsToken(lexer, TokenType.Character, "\t");
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetNumeralQuoteAsName()
         {
             Lexer lexer = new Lexer("#'");
@@ -636,6 +649,15 @@
                 Assert.IsInstanceOfType(ex, typeof(LexerException));
                 Assert.AreEqual("Unexpected '%a'", ex.Message);
             }
+        }
+
+        private static void IsToken(Lexer lexer, TokenType type, string value)
+        {
+            var token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(type, token.Type);
+            Assert.AreEqual(value, token.Value);
         }
     }
 }
