@@ -46,6 +46,15 @@
         }
 
         [TestMethod]
+        public void EvaluateEscapedChar()
+        {
+            Assert.AreEqual('\\', this.Evaluate("\\\\\\", null));
+            Assert.AreEqual('\t', this.Evaluate("\\\\t", null));
+            Assert.AreEqual('\r', this.Evaluate("\\\\r", null));
+            Assert.AreEqual('\n', this.Evaluate("\\\\n", null));
+        }
+
+        [TestMethod]
         public void EvaluateSymbolInContext()
         {
             Context context = new Context();
