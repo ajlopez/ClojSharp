@@ -23,25 +23,17 @@
         {
             Lexer lexer = new Lexer("name");
 
-            var token = lexer.NextToken();
-
-            Assert.IsNotNull(token);
-            Assert.AreEqual(TokenType.Name, token.Type);
-            Assert.AreEqual("name", token.Value);
+            IsToken(lexer, TokenType.Name, "name");
 
             Assert.IsNull(lexer.NextToken());
         }
 
         [TestMethod]
-        public void GeDottName()
+        public void GeDotName()
         {
             Lexer lexer = new Lexer(".name");
 
-            var token = lexer.NextToken();
-
-            Assert.IsNotNull(token);
-            Assert.AreEqual(TokenType.Name, token.Type);
-            Assert.AreEqual(".name", token.Value);
+            IsToken(lexer, TokenType.Name, ".name");
 
             Assert.IsNull(lexer.NextToken());
         }
@@ -51,11 +43,7 @@
         {
             Lexer lexer = new Lexer("name?");
 
-            var token = lexer.NextToken();
-
-            Assert.IsNotNull(token);
-            Assert.AreEqual(TokenType.Name, token.Type);
-            Assert.AreEqual("name?", token.Value);
+            IsToken(lexer, TokenType.Name, "name?");
 
             Assert.IsNull(lexer.NextToken());
         }
@@ -65,11 +53,7 @@
         {
             Lexer lexer = new Lexer("bit-and");
 
-            var token = lexer.NextToken();
-
-            Assert.IsNotNull(token);
-            Assert.AreEqual(TokenType.Name, token.Type);
-            Assert.AreEqual("bit-and", token.Value);
+            IsToken(lexer, TokenType.Name, "bit-and");
 
             Assert.IsNull(lexer.NextToken());
         }
@@ -79,11 +63,7 @@
         {
             Lexer lexer = new Lexer("clojsharp.core");
 
-            var token = lexer.NextToken();
-
-            Assert.IsNotNull(token);
-            Assert.AreEqual(TokenType.Name, token.Type);
-            Assert.AreEqual("clojsharp.core", token.Value);
+            IsToken(lexer, TokenType.Name, "clojsharp.core");
 
             Assert.IsNull(lexer.NextToken());
         }
@@ -93,11 +73,7 @@
         {
             Lexer lexer = new Lexer("clojsharp.core/str");
 
-            var token = lexer.NextToken();
-
-            Assert.IsNotNull(token);
-            Assert.AreEqual(TokenType.Name, token.Type);
-            Assert.AreEqual("clojsharp.core/str", token.Value);
+            IsToken(lexer, TokenType.Name, "clojsharp.core/str");
 
             Assert.IsNull(lexer.NextToken());
         }
@@ -107,11 +83,7 @@
         {
             Lexer lexer = new Lexer("name ; comment");
 
-            var token = lexer.NextToken();
-
-            Assert.IsNotNull(token);
-            Assert.AreEqual(TokenType.Name, token.Type);
-            Assert.AreEqual("name", token.Value);
+            IsToken(lexer, TokenType.Name, "name");
 
             Assert.IsNull(lexer.NextToken());
         }
@@ -194,11 +166,7 @@
         {
             Lexer lexer = new Lexer("#'");
 
-            var token = lexer.NextToken();
-
-            Assert.IsNotNull(token);
-            Assert.AreEqual(TokenType.Name, token.Type);
-            Assert.AreEqual("#'", token.Value);
+            IsToken(lexer, TokenType.Name, "#'");
 
             Assert.IsNull(lexer.NextToken());
         }
