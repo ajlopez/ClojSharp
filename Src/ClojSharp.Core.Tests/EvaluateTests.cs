@@ -839,6 +839,22 @@
         }
 
         [TestMethod]
+        public void EvaluateSeqOverString()
+        {
+            var result = this.Evaluate("(seq \"foo\")");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ISeq));
+
+            var seq = (ISeq)result;
+
+            Assert.AreEqual('f', seq.First);
+            Assert.AreEqual('o', seq.Rest.First);
+            Assert.AreEqual('o', seq.Rest.Rest.First);
+            Assert.IsInstanceOfType(seq.Rest.Rest.Rest, typeof(EmptyList));
+        }
+
+        [TestMethod]
         public void RaiseIfInvalidArityInRand()
         {
             try

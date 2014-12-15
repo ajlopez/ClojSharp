@@ -1,6 +1,7 @@
 ﻿namespace ClojSharp.Core.Forms
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
@@ -10,7 +11,12 @@
     {
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
-            return (ISeq)arguments[0];
+            var arg = arguments[0];
+
+            if (arg is ISeq)
+                return (ISeq)arg;
+
+            return EnumerableSeq.MakeSeq((IEnumerable)arg);
         }
     }
 }
