@@ -66,6 +66,7 @@
             this.IsForm("symbol?");
             this.IsForm("seq?");
             this.IsForm("blank?");
+            this.IsForm("instance?");
 
             this.IsForm("str");
             this.IsForm("rand");

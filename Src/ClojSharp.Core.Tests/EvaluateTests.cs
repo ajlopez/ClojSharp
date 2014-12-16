@@ -833,6 +833,13 @@
         }
 
         [TestMethod]
+        public void EvaluateInstanceP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(instance? System.String \"foo\")"));
+            Assert.AreEqual(false, this.Evaluate("(instance? System.String 42)"));
+        }
+
+        [TestMethod]
         public void EvaluateSeqOverList()
         {
             Assert.AreEqual("(1 2 3)", this.Evaluate("(seq '(1 2 3))").ToString());

@@ -63,6 +63,7 @@
             this.root.SetValue("symbol?", new SymbolP());
             this.root.SetValue("seq?", new SeqP());
             this.root.SetValue("blank?", new BlankP());
+            this.root.SetValue("instance?", new InstanceP());
 
             this.root.SetValue("str", new Str());
             this.root.SetValue("rand", new Rand());

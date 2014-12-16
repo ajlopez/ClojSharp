@@ -14,6 +14,7 @@
         private Map metadata;
         private object value;
         private bool hasns;
+        private bool hasdot;
 
         public Symbol(string name)
             : this(name, null)
@@ -29,6 +30,7 @@
                 this.value = new MethodForm(this.name.Substring(1));
 
             this.hasns = name.IndexOf('/') > 0;
+            this.hasdot = name.IndexOf('.') > 0;
         }
 
         public string Name { get { return this.name; } }
@@ -53,6 +55,9 @@
                 var name = words[1];
                 return type.InvokeMember(name, BindingFlags.Public | BindingFlags.GetField | BindingFlags.GetProperty | BindingFlags.Static, null, type, null);
             }
+
+            if (this.hasdot)
+                return Type.GetType(this.name);
 
             var result = context.GetValue(this.name);
 

@@ -85,6 +85,7 @@
     <Compile Include="Forms\BlankP.cs" />
     <Compile Include="Forms\AtomF.cs" />
     <Compile Include="Forms\Class.cs" />
+    <Compile Include="Forms\InstanceP.cs" />
     <Compile Include="Forms\Seq.cs" />
     <Compile Include="Forms\MethodForm.cs" />
     <Compile Include="Forms\Min.cs" />
