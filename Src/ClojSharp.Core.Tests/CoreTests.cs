@@ -21,6 +21,7 @@
         {
             this.machine = new Machine();
             this.machine.RootContext.SetValue("seq?", null);
+            this.machine.RootContext.SetValue("char?", null);
             this.machine.EvaluateFile("Src\\core.clj");
         }
 
@@ -40,6 +41,7 @@
             this.IsForm("fnext");
             this.IsForm("nnext");
             this.IsForm("seq?");
+            this.IsForm("char?");
         }
 
         [TestMethod]
@@ -84,6 +86,14 @@
         {
             Assert.AreEqual(true, this.Evaluate("(seq? '(1 2 3))"));
             Assert.AreEqual(false, this.Evaluate("(seq? 42)"));
+        }
+
+        [TestMethod]
+        public void EvaluateCharP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(char? \\a)"));
+            Assert.AreEqual(false, this.Evaluate("(char? 42)"));
+            Assert.AreEqual(false, this.Evaluate("(char? \"foo\")"));
         }
 
         private void IsForm(string name)

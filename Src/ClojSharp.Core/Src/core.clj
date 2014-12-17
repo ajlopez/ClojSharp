@@ -17,3 +17,6 @@
 (defn nnext [x] (next (next x)))
 
 (defn seq? [x] (instance? ClojSharp.Core.Language.ISeq x))
+
+(defn char? [x] (instance? System.Char x))
+
