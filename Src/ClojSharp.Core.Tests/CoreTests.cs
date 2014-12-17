@@ -20,6 +20,7 @@
         public void Setup()
         {
             this.machine = new Machine();
+            this.machine.RootContext.SetValue("seq?", null);
             this.machine.EvaluateFile("Src\\core.clj");
         }
 
@@ -38,6 +39,7 @@
             this.IsForm("nfirst");
             this.IsForm("fnext");
             this.IsForm("nnext");
+            this.IsForm("seq?");
         }
 
         [TestMethod]
@@ -75,6 +77,13 @@
         public void EvaluateNNext()
         {
             Assert.IsNull(this.Evaluate("(nnext '((1 2 3) (4 5 6)))"));
+        }
+
+        [TestMethod]
+        public void EvaluateSeqP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(seq? '(1 2 3))"));
+            Assert.AreEqual(false, this.Evaluate("(seq? 42)"));
         }
 
         private void IsForm(string name)

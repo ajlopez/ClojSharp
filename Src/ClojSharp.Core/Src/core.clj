@@ -15,3 +15,5 @@
 (defn fnext [x] (first (next x)))
 
 (defn nnext [x] (next (next x)))
+
+(defn seq? [x] (instance? ClojSharp.Core.Language.ISeq x))
