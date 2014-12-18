@@ -20,3 +20,6 @@
 
 (defn char? [x] (instance? System.Char x))
 
+(defn map? [x] (instance? ClojSharp.Core.Language.Map x))
+
+(defn vector? [x] (instance? ClojSharp.Core.Language.Vector x))

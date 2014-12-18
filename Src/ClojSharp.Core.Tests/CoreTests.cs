@@ -42,6 +42,8 @@
             this.IsForm("nnext");
             this.IsForm("seq?");
             this.IsForm("char?");
+            this.IsForm("map?");
+            this.IsForm("vector?");
         }
 
         [TestMethod]
@@ -94,6 +96,22 @@
             Assert.AreEqual(true, this.Evaluate("(char? \\a)"));
             Assert.AreEqual(false, this.Evaluate("(char? 42)"));
             Assert.AreEqual(false, this.Evaluate("(char? \"foo\")"));
+        }
+
+        [TestMethod]
+        public void EvaluateMapP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(map? {:a 1 :b 2})"));
+            Assert.AreEqual(false, this.Evaluate("(map? 42)"));
+            Assert.AreEqual(false, this.Evaluate("(map? \"foo\")"));
+        }
+
+        [TestMethod]
+        public void EvaluateVectorP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(vector? [1 2])"));
+            Assert.AreEqual(false, this.Evaluate("(vector? 42)"));
+            Assert.AreEqual(false, this.Evaluate("(vector? \"foo\")"));
         }
 
         private void IsForm(string name)
