@@ -821,6 +821,14 @@
         }
 
         [TestMethod]
+        public void EvaluateDot()
+        {
+            Assert.AreEqual("42", this.Evaluate("(. 42 (ToString))"));
+            Assert.AreEqual("FOO", this.Evaluate("(. \"foo\" (ToUpper))"));
+            Assert.AreEqual("oo", this.Evaluate("(. \"foo\" (Substring 1))"));
+        }
+
+        [TestMethod]
         public void EvaluateTypeStaticField()
         {
             Assert.AreEqual(System.Math.PI, this.Evaluate("System.Math/PI"));

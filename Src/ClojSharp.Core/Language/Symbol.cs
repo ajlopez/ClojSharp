@@ -45,7 +45,7 @@
 
         public object Evaluate(IContext context)
         {
-            if (this.name[0] == '.')
+            if (this.name[0] == '.' && this.name.Length > 1)
                 return this.value;
 
             if (this.hasns)

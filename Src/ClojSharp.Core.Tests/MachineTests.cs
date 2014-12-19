@@ -100,6 +100,8 @@
             this.IsSpecialForm("or");
 
             this.IsSpecialForm("new");
+
+            this.IsSpecialForm(".");
         }
 
         [TestMethod]
