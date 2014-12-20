@@ -13,6 +13,7 @@
     public class Machine
     {
         private VarContext root;
+        private IDictionary<string, Namespace> namespaces = new Dictionary<string, Namespace>();
 
         public Machine()
         {
@@ -159,6 +160,19 @@
         public object EvaluateFile(string filename)
         {
             return EvaluateFile(filename, this.RootContext);
+        }
+
+        public void SetNamespace(Namespace ns)
+        {
+            this.namespaces[ns.Name] = ns;
+        }
+
+        public Namespace GetNamespace(string name)
+        {
+            if (this.namespaces.ContainsKey(name))
+                return this.namespaces[name];
+
+            return null;
         }
     }
 }

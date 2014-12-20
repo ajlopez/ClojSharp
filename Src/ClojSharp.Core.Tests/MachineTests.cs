@@ -141,6 +141,21 @@
             Assert.AreEqual("\\\\t", Machine.ToString('\t'));
         }
 
+        [TestMethod]
+        public void GetUnknownNamespaceAsNull()
+        {
+            Assert.IsNull(machine.GetNamespace("foo"));
+        }
+
+        [TestMethod]
+        public void SetAndGetNamespace()
+        {
+            var ns = new Namespace("ns1");
+            machine.SetNamespace(ns);
+
+            Assert.AreSame(ns, machine.GetNamespace("ns1"));
+        }
+
         private void IsSpecialForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

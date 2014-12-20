@@ -18,7 +18,17 @@
             Assert.AreEqual("foo", var.Name);
             Assert.AreEqual("user/foo", var.FullName);
             Assert.IsNull(var.Value);
-            Assert.IsNull(var.Metadata);
+
+            Assert.IsNotNull(var.Metadata);
+
+            var meta = var.Metadata;
+
+            Assert.AreEqual("foo", meta.GetValue("name"));
+            Assert.IsNotNull(meta.GetValue("ns"));
+            Assert.IsInstanceOfType(meta.GetValue("ns"), typeof(Namespace));
+
+            var ns = (Namespace)meta.GetValue("ns");
+            Assert.AreEqual("user", ns.Name);
         }
 
         [TestMethod]
