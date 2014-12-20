@@ -40,12 +40,28 @@
             if (this.keyvalues.ContainsKey(name))
                 return this.keyvalues[name];
 
+            if (this.metadata != null)
+                return this.metadata.GetValue(name);
+
             return null;
         }
 
         public Map SetValue(object name, object value)
         {
-            return new Map(new object[] { name, value }, this.metadata);
+            return new Map(new object[] { name, value }, this);
+        }
+
+        public Map Merge(Map map)
+        {
+            Map newmap = this;
+
+            if (map.metadata != null)
+                newmap = newmap.Merge(map.metadata);
+
+            foreach (var key in map.keyvalues.Keys)
+                newmap = newmap.SetValue(key, map.keyvalues[key]);
+
+            return newmap;
         }
     }
 }

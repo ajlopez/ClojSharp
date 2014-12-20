@@ -38,6 +38,14 @@
 
             this.metadata = metadata;
 
+            if (this.metadata == null)
+                this.metadata = new Map(new object[] { "ns", @namespace, "name", name });
+            else
+            {
+                this.metadata = this.metadata.SetValue("ns", @namespace);
+                this.metadata = this.metadata.SetValue("name", name);
+            }
+
             if (metadata != null && true.Equals(metadata.GetValue(macrokw)))
                 this.ismacro = true;
             else
@@ -56,7 +64,7 @@
 
         public IObject WithMetadata(Map map)
         {
-            return new Var(this.@namespace, this.name, this.value, map);
+            return new Var(this.@namespace, this.name, this.value, this.metadata.Merge(map));
         }
     }
 }

@@ -41,7 +41,7 @@
             Assert.AreEqual("one", var.Name);
             Assert.AreEqual("user/one", var.FullName);
             Assert.AreEqual(1, var.Value);
-            Assert.IsNull(var.Metadata);
+            Assert.IsNotNull(var.Metadata);
         }
 
         [TestMethod]
@@ -52,9 +52,9 @@
             Map map = new Map(new object[] { });
             Var var2 = (Var)var.WithMetadata(map);
 
-            Assert.IsNull(var.Metadata);
+            Assert.IsNotNull(var.Metadata);
             Assert.IsNotNull(var2.Metadata);
-            Assert.AreSame(map, var2.Metadata);
+            Assert.AreNotSame(map, var2.Metadata);
             Assert.AreEqual(1, var.Value);
             Assert.AreEqual(1, var2.Value);
             Assert.AreEqual("one", var2.Name);
