@@ -23,6 +23,9 @@
 
             this.root.SetValue("*ns*", ns);
 
+            this.SetNamespace(ns);
+            this.SetNamespace(new Namespace("user"));
+
             this.root.SetValue("def", new Def());
             this.root.SetValue("fn", new Fn());
             this.root.SetValue("mfn", new MFn());

@@ -156,6 +156,13 @@
             Assert.AreSame(ns, machine.GetNamespace("ns1"));
         }
 
+        [TestMethod]
+        public void GetInitialNamespaces()
+        {
+            Assert.IsNotNull(machine.GetNamespace("clojsharp.core"));
+            Assert.IsNotNull(machine.GetNamespace("user"));
+        }
+
         private void IsSpecialForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);
