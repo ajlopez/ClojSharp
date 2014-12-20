@@ -17,7 +17,7 @@
 
         public Machine()
         {
-            this.root = new VarContext();
+            this.root = new VarContext(this);
 
             var ns = new Namespace("clojsharp.core");
 

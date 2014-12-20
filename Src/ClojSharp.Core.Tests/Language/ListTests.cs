@@ -59,7 +59,8 @@
         [TestMethod]
         public void EvaluateDefIntegerVariable()
         {
-            IContext context = new VarContext();
+            Machine machine = new Machine();
+            IContext context = new VarContext(machine);
             context.SetValue("def", new Def());
             List list = new List(new Symbol("def"), new List(new Symbol("one"), new List(1, null)));
 

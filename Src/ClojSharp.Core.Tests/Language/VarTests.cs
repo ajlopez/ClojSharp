@@ -13,7 +13,8 @@
         [TestMethod]
         public void CreateWithName()
         {
-            Var var = new Var("foo");
+            Machine machine = new Machine();
+            Var var = new Var(machine, "foo");
 
             Assert.AreEqual("foo", var.Name);
             Assert.AreEqual("user/foo", var.FullName);
@@ -34,7 +35,8 @@
         [TestMethod]
         public void CreateWithNameAndValue()
         {
-            Var var = new Var("one", 1);
+            Machine machine = new Machine();
+            Var var = new Var(machine, "one", 1);
 
             Assert.AreEqual("one", var.Name);
             Assert.AreEqual("user/one", var.FullName);
@@ -45,7 +47,8 @@
         [TestMethod]
         public void WithMetadata()
         {
-            Var var = new Var("one", 1);
+            Machine machine = new Machine();
+            Var var = new Var(machine, "one", 1);
             Map map = new Map(new object[] { });
             Var var2 = (Var)var.WithMetadata(map);
 
@@ -61,7 +64,8 @@
         [TestMethod]
         public void IsMacro()
         {
-            Var var = new Var("one", 1);
+            Machine machine = new Machine();
+            Var var = new Var(machine, "one", 1);
             Map map = new Map(new object[] { new Keyword("macro"), true });
             Var var2 = (Var)var.WithMetadata(map);
 

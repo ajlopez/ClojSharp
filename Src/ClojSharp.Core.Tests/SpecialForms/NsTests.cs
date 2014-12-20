@@ -15,7 +15,8 @@
         [TestMethod]
         public void NsSimpleName()
         {
-            IContext context = new VarContext();
+            Machine machine = new Machine();
+            IContext context = new VarContext(machine);
             Symbol symbol = new Symbol("foo");
             Ns ns = new Ns();
 

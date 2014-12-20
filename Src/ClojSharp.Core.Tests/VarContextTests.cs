@@ -12,7 +12,8 @@
         [TestMethod]
         public void GetNullIfUndefined()
         {
-            VarContext context = new VarContext();
+            Machine machine = new Machine();
+            VarContext context = new VarContext(machine);
 
             Assert.IsNull(context.GetValue("name"));
         }
@@ -20,7 +21,8 @@
         [TestMethod]
         public void SetAndGetValue()
         {
-            VarContext context = new VarContext();
+            Machine machine = new Machine();
+            VarContext context = new VarContext(machine);
 
             context.SetValue("one", 1);
             Assert.AreEqual(1, context.GetValue("one"));
@@ -29,7 +31,8 @@
         [TestMethod]
         public void GetValueFromParent()
         {
-            VarContext parent = new VarContext();
+            Machine machine = new Machine();
+            VarContext parent = new VarContext(machine);
             Context context = new Context(parent);
 
             parent.SetValue("one", 1);
@@ -40,7 +43,8 @@
         [TestMethod]
         public void GetVar()
         {
-            VarContext parent = new VarContext();
+            Machine machine = new Machine();
+            VarContext parent = new VarContext(machine);
             Context context = new Context(parent);
 
             parent.SetValue("one", 1);

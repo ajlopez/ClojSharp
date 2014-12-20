@@ -8,9 +8,17 @@
 
     public class VarContext : IContext
     {
+        private Machine machine;
         private IDictionary<string, Var> variables = new Dictionary<string, Var>();
 
+        public VarContext(Machine machine)
+        {
+            this.machine = machine;
+        }
+
         public VarContext TopContext { get { return this; } }
+
+        public Machine Machine { get { return this.machine; } }
 
         public object GetValue(string name)
         {
@@ -22,7 +30,7 @@
 
         public void SetValue(string name, object value)
         {
-            this.variables[name] = new Var(name, value);
+            this.variables[name] = new Var(this.machine, name, value);
         }
 
         public void SetVar(Var var)

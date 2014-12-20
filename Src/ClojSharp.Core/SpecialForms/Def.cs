@@ -22,7 +22,7 @@
                     value = ((IEvaluable)value).Evaluate(context);
             }
 
-            var variable = new Var(symbol.Name, value);
+            var variable = new Var(context.TopContext.Machine, symbol.Name, value);
 
             if (symbol.Metadata != null)
                 variable = (Var)variable.WithMetadata(symbol.Metadata);
