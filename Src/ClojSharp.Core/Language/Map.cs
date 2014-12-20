@@ -42,5 +42,10 @@
 
             return null;
         }
+
+        public Map SetValue(object name, object value)
+        {
+            return new Map(new object[] { name, value }, this.metadata);
+        }
     }
 }

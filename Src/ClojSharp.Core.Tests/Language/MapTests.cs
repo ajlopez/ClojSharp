@@ -34,5 +34,17 @@
         {
             new Map(new object[] { new Keyword("a"), 1, new Keyword("b") });
         }
+
+        [TestMethod]
+        public void SetValue()
+        {
+            Map map = new Map(null);
+            Map map2 = map.SetValue("name", "foo");
+
+            Assert.AreNotSame(map, map2);
+
+            Assert.AreEqual("foo", map2.GetValue("name"));
+            Assert.IsNull(map.GetValue("name"));
+        }
     }
 }
