@@ -23,3 +23,8 @@
 (defn map? [x] (instance? ClojSharp.Core.Language.Map x))
 
 (defn vector? [x] (instance? ClojSharp.Core.Language.Vector x))
+
+(defn meta [x] 
+    (if (instance? ClojSharp.Core.Language.IMetadata x)
+	    (. x (Metadata))))
+

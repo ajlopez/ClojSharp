@@ -22,6 +22,7 @@
             this.machine = new Machine();
             this.machine.RootContext.SetValue("seq?", null);
             this.machine.RootContext.SetValue("char?", null);
+            this.machine.RootContext.SetValue("meta", null);
             this.machine.EvaluateFile("Src\\core.clj");
         }
 
@@ -112,6 +113,24 @@
             Assert.AreEqual(true, this.Evaluate("(vector? [1 2])"));
             Assert.AreEqual(false, this.Evaluate("(vector? 42)"));
             Assert.AreEqual(false, this.Evaluate("(vector? \"foo\")"));
+        }
+
+        [TestMethod]
+        public void EvaluateMeta()
+        {
+            this.Evaluate("(def one 1)");
+
+            var result = this.Evaluate("(meta (var one))");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Map));
+
+            var metadata = (Map)result;
+
+            Assert.AreEqual("one", metadata.GetValue("name"));
+            Assert.IsNotNull(metadata.GetValue("ns"));
+            Assert.IsInstanceOfType(metadata.GetValue("ns"), typeof(Namespace));
+            Assert.AreEqual("user", ((Namespace)metadata.GetValue("ns")).Name);
         }
 
         private void IsForm(string name)
