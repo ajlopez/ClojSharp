@@ -133,6 +133,22 @@
             Assert.AreEqual("user", ((Namespace)metadata.GetValue("ns")).Name);
         }
 
+        [TestMethod]
+        public void EvaluateWithMeta()
+        {
+            var result = this.Evaluate("(with-meta [1 2 3] { :my \"meta\" })");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Vector));
+
+            var vector = (Vector)result;
+            var metadata = vector.Metadata;
+
+            Assert.IsNotNull(metadata);
+
+            Assert.AreEqual("meta", metadata.GetValue(new Keyword("my")));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

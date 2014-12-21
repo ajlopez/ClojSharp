@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class Vector : IMetadata, IEvaluable, IObject
+    public class Vector : IEvaluable, IObject
     {
         private IList<object> elements;
         private Map metadata;
@@ -57,7 +57,12 @@
 
         public IObject WithMetadata(Map map)
         {
-            return new Vector(this.elements, map);
+            Map newmap = map;
+
+            if (this.metadata != null)
+                newmap = this.metadata.Merge(map);
+
+            return new Vector(this.elements, newmap);
         }
     }
 }

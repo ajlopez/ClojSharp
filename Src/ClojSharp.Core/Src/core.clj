@@ -28,3 +28,5 @@
     (if (instance? ClojSharp.Core.Language.IMetadata x)
 	    (. x (Metadata))))
 
+(defn with-meta [x m] 
+	(. x (WithMetadata m)))

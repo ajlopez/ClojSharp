@@ -20,7 +20,7 @@
             object[] args = null;
 
             if (list.Next != null)
-                args = ((List)list.Next).ToList().ToArray();
+                args = ((List)list.Next).ToList().Select(arg => Machine.Evaluate(arg, context)).ToArray();
 
             return type.InvokeMember(name, BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.InvokeMethod | BindingFlags.Instance, null, target, args);
         }
