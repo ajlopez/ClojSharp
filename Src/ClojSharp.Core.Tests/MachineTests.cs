@@ -80,6 +80,8 @@
             this.IsForm("min");
 
             this.IsForm("seq");
+
+            this.IsForm("recur");
         }
 
         [TestMethod]

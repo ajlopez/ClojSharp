@@ -149,6 +149,15 @@
             Assert.AreEqual("meta", metadata.GetValue(new Keyword("my")));
         }
 
+        [TestMethod]
+        public void EvaluateLastInList()
+        {
+            Assert.AreEqual(3, this.Evaluate("(last '(1 2 3))"));
+            Assert.AreEqual(1, this.Evaluate("(last '(1))"));
+            Assert.IsNull(this.Evaluate("(last '())"));
+            Assert.IsNull(this.Evaluate("(last nil)"));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

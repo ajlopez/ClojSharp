@@ -30,3 +30,8 @@
 
 (defn with-meta [x m] 
 	(. x (WithMetadata m)))
+
+(defn last [s]
+	(if (next s)
+		(recur (next s))
+		(first s))))

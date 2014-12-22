@@ -80,6 +80,7 @@
             this.root.SetValue("min", new Min());
 
             this.root.SetValue("seq", new Seq());
+            this.root.SetValue("recur", new Recur());
         }
 
         public IContext RootContext { get { return this.root; } }
