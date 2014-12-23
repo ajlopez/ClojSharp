@@ -31,6 +31,14 @@
             return new List(list1.First, AddList(list1.Next, list2));
         }
 
+        public static List AddItem(ISeq list, object item)
+        {
+            if (list == null)
+                return new List(item, null);
+
+            return new List(list.First, AddItem(list.Next, item));
+        }
+
         public object Evaluate(IContext context)
         {
             IForm fn;

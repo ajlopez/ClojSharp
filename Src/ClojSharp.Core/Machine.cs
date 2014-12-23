@@ -43,6 +43,7 @@
             this.root.SetValue("first", new First());
             this.root.SetValue("rest", new Rest());
             this.root.SetValue("next", new Next());
+            this.root.SetValue("conj", new Conj());
 
             this.root.SetValue("+", new Add());
             this.root.SetValue("-", new Subtract());
