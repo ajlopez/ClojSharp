@@ -147,23 +147,23 @@
         [TestMethod]
         public void GetUnknownNamespaceAsNull()
         {
-            Assert.IsNull(machine.GetNamespace("foo"));
+            Assert.IsNull(this.machine.GetNamespace("foo"));
         }
 
         [TestMethod]
         public void SetAndGetNamespace()
         {
             var ns = new Namespace("ns1");
-            machine.SetNamespace(ns);
+            this.machine.SetNamespace(ns);
 
-            Assert.AreSame(ns, machine.GetNamespace("ns1"));
+            Assert.AreSame(ns, this.machine.GetNamespace("ns1"));
         }
 
         [TestMethod]
         public void GetInitialNamespaces()
         {
-            Assert.IsNotNull(machine.GetNamespace("clojsharp.core"));
-            Assert.IsNotNull(machine.GetNamespace("user"));
+            Assert.IsNotNull(this.machine.GetNamespace("clojsharp.core"));
+            Assert.IsNotNull(this.machine.GetNamespace("user"));
         }
 
         private void IsSpecialForm(string name)

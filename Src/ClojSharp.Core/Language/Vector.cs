@@ -23,6 +23,41 @@
 
         public IList<object> Elements { get { return this.elements; } }
 
+        public object First
+        {
+            get 
+            { 
+                if (this.elements == null || this.elements.Count == 0) 
+                    return null; 
+                
+                return this.elements[0]; 
+            }
+        }
+
+        public ISeq Next
+        {
+            get 
+            { 
+                if (this.elements == null || this.elements.Count <= 1)
+                    return null; 
+                
+                return new Vector(this.elements.Skip(1).ToList()); 
+            }
+        }
+
+        public ISeq Rest
+        {
+            get 
+            { 
+                var next = this.Next; 
+                
+                if (next == null) 
+                    return EmptyVector.Instance; 
+                
+                return next; 
+            }
+        }
+
         public Map Metadata
         {
             get { return this.metadata; }
@@ -63,21 +98,6 @@
                 newmap = this.metadata.Merge(map);
 
             return new Vector(this.elements, newmap);
-        }
-
-        public object First
-        {
-            get { if (this.elements == null || this.elements.Count == 0) return null; return this.elements[0]; }
-        }
-
-        public ISeq Next
-        {
-            get { if (this.elements == null || this.elements.Count <= 1) return null; return new Vector(this.elements.Skip(1).ToList()); }
-        }
-
-        public ISeq Rest
-        {
-            get { var next = this.Next; if (next == null) return EmptyVector.Instance; return next; }
         }
     }
 }
