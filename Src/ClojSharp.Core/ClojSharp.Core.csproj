@@ -121,7 +121,6 @@
     <Compile Include="Forms\Subtract.cs" />
     <Compile Include="IContext.cs" />
     <Compile Include="Language\Atom.cs" />
-    <Compile Include="Language\EmptyVector.cs" />
     <Compile Include="Language\EnumerableSeq.cs" />
     <Compile Include="Language\IReference.cs" />
     <Compile Include="Language\IObject.cs" />

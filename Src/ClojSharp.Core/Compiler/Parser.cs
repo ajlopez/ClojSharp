@@ -102,7 +102,7 @@
                     return new List(var, new List(this.ParseExpression(), null));
 
                 if (token.Value == anonfnDispatch)
-                    return new List(fn, new List(EmptyVector.Instance, new List(this.ParseList(), null)));
+                    return new List(fn, new List(new Vector(null), new List(this.ParseList(), null)));
 
                 if (token.Value == nilName)
                     return null;
@@ -154,9 +154,6 @@
 
             if (token == null)
                 throw new ParserException("Unclosed vector");
-
-            if (expressions.Count == 0)
-                return EmptyVector.Instance;
 
             return new Vector(expressions);
         }

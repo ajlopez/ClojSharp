@@ -77,7 +77,7 @@
         public object Evaluate(IContext context)
         {
             if (this.elements == null || this.elements.Count == 0)
-                return EmptyVector.Instance;
+                return this;
 
             object[] values = new object[this.elements.Count];
 
@@ -91,15 +91,16 @@
         {
             string result = "[";
 
-            for (int k = 0; k < this.elements.Count; k++)
-            {
-                var expr = this.elements[k];
+            if (this.elements != null)
+                for (int k = 0; k < this.elements.Count; k++)
+                {
+                    var expr = this.elements[k];
 
-                if (k > 0)
-                    result += " ";
+                    if (k > 0)
+                        result += " ";
 
-                result += expr.ToString();
-            }
+                    result += expr.ToString();
+                }
 
             return result + "]";
         }

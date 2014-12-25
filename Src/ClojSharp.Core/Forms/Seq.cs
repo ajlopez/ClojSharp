@@ -16,11 +16,8 @@
             if (arg == null)
                 return null;
 
-            if (arg is EmptyVector)
-                return null;
-
             if (arg is Vector)
-                return List.FromSequence((ISeq)arg);
+                return List.FromEnumerable(((Vector)arg).Elements);
 
             if (arg is EmptyList)
                 return null;
