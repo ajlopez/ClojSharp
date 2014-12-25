@@ -848,9 +848,23 @@
         }
 
         [TestMethod]
-        public void EvaluateSeqOverList()
+        public void EvaluateSeqWithLists()
         {
             Assert.AreEqual("(1 2 3)", this.Evaluate("(seq '(1 2 3))").ToString());
+            Assert.IsNull(this.Evaluate("(seq '())"));
+        }
+
+        [TestMethod]
+        public void EvaluateSeqWithNil()
+        {
+            Assert.IsNull(this.Evaluate("(seq nil)"));
+        }
+
+        [TestMethod]
+        public void EvaluateSeqWithArrays()
+        {
+            Assert.AreEqual("(1 2 3)", this.Evaluate("(seq [1 2 3])").ToString());
+            Assert.IsNull(this.Evaluate("(seq [])"));
         }
 
         [TestMethod]

@@ -13,6 +13,18 @@
         {
             var arg = arguments[0];
 
+            if (arg == null)
+                return null;
+
+            if (arg is EmptyVector)
+                return null;
+
+            if (arg is Vector)
+                return List.FromSequence((ISeq)arg);
+
+            if (arg is EmptyList)
+                return null;
+
             if (arg is ISeq)
                 return (ISeq)arg;
 

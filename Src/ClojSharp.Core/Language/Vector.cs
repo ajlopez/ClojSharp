@@ -76,6 +76,9 @@
 
         public object Evaluate(IContext context)
         {
+            if (this.elements == null || this.elements.Count == 0)
+                return EmptyVector.Instance;
+
             object[] values = new object[this.elements.Count];
 
             for (var k = 0; k < values.Length; k++)

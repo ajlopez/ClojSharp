@@ -31,19 +31,20 @@
             string restname = null;
             int nelement = 0;
 
-            foreach (var element in elements)
-            {
-                string name = ((Symbol)element).Name;
-
-                if (name == "&" && nelement == elements.Count - 2)
+            if (elements != null)
+                foreach (var element in elements)
                 {
-                    restname = ((Symbol)elements[elements.Count - 1]).Name;
-                    break;
-                }
+                    string name = ((Symbol)element).Name;
 
-                names.Add(((Symbol)element).Name);
-                nelement++;
-            }
+                    if (name == "&" && nelement == elements.Count - 2)
+                    {
+                        restname = ((Symbol)elements[elements.Count - 1]).Name;
+                        break;
+                    }
+
+                    names.Add(((Symbol)element).Name);
+                    nelement++;
+                }
 
             object body = arguments[1];
 

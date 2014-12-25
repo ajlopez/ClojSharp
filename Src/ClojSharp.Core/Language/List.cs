@@ -39,6 +39,14 @@
             return new List(list.First, AddItem(list.Next, item));
         }
 
+        public static List FromSequence(ISeq seq)
+        {
+            if (seq == null)
+                return null;
+
+            return new List(seq.First, FromSequence(seq.Next));
+        }
+
         public object Evaluate(IContext context)
         {
             IForm fn;
