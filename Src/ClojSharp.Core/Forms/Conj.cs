@@ -22,10 +22,10 @@
 
             if (first == null || first is List)
             {
-                ISeq result = Language.List.AddItem((ISeq)arguments[0], arguments[1]);
+                ISeq result = new List(arguments[1], (ISeq)arguments[0]);
 
                 for (int k = 2; k < arguments.Count; k++)
-                    result = Language.List.AddItem(result, arguments[k]);
+                    result = new List(arguments[k], result);
 
                 return result;
             }

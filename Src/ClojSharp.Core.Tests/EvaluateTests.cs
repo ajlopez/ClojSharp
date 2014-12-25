@@ -916,10 +916,10 @@
         [TestMethod]
         public void EvaluateConjWithLists()
         {
-            Assert.AreEqual("(1 2 3 4)", this.Evaluate("(conj '(1 2 3) 4)").ToString());
+            Assert.AreEqual("(4 1 2 3)", this.Evaluate("(conj '(1 2 3) 4)").ToString());
             Assert.AreEqual("(1)", this.Evaluate("(conj nil 1)").ToString());
             Assert.AreEqual("(1)", this.Evaluate("(conj '() 1)").ToString());
-            Assert.AreEqual("(1 2 3 4)", this.Evaluate("(conj '(1 2) 3 4)").ToString());
+            Assert.AreEqual("(4 3 1 2)", this.Evaluate("(conj '(1 2) 3 4)").ToString());
         }
 
         [TestMethod]
