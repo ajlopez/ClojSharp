@@ -37,8 +37,8 @@
             var result = vector.Next;
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(Vector));
-            Assert.AreEqual("[2]", result.ToString());
+            Assert.IsInstanceOfType(result, typeof(List));
+            Assert.AreEqual("(2)", result.ToString());
 
             Assert.AreEqual(1, vector.First);
         }
@@ -59,8 +59,8 @@
             var result = vector.Rest;
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(Vector));
-            Assert.AreEqual("[2]", result.ToString());
+            Assert.IsInstanceOfType(result, typeof(List));
+            Assert.AreEqual("(2)", result.ToString());
 
             Assert.AreEqual(1, vector.First);
         }
@@ -73,8 +73,8 @@
             var result = vector.Rest;
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(EmptyVector));
-            Assert.AreEqual("[]", result.ToString());
+            Assert.IsInstanceOfType(result, typeof(EmptyList));
+            Assert.AreEqual("()", result.ToString());
             Assert.IsNull(result.First);
             Assert.AreSame(result, result.Rest);
             Assert.IsNull(result.Next);

@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Forms;
+using System.Collections;
 
     public class List : IEvaluable, ISeq
     {
@@ -45,6 +46,14 @@
                 return null;
 
             return new List(seq.First, FromSequence(seq.Next));
+        }
+
+        public static List FromEnumerable(IEnumerable<object> enumerable)
+        {
+            if (enumerable == null || enumerable.Count() == 0)
+                return null;
+
+            return new List(enumerable.First(), FromEnumerable(enumerable.Skip(1)));
         }
 
         public object Evaluate(IContext context)

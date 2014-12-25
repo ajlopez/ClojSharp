@@ -41,7 +41,7 @@
                 if (this.elements == null || this.elements.Count <= 1)
                     return null; 
                 
-                return new Vector(this.elements.Skip(1).ToList()); 
+                return List.FromEnumerable(this.elements.Skip(1)); 
             }
         }
 
@@ -52,7 +52,7 @@
                 var next = this.Next; 
                 
                 if (next == null) 
-                    return EmptyVector.Instance; 
+                    return EmptyList.Instance; 
                 
                 return next; 
             }

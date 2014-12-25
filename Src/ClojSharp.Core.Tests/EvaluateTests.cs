@@ -248,7 +248,7 @@
         }
 
         [TestMethod]
-        public void EvaluateRest()
+        public void EvaluateRestWithLists()
         {
             Assert.AreEqual("(2)", this.Evaluate("(rest (list 1 2))").ToString());
             Assert.AreSame(EmptyList.Instance, this.Evaluate("(rest nil)"));
@@ -256,11 +256,26 @@
         }
 
         [TestMethod]
-        public void EvaluateNext()
+        public void EvaluateRestWithVectors()
+        {
+            Assert.AreEqual("(2 3)", this.Evaluate("(rest [1 2 3])").ToString());
+            Assert.AreEqual("(2)", this.Evaluate("(rest [1 2])").ToString());
+            Assert.AreSame(EmptyList.Instance, this.Evaluate("(rest [])"));
+        }
+
+        [TestMethod]
+        public void EvaluateNextWithLists()
         {
             Assert.AreEqual("(2)", this.Evaluate("(next (list 1 2))").ToString());
             Assert.IsNull(this.Evaluate("(next nil)"));
             Assert.IsNull(this.Evaluate("(next ())"));
+        }
+
+        [TestMethod]
+        public void EvaluateNextWithVectors()
+        {
+            Assert.AreEqual("(2)", this.Evaluate("(next [1 2])").ToString());
+            Assert.IsNull(this.Evaluate("(next [])"));
         }
 
         [TestMethod]
