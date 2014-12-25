@@ -35,3 +35,9 @@
 	(if (next s)
 		(recur (next s))
 		(first s))))
+
+(defn butlast [s]
+	(loop [ret [] s s]
+		(if (next s)
+			(recur (conj ret (first s)) (next s))
+            (seq ret))))

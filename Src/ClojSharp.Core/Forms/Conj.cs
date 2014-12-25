@@ -18,12 +18,24 @@
 
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
-            ISeq result = Language.List.AddItem((ISeq)arguments[0], arguments[1]);
+            var first = arguments[0];
+
+            if (first == null || first is List)
+            {
+                ISeq result = Language.List.AddItem((ISeq)arguments[0], arguments[1]);
+
+                for (int k = 2; k < arguments.Count; k++)
+                    result = Language.List.AddItem(result, arguments[k]);
+
+                return result;
+            }
+
+            Vector vector = Language.Vector.AddItem((Vector)first, arguments[1]);
 
             for (int k = 2; k < arguments.Count; k++)
-                result = Language.List.AddItem(result, arguments[k]);
+                vector = Language.Vector.AddItem(vector, arguments[k]);
 
-            return result;
+            return vector;
         }
     }
 }

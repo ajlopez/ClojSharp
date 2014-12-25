@@ -63,6 +63,17 @@
             get { return this.metadata; }
         }
 
+        public static Vector AddItem(Vector vector, object item)
+        {
+            if (vector == null || vector.elements == null || vector.elements.Count == 0)
+                return new Vector(new object[] { item });
+
+            var newlist = new List<object>(vector.elements);
+            newlist.Add(item);
+
+            return new Vector(newlist);
+        }
+
         public object Evaluate(IContext context)
         {
             object[] values = new object[this.elements.Count];

@@ -167,6 +167,13 @@
             Assert.IsNull(this.Evaluate("(last nil)"));
         }
 
+        [TestMethod]
+        public void EvaluateButLastInList()
+        {
+            Assert.AreEqual("(1 2)", this.Evaluate("(butlast '(1 2 3))").ToString());
+            Assert.IsNull(this.Evaluate("(butlast '(1))"));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

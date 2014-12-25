@@ -103,6 +103,7 @@
             this.IsSpecialForm("or");
 
             this.IsSpecialForm("new");
+            this.IsSpecialForm("loop");
 
             this.IsSpecialForm(".");
         }

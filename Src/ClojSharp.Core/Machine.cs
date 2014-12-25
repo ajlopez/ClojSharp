@@ -82,6 +82,7 @@
 
             this.root.SetValue("seq", new Seq());
             this.root.SetValue("recur", new Recur());
+            this.root.SetValue("loop", new Loop());
         }
 
         public IContext RootContext { get { return this.root; } }
