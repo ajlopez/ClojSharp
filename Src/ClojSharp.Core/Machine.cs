@@ -160,7 +160,31 @@
                 return "\\" + ch.ToString();
             }
 
+            if (value is Vector)
+                return value.ToString();
+
+            if (value is ISeq)
+                return ToString((ISeq)value);
+
             return value.ToString();
+        }
+
+        public static string ToString(ISeq seq)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("(");
+            sb.Append(Machine.ToString(seq.First));
+
+            for (var rest = seq.Next; rest != null; rest = rest.Next)
+            {
+                sb.Append(" ");
+                sb.Append(Machine.ToString(rest.First));
+            }
+
+            sb.Append(")");
+
+            return sb.ToString();
         }
 
         public object EvaluateFile(string filename)

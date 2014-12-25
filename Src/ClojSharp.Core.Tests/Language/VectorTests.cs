@@ -37,7 +37,7 @@
             var result = vector.Next;
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(List));
+            Assert.IsInstanceOfType(result, typeof(ISeq));
             Assert.AreEqual("(2)", result.ToString());
 
             Assert.AreEqual(1, vector.First);
@@ -59,7 +59,7 @@
             var result = vector.Rest;
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(List));
+            Assert.IsInstanceOfType(result, typeof(ISeq));
             Assert.AreEqual("(2)", result.ToString());
 
             Assert.AreEqual(1, vector.First);

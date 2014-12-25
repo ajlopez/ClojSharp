@@ -59,6 +59,11 @@
             return MakeSeq(value.GetEnumerator());
         }
 
+        public override string ToString()
+        {
+            return Machine.ToString(this);
+        }
+
         private static ISeq MakeSeq(IEnumerator enumerator)
         {
             if (enumerator.MoveNext())

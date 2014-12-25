@@ -41,7 +41,7 @@
                 if (this.elements == null || this.elements.Count <= 1)
                     return null; 
                 
-                return List.FromEnumerable(this.elements.Skip(1)); 
+                return EnumerableSeq.MakeSeq(this.elements.Skip(1)); 
             }
         }
 

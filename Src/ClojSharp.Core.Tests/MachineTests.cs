@@ -130,7 +130,7 @@
         {
             Assert.AreEqual("foo", Machine.ToString("foo"));
             Assert.AreEqual("42", Machine.ToString(42));
-            Assert.AreEqual("nil", Machine.ToString(null));
+            Assert.AreEqual("nil", Machine.ToString((object)null));
             Assert.AreEqual("false", Machine.ToString(false));
             Assert.AreEqual("true", Machine.ToString(true));
         }

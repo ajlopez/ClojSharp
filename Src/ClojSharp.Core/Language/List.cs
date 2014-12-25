@@ -40,14 +40,6 @@
             return new List(list.First, AddItem(list.Next, item));
         }
 
-        public static List FromSequence(ISeq seq)
-        {
-            if (seq == null)
-                return null;
-
-            return new List(seq.First, FromSequence(seq.Next));
-        }
-
         public static List FromEnumerable(IEnumerable<object> enumerable)
         {
             if (enumerable == null || enumerable.Count() == 0)
@@ -71,20 +63,7 @@
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-
-            sb.Append("(");
-            sb.Append(Machine.ToString(this.first));
-
-            for (var rest = this.rest; rest != null; rest = rest.Next)
-            {
-                sb.Append(" ");
-                sb.Append(Machine.ToString(rest.First));
-            }
-            
-            sb.Append(")");
-
-            return sb.ToString();
+            return Machine.ToString(this);
         }
 
         public IList<object> ToList()

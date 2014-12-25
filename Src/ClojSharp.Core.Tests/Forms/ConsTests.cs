@@ -39,6 +39,18 @@
         }
 
         [TestMethod]
+        public void ConsIntegerToVector()
+        {
+            Cons cons = new Cons();
+            var vector = new Vector(new object[] { 2, 3 });
+            var result = cons.EvaluateForm(null, new object[] { 1, vector });
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ISeq));
+            Assert.AreEqual("(1 2 3)", result.ToString());
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void RaiseWhenSecondArgumentIsNotAnISeq()
         {
