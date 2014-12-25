@@ -17,7 +17,14 @@
                 return null;
 
             if (arg is Vector)
-                return List.FromEnumerable(((Vector)arg).Elements);
+            {
+                var vector = (Vector)arg;
+
+                if (vector.Elements == null || vector.Elements.Count == 0)
+                    return null;
+
+                return EnumerableSeq.MakeSeq(vector.Elements);
+            }
 
             if (arg is EmptyList)
                 return null;
