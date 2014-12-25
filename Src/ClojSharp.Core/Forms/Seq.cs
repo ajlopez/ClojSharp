@@ -22,8 +22,8 @@
             if (arg is EmptyList)
                 return null;
 
-            if (arg is ISeq)
-                return (ISeq)arg;
+            if (arg is List)
+                return arg;
 
             return EnumerableSeq.MakeSeq((IEnumerable)arg);
         }
