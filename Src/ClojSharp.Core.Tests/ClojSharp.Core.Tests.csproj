@@ -67,6 +67,7 @@
     <Compile Include="ContextTests.cs" />
     <Compile Include="CoreTests.cs" />
     <Compile Include="FileTests.cs" />
+    <Compile Include="SpecialForms\MultiMacroTests.cs" />
     <Compile Include="Forms\MultiFunctionTests.cs" />
     <Compile Include="Forms\RecurTests.cs" />
     <Compile Include="Language\EnumerableSeqTests.cs" />

@@ -142,7 +142,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecialForms\And.cs" />
     <Compile Include="SpecialForms\BackQuote.cs" />
+    <Compile Include="SpecialForms\BaseMacro.cs" />
     <Compile Include="SpecialForms\Dot.cs" />
+    <Compile Include="SpecialForms\MultiMacro.cs" />
     <Compile Include="SpecialForms\New.cs" />
     <Compile Include="SpecialForms\IMacro.cs" />
     <Compile Include="SpecialForms\MFn.cs" />

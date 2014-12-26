@@ -7,12 +7,17 @@
     using ClojSharp.Core.Exceptions;
     using ClojSharp.Core.Language;
 
-    public class Macro : IMacro
+    public class Macro : BaseMacro
     {
         private IContext closure;
         private IList<string> names;
         private string restname;
         private object body;
+
+        public Macro(IContext closure, IList<string> names, object body)
+            : this(closure, names, null, body)
+        {
+        }
 
         public Macro(IContext closure, IList<string> names, string restname, object body)
         {
@@ -22,12 +27,22 @@
             this.body = body;
         }
 
-        public object Evaluate(IContext context, IList<object> arguments)
+        public override int RequiredArity
+        {
+            get { if (this.names == null) return 0; return this.names.Count; }
+        }
+
+        public override bool VariableArity
+        {
+            get { return this.restname != null; }
+        }
+
+        public override object EvaluateMacro(IContext context, IList<object> arguments)
         {
             return Machine.Evaluate(this.Expand(arguments), context);
         }
 
-        public object Expand(IList<object> arguments)
+        public override object Expand(IList<object> arguments)
         {
             IContext newcontext = new Context(this.closure);
 
