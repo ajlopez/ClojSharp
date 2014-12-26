@@ -13,6 +13,8 @@
             get { return 2; }
         }
 
+        public override bool VariableArity { get { return false; } }
+
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
             return (int)arguments[0] % (int)arguments[1];

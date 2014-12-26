@@ -11,7 +11,7 @@
     {
         public abstract int RequiredArity { get; }
 
-        public virtual bool VariableArity { get { return true; } }
+        public abstract bool VariableArity { get; }
 
         public object Evaluate(IContext context, IList<object> arguments)
         {

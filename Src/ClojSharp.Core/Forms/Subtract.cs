@@ -14,6 +14,11 @@
             get { return 1; }
         }
 
+        public override bool VariableArity
+        {
+            get { return true; }
+        }
+
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
             if (arguments.Any(arg => Predicates.IsReal(arg)))

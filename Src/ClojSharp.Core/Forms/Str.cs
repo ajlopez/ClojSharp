@@ -10,6 +10,8 @@
     {
         public override int RequiredArity { get { return 0; } }
 
+        public override bool VariableArity { get { return true; } }
+
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
             string result = string.Empty;
