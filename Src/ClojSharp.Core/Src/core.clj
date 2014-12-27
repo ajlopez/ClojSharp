@@ -46,3 +46,7 @@
 	([test then] `(if-not ~test ~then nil))
 	([test then else]
 		`(if (not ~test) ~then ~else)))
+
+(defmacro when
+	[test & body]
+	(list 'if test (cons 'do body)))

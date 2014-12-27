@@ -190,6 +190,13 @@
             Assert.AreEqual(2, this.Evaluate("(if-not true 1 2)"));
         }
 
+        [TestMethod]
+        public void EvaluateWhen()
+        {
+            Assert.AreEqual(3, this.Evaluate("(when true 1 2 3)"));
+            Assert.IsNull(this.Evaluate("(when false 1 2 3)"));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);
