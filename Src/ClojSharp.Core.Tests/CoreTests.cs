@@ -174,6 +174,13 @@
             Assert.IsNull(this.Evaluate("(butlast '(1))"));
         }
 
+        [TestMethod]
+        public void EvaluateButLastInVector()
+        {
+            Assert.AreEqual("(1 2)", this.Evaluate("(butlast [1 2 3])").ToString());
+            Assert.IsNull(this.Evaluate("(butlast [1])"));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);
