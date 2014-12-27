@@ -11,7 +11,17 @@
     {
         public object Evaluate(IContext context, IList<object> arguments)
         {
-            return this.EvaluateMacro(context, arguments);
+            if (arguments[0] is List)
+            {
+                IList<Macro> macros = new List<Macro>();
+
+                foreach (var arg in arguments)
+                    macros.Add(this.EvaluateMacro(context, ((List)arg).ToList()));
+
+                return new MultiMacro(macros);
+            }
+            else
+                return this.EvaluateMacro(context, arguments);
         }
 
         private Macro EvaluateMacro(IContext context, IList<object> arguments)

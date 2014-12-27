@@ -480,6 +480,13 @@
         }
 
         [TestMethod]
+        public void EvaluateMFnWithMultiMacro()
+        {
+            Assert.AreEqual(3, this.Evaluate("((mfn ([x] `(+ 1 ~x)) ([x y] `(+ ~x ~y))) 2)"));
+            Assert.AreEqual(5, this.Evaluate("((mfn ([x] `(+ 1 ~x)) ([x y] `(+ ~x ~y))) 2 3)"));
+        }
+
+        [TestMethod]
         public void EvaluateDefinedVar()
         {
             var machine = new Machine();
