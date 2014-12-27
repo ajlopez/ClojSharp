@@ -41,3 +41,8 @@
 		(if (next s)
 			(recur (conj ret (first s)) (next s))
             (seq ret))))
+
+(defmacro if-not
+	([test then] `(if-not ~test ~then nil))
+	([test then else]
+		`(if (not ~test) ~then ~else)))

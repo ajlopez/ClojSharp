@@ -181,6 +181,15 @@
             Assert.IsNull(this.Evaluate("(butlast [1])"));
         }
 
+        [TestMethod]
+        public void EvaluateIfNot()
+        {
+            Assert.AreEqual(1, this.Evaluate("(if-not false 1)"));
+            Assert.IsNull(this.Evaluate("(if-not true 2)"));
+            Assert.AreEqual(1, this.Evaluate("(if-not false 1 2)"));
+            Assert.AreEqual(2, this.Evaluate("(if-not true 1 2)"));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);
