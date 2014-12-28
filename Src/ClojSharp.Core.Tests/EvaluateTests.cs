@@ -937,6 +937,15 @@
             Assert.AreEqual("[1 2 3 4]", this.Evaluate("(conj [1 2] 3 4)").ToString());
         }
 
+        [TestMethod]
+        public void EvaluateGetWithVectors()
+        {
+            Assert.AreEqual(1, this.Evaluate("(get [1 2 3] 0)"));
+            Assert.AreEqual(3, this.Evaluate("(get [1 2 3] 2)"));
+            Assert.IsNull(this.Evaluate("(get [1 2 3] -1)"));
+            Assert.IsNull(this.Evaluate("(get [1 2 3] 5)"));
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);

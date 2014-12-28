@@ -83,6 +83,7 @@
             this.IsForm("seq");
 
             this.IsForm("recur");
+            this.IsForm("get");
         }
 
         [TestMethod]
