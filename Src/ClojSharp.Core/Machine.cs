@@ -85,6 +85,7 @@
             this.root.SetValue("loop", new Loop());
 
             this.root.SetValue("get", new Get());
+            this.root.SetValue("nth", new Nth());
         }
 
         public IContext RootContext { get { return this.root; } }

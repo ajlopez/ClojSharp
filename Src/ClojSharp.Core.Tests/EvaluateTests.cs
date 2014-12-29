@@ -946,6 +946,35 @@
             Assert.IsNull(this.Evaluate("(get [1 2 3] 5)"));
         }
 
+        [TestMethod]
+        public void EvaluateNthWithVectors()
+        {
+            Assert.AreEqual(1, this.Evaluate("(nth [1 2 3] 0)"));
+            Assert.AreEqual(3, this.Evaluate("(nth [1 2 3] 2)"));
+        }
+
+        [TestMethod]
+        public void EvaluateNthWithVectorsIndexOutOfBounds()
+        {
+            try
+            {
+                this.Evaluate("(nth [1 2 3] -1)");
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(IndexOutOfRangeException));
+            }
+
+            try
+            {
+                this.Evaluate("(nth [1 2 3] 5)");
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(IndexOutOfRangeException));
+            }
+        }
+
         private object Evaluate(string text)
         {
             return this.Evaluate(text, this.machine.RootContext);

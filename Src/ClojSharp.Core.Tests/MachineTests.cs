@@ -84,6 +84,7 @@
 
             this.IsForm("recur");
             this.IsForm("get");
+            this.IsForm("nth");
         }
 
         [TestMethod]
