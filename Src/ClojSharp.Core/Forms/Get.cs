@@ -14,17 +14,33 @@
             get { return 2; }
         }
 
-        public override bool VariableArity { get { return false; } }
+        public override bool VariableArity { get { return true; } }
 
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
-            Vector vector = (Vector)arguments[0];
-            int index = Convert.ToInt32(arguments[1]);
+            if (arguments[0] is Vector)
+            {
+                Vector vector = (Vector)arguments[0];
+                int index = Convert.ToInt32(arguments[1]);
 
-            if (index < 0 || index > vector.Elements.Count)
-                return null;
+                if (index < 0 || index > vector.Elements.Count)
+                    if (arguments.Count > 2)
+                        return arguments[2];
+                    else
+                        return null;
 
-            return vector.Elements[index];
+                return vector.Elements[index];
+            }
+
+            Map map = (Map)arguments[0];
+            
+            if (!map.HasValue(arguments[1]))
+                if (arguments.Count > 2)
+                    return arguments[2];
+                else
+                    return null;
+
+            return map.GetValue(arguments[1]);
         }
     }
 }

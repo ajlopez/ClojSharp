@@ -46,6 +46,17 @@
             return null;
         }
 
+        public bool HasValue(object name)
+        {
+            if (this.keyvalues.ContainsKey(name))
+                return true;
+
+            if (this.metadata != null)
+                return this.metadata.HasValue(name);
+
+            return false;
+        }
+
         public Map SetValue(object name, object value)
         {
             return new Map(new object[] { name, value }, this);

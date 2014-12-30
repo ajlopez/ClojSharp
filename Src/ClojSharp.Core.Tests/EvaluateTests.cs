@@ -944,6 +944,17 @@
             Assert.AreEqual(3, this.Evaluate("(get [1 2 3] 2)"));
             Assert.IsNull(this.Evaluate("(get [1 2 3] -1)"));
             Assert.IsNull(this.Evaluate("(get [1 2 3] 5)"));
+            Assert.IsNull(this.Evaluate("(get [1 nil 3] 1 \"missing\")"));
+            Assert.AreEqual("missing", this.Evaluate("(get [1 2 3] 5 \"missing\")"));
+        }
+
+        [TestMethod]
+        public void EvaluateGetWithMaps()
+        {
+            Assert.AreEqual(1, this.Evaluate("(get { :a 1 :b 2 } :a)"));
+            Assert.IsNull(this.Evaluate("(get { :a 1 :b 2 } :c)"));
+            Assert.AreEqual("missing", this.Evaluate("(get { :a 1 :b 2 } :c \"missing\")"));
+            Assert.IsNull(this.Evaluate("(get { :a 1 :b nil } :b \"missing\")"));
         }
 
         [TestMethod]
