@@ -86,6 +86,7 @@
 
             this.root.SetValue("get", new Get());
             this.root.SetValue("nth", new Nth());
+            this.root.SetValue("to-array", new ToArray());
         }
 
         public IContext RootContext { get { return this.root; } }

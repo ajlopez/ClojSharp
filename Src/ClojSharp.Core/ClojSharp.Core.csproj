@@ -86,6 +86,7 @@
     <Compile Include="Forms\AtomF.cs" />
     <Compile Include="Forms\Class.cs" />
     <Compile Include="Forms\Conj.cs" />
+    <Compile Include="Forms\ToArray.cs" />
     <Compile Include="Forms\Nth.cs" />
     <Compile Include="Forms\Get.cs" />
     <Compile Include="Forms\InstanceP.cs" />

@@ -965,6 +965,51 @@
         }
 
         [TestMethod]
+        public void EvaluateVectorToArray()
+        {
+            var result = this.Evaluate("(to-array [1 2 3])");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(object[]));
+
+            var array = (object[])result;
+
+            Assert.AreEqual(3, array.Length);
+            Assert.AreEqual(1, array[0]);
+            Assert.AreEqual(2, array[1]);
+            Assert.AreEqual(3, array[2]);
+        }
+
+        [TestMethod]
+        public void EvaluateListToArray()
+        {
+            var result = this.Evaluate("(to-array '(1 2 3))");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(object[]));
+
+            var array = (object[])result;
+
+            Assert.AreEqual(3, array.Length);
+            Assert.AreEqual(1, array[0]);
+            Assert.AreEqual(2, array[1]);
+            Assert.AreEqual(3, array[2]);
+        }
+
+        [TestMethod]
+        public void EvaluateNilToArray()
+        {
+            var result = this.Evaluate("(to-array nil)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(object[]));
+
+            var array = (object[])result;
+
+            Assert.AreEqual(0, array.Length);
+        }
+
+        [TestMethod]
         public void EvaluateNthWithVectorsIndexOutOfBounds()
         {
             try
