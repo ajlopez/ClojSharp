@@ -851,6 +851,12 @@
         }
 
         [TestMethod]
+        public void EvaluateDotOnType()
+        {
+            Assert.AreEqual(true, this.Evaluate("(. System.Char (IsDigit \\9))"));
+        }
+
+        [TestMethod]
         public void EvaluateTypeStaticField()
         {
             Assert.AreEqual(System.Math.PI, this.Evaluate("System.Math/PI"));

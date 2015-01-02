@@ -22,7 +22,10 @@
             if (list.Next != null)
                 args = ((List)list.Next).ToList().Select(arg => Machine.Evaluate(arg, context)).ToArray();
 
-            return type.InvokeMember(name, BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.InvokeMethod | BindingFlags.Instance, null, target, args);
+            if (target is Type)
+                return ((Type)target).InvokeMember(name, BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.InvokeMethod | BindingFlags.Static, null, target, args);
+            else
+                return type.InvokeMember(name, BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.InvokeMethod | BindingFlags.Instance, null, target, args);
         }
     }
 }
