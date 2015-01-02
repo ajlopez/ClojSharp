@@ -29,7 +29,12 @@
 
         public override int RequiredArity
         {
-            get { if (this.names == null) return 0; return this.names.Count; }
+            get 
+            { 
+                if (this.names == null) 
+                    return 0; 
+                return this.names.Count; 
+            }
         }
 
         public override bool VariableArity

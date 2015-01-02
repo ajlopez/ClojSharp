@@ -5,10 +5,10 @@
     using System.Linq;
     using System.Text;
     using ClojSharp.Core.Compiler;
+    using ClojSharp.Core.Exceptions;
     using ClojSharp.Core.Forms;
     using ClojSharp.Core.SpecialForms;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using ClojSharp.Core.Exceptions;
 
     [TestClass]
     public class MacroTests
