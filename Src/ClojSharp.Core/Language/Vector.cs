@@ -74,6 +74,19 @@
             return new Vector(newlist);
         }
 
+        public static Vector Create(ISeq seq)
+        {
+            var list = new List<object>();
+
+            while (seq != null)
+            {
+                list.Add(seq.First);
+                seq = seq.Next;
+            }
+
+            return new Vector(list);
+        }
+
         public object Evaluate(IContext context)
         {
             if (this.elements == null || this.elements.Count == 0)

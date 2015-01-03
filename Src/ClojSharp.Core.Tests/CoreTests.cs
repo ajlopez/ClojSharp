@@ -197,6 +197,18 @@
             Assert.IsNull(this.Evaluate("(when false 1 2 3)"));
         }
 
+        [TestMethod]
+        public void EvaluateVector()
+        {
+            Assert.AreEqual("[]", this.Evaluate("(vector)").ToString());
+            Assert.AreEqual("[1]", this.Evaluate("(vector 1)").ToString());
+            Assert.AreEqual("[1 2]", this.Evaluate("(vector 1 2)").ToString());
+            Assert.AreEqual("[1 2 3]", this.Evaluate("(vector 1 2 3)").ToString());
+            Assert.AreEqual("[1 2 3 4]", this.Evaluate("(vector 1 2 3 4)").ToString());
+            Assert.AreEqual("[1 2 3 4 5]", this.Evaluate("(vector 1 2 3 4 5)").ToString());
+            Assert.AreEqual("[1 2 3 4 5 6]", this.Evaluate("(vector 1 2 3 4 5 6)").ToString());
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

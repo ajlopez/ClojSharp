@@ -50,3 +50,13 @@
 (defmacro when
 	[test & body]
 	(list 'if test (cons 'do body)))
+
+(defn vector
+  ([] [])
+  ([a] [a])
+  ([a b] [a b])
+  ([a b c] [a b c])
+  ([a b c d] [a b c d])
+  ([a b c d & args]
+     (. ClojSharp.Core.Language.Vector (Create (cons a (cons b (cons c (cons d args))))))))
+
