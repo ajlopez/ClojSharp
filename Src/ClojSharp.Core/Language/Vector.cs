@@ -7,7 +7,7 @@
 
     public class Vector : IEvaluable, IObject, ISeq
     {
-        private IList<object> elements;
+        private object[] elements;
         private Map metadata;
 
         public Vector(IList<object> elements)
@@ -16,6 +16,14 @@
         }
 
         internal Vector(IList<object> elements, Map metadata)
+        {
+            if (elements != null)
+                this.elements = elements.ToArray();
+
+            this.metadata = metadata;
+        }
+
+        internal Vector(object[] elements, Map metadata)
         {
             this.elements = elements;
             this.metadata = metadata;
@@ -27,7 +35,7 @@
         {
             get 
             { 
-                if (this.elements == null || this.elements.Count == 0) 
+                if (this.elements == null || this.elements.Length == 0) 
                     return null; 
                 
                 return this.elements[0]; 
@@ -38,7 +46,7 @@
         {
             get 
             { 
-                if (this.elements == null || this.elements.Count <= 1)
+                if (this.elements == null || this.elements.Length <= 1)
                     return null; 
                 
                 return EnumerableSeq.MakeSeq(this.elements.Skip(1)); 
@@ -65,7 +73,7 @@
 
         public static Vector AddItem(Vector vector, object item)
         {
-            if (vector == null || vector.elements == null || vector.elements.Count == 0)
+            if (vector == null || vector.elements == null || vector.elements.Length == 0)
                 return new Vector(new object[] { item });
 
             var newlist = new List<object>(vector.elements);
@@ -89,10 +97,10 @@
 
         public object Evaluate(IContext context)
         {
-            if (this.elements == null || this.elements.Count == 0)
+            if (this.elements == null || this.elements.Length == 0)
                 return this;
 
-            object[] values = new object[this.elements.Count];
+            object[] values = new object[this.elements.Length];
 
             for (var k = 0; k < values.Length; k++)
                 values[k] = Machine.Evaluate(this.elements[k], context);
@@ -105,7 +113,7 @@
             string result = "[";
 
             if (this.elements != null)
-                for (int k = 0; k < this.elements.Count; k++)
+                for (int k = 0; k < this.elements.Length; k++)
                 {
                     var expr = this.elements[k];
 
