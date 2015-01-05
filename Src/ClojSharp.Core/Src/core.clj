@@ -60,3 +60,7 @@
   ([a b c d & args]
      (. ClojSharp.Core.Language.Vector (Create (cons a (cons b (cons c (cons d args))))))))
 
+(defn hash-map
+	([] {})
+	([& keyvals]
+		(. ClojSharp.Core.Language.Map (Create (to-array keyvals)))))

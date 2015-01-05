@@ -209,6 +209,34 @@
             Assert.AreEqual("[1 2 3 4 5 6]", this.Evaluate("(vector 1 2 3 4 5 6)").ToString());
         }
 
+        [TestMethod]
+        public void EvaluateEmptyHashMap()
+        {
+            var result = this.Evaluate("(hash-map)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Map));
+
+            var map = (Map)result;
+
+            Assert.IsNull(map.GetValue("name"));
+        }
+
+        [TestMethod]
+        public void EvaluateHashMap()
+        {
+            var result = this.Evaluate("(hash-map :one 1 :two 2 :three 3)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Map));
+
+            var map = (Map)result;
+
+            Assert.AreEqual(1, map.GetValue(new Keyword("one")));
+            Assert.AreEqual(2, map.GetValue(new Keyword("two")));
+            Assert.AreEqual(3, map.GetValue(new Keyword("three")));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

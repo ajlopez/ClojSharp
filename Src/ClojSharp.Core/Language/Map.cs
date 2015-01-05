@@ -35,6 +35,11 @@
             get { return this.metadata; }
         }
 
+        public static Map Create(IList<object> keyvalues)
+        {
+            return new Map(keyvalues);
+        }
+
         public object GetValue(object name)
         {
             if (this.keyvalues.ContainsKey(name))

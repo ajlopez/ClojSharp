@@ -21,6 +21,15 @@
         }
 
         [TestMethod]
+        public void CreateMapUsingCreate()
+        {
+            Map map = Map.Create(new object[] { new Keyword("one"), 1, new Keyword("two"), 2 });
+
+            Assert.AreEqual(1, map.GetValue(new Keyword("one")));
+            Assert.AreEqual(2, map.GetValue(new Keyword("two")));
+        }
+
+        [TestMethod]
         public void CreateEmptyMap()
         {
             Map map = new Map(null);
