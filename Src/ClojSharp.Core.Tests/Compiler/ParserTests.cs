@@ -399,6 +399,31 @@
         }
 
         [TestMethod]
+        public void ParseAndEvaluateSet()
+        {
+            Parser parser = new Parser("#{:a :b :d}");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(Set));
+
+            var value = Machine.Evaluate(expr, null);
+
+            Assert.IsNotNull(value);
+            Assert.IsInstanceOfType(value, typeof(Set));
+
+            var set = (Set)value;
+
+            Assert.IsNull(set.Metadata);
+            Assert.AreEqual("#{:a :b :d}", set.ToString());
+            Assert.IsTrue(set.HasKey(new Keyword("a")));
+            Assert.IsTrue(set.HasKey(new Keyword("b")));
+            Assert.IsFalse(set.HasKey(new Keyword("c")));
+            Assert.IsTrue(set.HasKey(new Keyword("d")));
+        }
+
+        [TestMethod]
         public void ParseAndEvaluateMapWithMetadata()
         {
             Parser parser = new Parser("^{:foo true} {:a 1 :b 2}");

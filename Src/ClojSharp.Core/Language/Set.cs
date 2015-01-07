@@ -6,7 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
 
-    public class Set : IMetadata
+    public class Set : IEvaluable, IMetadata
     {
         private HashSet<object> keys;
         private Set set;
@@ -52,6 +52,16 @@
         public Set Add(object key)
         {
             return new Set(new object[] { key }, this, this.metadata);
+        }
+
+        public object Evaluate(IContext context)
+        {
+            IList<object> values = new List<object>();
+
+            foreach (var expr in this.keys)
+                values.Add(Machine.Evaluate(expr, context));
+
+            return new Set(values);
         }
     }
 }

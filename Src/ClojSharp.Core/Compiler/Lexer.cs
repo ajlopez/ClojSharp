@@ -82,6 +82,9 @@
 
                 char chr2 = (char)ch2;
 
+                if (chr2 == '{')
+                    return new Token(TokenType.Separator, chr.ToString() + chr2.ToString());
+
                 return new Token(TokenType.Name, chr.ToString() + chr2.ToString());
             }
 

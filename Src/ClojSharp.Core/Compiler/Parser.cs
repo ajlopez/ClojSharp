@@ -58,6 +58,9 @@
             if (token.Type == TokenType.Separator && token.Value == "{")
                 return this.ParseMap();
 
+            if (token.Type == TokenType.Separator && token.Value == "#{")
+                return this.ParseSet();
+
             if (token.Type == TokenType.Integer)
                 return int.Parse(token.Value, CultureInfo.InvariantCulture);
 
@@ -174,6 +177,24 @@
                 throw new ParserException("Unclosed map");
 
             return new MapValue(expressions);
+        }
+
+        private Set ParseSet()
+        {
+            List<object> expressions = new List<object>();
+            var token = this.lexer.NextToken();
+
+            while (token != null && (token.Type != TokenType.Separator || token.Value != "}"))
+            {
+                this.lexer.PushToken(token);
+                expressions.Add(this.ParseExpression());
+                token = this.lexer.NextToken();
+            }
+
+            if (token == null)
+                throw new ParserException("Unclosed set");
+
+            return new Set(expressions);
         }
     }
 }
