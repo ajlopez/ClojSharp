@@ -379,9 +379,9 @@
             var expr = parser.ParseExpression();
 
             Assert.IsNotNull(expr);
-            Assert.IsInstanceOfType(expr, typeof(MapValue));
+            Assert.IsInstanceOfType(expr, typeof(Map));
 
-            var mapvalue = (MapValue)expr;
+            var mapvalue = (Map)expr;
 
             Assert.IsNull(mapvalue.Metadata);
             Assert.AreEqual("{:a 1 :b 2}", mapvalue.ToString()); 
@@ -416,7 +416,6 @@
             var set = (Set)value;
 
             Assert.IsNull(set.Metadata);
-            Assert.AreEqual("#{:a :b :d}", set.ToString());
             Assert.IsTrue(set.HasKey(new Keyword("a")));
             Assert.IsTrue(set.HasKey(new Keyword("b")));
             Assert.IsFalse(set.HasKey(new Keyword("c")));
@@ -431,9 +430,9 @@
             var expr = parser.ParseExpression();
 
             Assert.IsNotNull(expr);
-            Assert.IsInstanceOfType(expr, typeof(MapValue));
+            Assert.IsInstanceOfType(expr, typeof(Map));
 
-            var mapvalue = (MapValue)expr;
+            var mapvalue = (Map)expr;
 
             Assert.IsNotNull(mapvalue.Metadata);
             Assert.AreEqual(true, mapvalue.Metadata.GetValue(new Keyword("foo")));

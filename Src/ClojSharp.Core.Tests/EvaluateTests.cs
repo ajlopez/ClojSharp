@@ -362,7 +362,7 @@
             catch (Exception ex)
             {
                 Assert.IsInstanceOfType(ex, typeof(RuntimeException));
-                Assert.AreEqual("Map literal must contain an even number of forms", ex.Message);
+                Assert.AreEqual("Map must be created with an even number of values", ex.Message);
             }
         }
 

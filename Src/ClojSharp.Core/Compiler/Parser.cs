@@ -93,7 +93,7 @@
                 if (token.Value == metaChar)
                 {
                     var metaexpr = this.ParseExpression();
-                    var metadata = (Map)((MapValue)metaexpr).Evaluate(null);
+                    var metadata = (Map)((Map)metaexpr).Evaluate(null);
                     var obj = this.ParseExpression();
                     return ((IObject)obj).WithMetadata(metadata);
                 }
@@ -161,7 +161,7 @@
             return new Vector(expressions);
         }
 
-        private MapValue ParseMap()
+        private Map ParseMap()
         {
             List<object> expressions = new List<object>();
             var token = this.lexer.NextToken();
@@ -176,7 +176,7 @@
             if (token == null)
                 throw new ParserException("Unclosed map");
 
-            return new MapValue(expressions);
+            return new Map(expressions);
         }
 
         private Set ParseSet()

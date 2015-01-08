@@ -6,7 +6,7 @@
     using System.Text;
     using ClojSharp.Core.Exceptions;
 
-    public class Map : IMetadata
+    public class Map : IObject, IEvaluable
     {
         private IDictionary<object, object> keyvalues = new Dictionary<object, object>();
         private Map metadata;
@@ -78,6 +78,58 @@
                 newmap = newmap.SetValue(key, map.keyvalues[key]);
 
             return newmap;
+        }
+
+        public object Evaluate(IContext context)
+        {
+            IList<object> list = new List<object>();
+
+            foreach (var key in this.keyvalues.Keys)
+            {
+                list.Add(Machine.Evaluate(key, context));
+                list.Add(Machine.Evaluate(this.keyvalues[key], context));
+            }
+
+            return new Map(list, this.metadata);
+        }
+
+        public IObject WithMetadata(Map map)
+        {
+            Map newmap = map;
+
+            if (this.metadata != null)
+                newmap = this.metadata.Merge(map);
+
+            IList<object> list = new List<object>();
+
+            foreach (var key in this.keyvalues.Keys)
+            {
+                list.Add(key);
+                list.Add(this.keyvalues[key]);
+            }
+
+            return new Map(list, newmap);
+        }
+
+        public override string ToString()
+        {
+            string result = "{";
+
+            foreach (var key in this.keyvalues.Keys)
+            {
+                var value = this.keyvalues[key];
+
+                if (result.Length > 1)
+                    result += " ";
+
+                result += Machine.ToString(key);
+
+                result += " ";
+
+                result += Machine.ToString(value);
+            }
+
+            return result + "}";
         }
     }
 }
