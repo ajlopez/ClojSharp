@@ -198,24 +198,6 @@
     <milliseconds>208</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="ParserTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>01/12/2014 18:16:33</timestamp>
-      <milliseconds>852</milliseconds>
-    </settings>
-    <timestamp>11/30/2014 06:13:20</timestamp>
-    <milliseconds>109</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="LexerTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>01/12/2014 18:16:33</timestamp>
-      <milliseconds>852</milliseconds>
-    </settings>
-    <timestamp>12/14/2014 04:17:19</timestamp>
-    <milliseconds>981</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="ListTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>01/12/2014 18:16:33</timestamp>
@@ -223,15 +205,6 @@
     </settings>
     <timestamp>12/20/2014 04:52:54</timestamp>
     <milliseconds>871</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="MapTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>01/12/2014 18:16:33</timestamp>
-      <milliseconds>852</milliseconds>
-    </settings>
-    <timestamp>12/20/2014 04:56:40</timestamp>
-    <milliseconds>491</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="VarTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -327,13 +300,22 @@
   <project key="1081152653">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <sourcecode name="LexerTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>01/12/2014 18:16:33</timestamp>
+      <milliseconds>852</milliseconds>
+    </settings>
+    <timestamp>01/07/2015 06:21:32</timestamp>
+    <milliseconds>365</milliseconds>
+    <violations />
+  </sourcecode>
   <sourcecode name="CoreTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>01/12/2014 18:16:33</timestamp>
       <milliseconds>852</milliseconds>
     </settings>
-    <timestamp>01/03/2015 06:43:27</timestamp>
-    <milliseconds>40</milliseconds>
+    <timestamp>01/05/2015 05:22:39</timestamp>
+    <milliseconds>761</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="EvaluateTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -341,8 +323,35 @@
       <timestamp>01/12/2014 18:16:33</timestamp>
       <milliseconds>852</milliseconds>
     </settings>
-    <timestamp>01/02/2015 06:55:06</timestamp>
-    <milliseconds>533</milliseconds>
+    <timestamp>01/09/2015 04:30:22</timestamp>
+    <milliseconds>320</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ParserTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>01/12/2014 18:16:33</timestamp>
+      <milliseconds>852</milliseconds>
+    </settings>
+    <timestamp>01/09/2015 04:30:22</timestamp>
+    <milliseconds>318</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="MapTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>01/12/2014 18:16:33</timestamp>
+      <milliseconds>852</milliseconds>
+    </settings>
+    <timestamp>01/05/2015 05:18:10</timestamp>
+    <milliseconds>574</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="SetTests.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>01/12/2014 18:16:33</timestamp>
+      <milliseconds>852</milliseconds>
+    </settings>
+    <timestamp>01/06/2015 05:14:52</timestamp>
+    <milliseconds>951</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>

@@ -502,5 +502,22 @@
                 Assert.AreEqual(ex.Message, "Unclosed map");
             }
         }
+
+        [TestMethod]
+        public void RaiseWhenUnclosedSet()
+        {
+            Parser parser = new Parser("#{1 2 3");
+
+            try
+            {
+                parser.ParseExpression();
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(ParserException));
+                Assert.AreEqual(ex.Message, "Unclosed set");
+            }
+        }
     }
 }

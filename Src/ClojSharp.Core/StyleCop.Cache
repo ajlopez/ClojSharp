@@ -549,15 +549,6 @@
     <milliseconds>461</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Lexer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>12/12/2014 05:57:57</timestamp>
-    <milliseconds>353</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="InstanceP.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -610,15 +601,6 @@
     </settings>
     <timestamp>12/20/2014 04:50:00</timestamp>
     <milliseconds>250</milliseconds>
-    <violations />
-  </sourcecode>
-  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>12/25/2014 18:45:14</timestamp>
-    <milliseconds>634</milliseconds>
     <violations />
   </sourcecode>
   <sourcecode name="Fn.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
@@ -828,15 +810,6 @@
     <milliseconds>653</milliseconds>
     <violations />
   </sourcecode>
-  <sourcecode name="Map.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
-    <settings>
-      <timestamp>03/03/2013 09:18:26</timestamp>
-      <milliseconds>243</milliseconds>
-    </settings>
-    <timestamp>12/30/2014 07:01:25</timestamp>
-    <milliseconds>366</milliseconds>
-    <violations />
-  </sourcecode>
   <sourcecode name="Machine.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -882,9 +855,6 @@
     <milliseconds>443</milliseconds>
     <violations />
   </sourcecode>
-  <project key="-1333396368">
-    <configuration>DEBUG;TRACE</configuration>
-  </project>
   <sourcecode name="Dot.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
     <settings>
       <timestamp>03/03/2013 09:18:26</timestamp>
@@ -901,6 +871,45 @@
     </settings>
     <timestamp>01/04/2015 06:47:49</timestamp>
     <milliseconds>839</milliseconds>
+    <violations />
+  </sourcecode>
+  <project key="-1333396368">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="Parser.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>01/09/2015 04:30:22</timestamp>
+    <milliseconds>323</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Lexer.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>01/07/2015 06:23:19</timestamp>
+    <milliseconds>842</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Set.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>01/07/2015 06:25:30</timestamp>
+    <milliseconds>330</milliseconds>
+    <violations />
+  </sourcecode>
+  <sourcecode name="Map.cs" parser="Microsoft.StyleCop.CSharp.CsParser">
+    <settings>
+      <timestamp>03/03/2013 09:18:26</timestamp>
+      <milliseconds>243</milliseconds>
+    </settings>
+    <timestamp>01/09/2015 04:30:22</timestamp>
+    <milliseconds>324</milliseconds>
     <violations />
   </sourcecode>
 </stylecopresultscache>
