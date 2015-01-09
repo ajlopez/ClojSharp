@@ -30,6 +30,14 @@
         }
 
         [TestMethod]
+        public void MapToString()
+        {
+            Map map = Map.Create(new object[] { new Keyword("one"), 1, new Keyword("two"), 2 });
+
+            Assert.AreEqual("{:one 1 :two 2}", map.ToString());
+        }
+
+        [TestMethod]
         public void CreateEmptyMap()
         {
             Map map = new Map(null);
