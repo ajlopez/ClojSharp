@@ -32,6 +32,14 @@
         }
 
         [TestMethod]
+        public void SetToString()
+        {
+            Set set = Set.Create(new object[] { new Keyword("one"), new Keyword("two") });
+
+            Assert.AreEqual("#{:one :two}", set.ToString());
+        }
+
+        [TestMethod]
         public void CreateEmptySet()
         {
             Set set = new Set(null);

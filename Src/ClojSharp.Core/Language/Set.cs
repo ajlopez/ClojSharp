@@ -63,5 +63,20 @@
 
             return new Set(values);
         }
+
+        public override string ToString()
+        {
+            string result = "#{";
+
+            foreach (var key in this.keys)
+            {
+                if (result.Length > 1)
+                    result += " ";
+
+                result += Machine.ToString(key);
+            }
+
+            return result + "}";
+        }
     }
 }
