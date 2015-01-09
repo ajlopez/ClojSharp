@@ -423,6 +423,31 @@
         }
 
         [TestMethod]
+        public void ParseAndEvaluateSetWithExpressions()
+        {
+            Parser parser = new Parser("#{(+ 1 0) (+ 1 1) (+ 1 2)}");
+
+            var expr = parser.ParseExpression();
+
+            Assert.IsNotNull(expr);
+            Assert.IsInstanceOfType(expr, typeof(Set));
+
+            Machine machine = new Machine();
+            var value = Machine.Evaluate(expr, machine.RootContext);
+
+            Assert.IsNotNull(value);
+            Assert.IsInstanceOfType(value, typeof(Set));
+
+            var set = (Set)value;
+
+            Assert.IsNull(set.Metadata);
+            Assert.IsTrue(set.HasKey(1));
+            Assert.IsTrue(set.HasKey(2));
+            Assert.IsTrue(set.HasKey(3));
+            Assert.IsFalse(set.HasKey(4));
+        }
+
+        [TestMethod]
         public void ParseAndEvaluateMapWithMetadata()
         {
             Parser parser = new Parser("^{:foo true} {:a 1 :b 2}");
