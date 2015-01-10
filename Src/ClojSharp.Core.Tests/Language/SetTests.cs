@@ -60,5 +60,19 @@
             Assert.IsFalse(set.HasKey("foo"));
             Assert.IsTrue(set.HasKey("bar"));
         }
+
+        [TestMethod]
+        public void AddExistingValue()
+        {
+            Set set = new Set(new object[] { "bar", "foo" });
+            Set set2 = set.Add("foo");
+
+            Assert.AreSame(set, set2);
+
+            Assert.IsTrue(set2.HasKey("foo"));
+            Assert.IsTrue(set2.HasKey("bar"));
+            Assert.IsTrue(set.HasKey("foo"));
+            Assert.IsTrue(set.HasKey("bar"));
+        }
     }
 }

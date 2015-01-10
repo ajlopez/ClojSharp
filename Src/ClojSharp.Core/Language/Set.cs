@@ -51,6 +51,9 @@
 
         public Set Add(object key)
         {
+            if (this.HasKey(key))
+                return this;
+
             return new Set(new object[] { key }, this, this.metadata);
         }
 
@@ -70,7 +73,7 @@
 
             foreach (var key in this.keys)
             {
-                if (result.Length > 1)
+                if (result.Length > 2)
                     result += " ";
 
                 result += Machine.ToString(key);
