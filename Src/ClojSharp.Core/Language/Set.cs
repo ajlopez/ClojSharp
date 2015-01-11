@@ -57,6 +57,14 @@
             return new Set(new object[] { key }, this, this.metadata);
         }
 
+        public Set Remove(object key)
+        {
+            if (!this.HasKey(key))
+                return this;
+
+            return new Set(this.keys.Where(k => k != key && (k == null || !k.Equals(key))).ToList());
+        }
+
         public object Evaluate(IContext context)
         {
             IList<object> values = new List<object>();

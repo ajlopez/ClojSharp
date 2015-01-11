@@ -74,5 +74,33 @@
             Assert.IsTrue(set.HasKey("foo"));
             Assert.IsTrue(set.HasKey("bar"));
         }
+
+        [TestMethod]
+        public void RemoveValue()
+        {
+            Set set = new Set(new object[] { "foo", "bar" });
+            Set set2 = set.Remove("foo");
+
+            Assert.AreNotSame(set, set2);
+
+            Assert.IsFalse(set2.HasKey("foo"));
+            Assert.IsTrue(set2.HasKey("bar"));
+            Assert.IsTrue(set.HasKey("foo"));
+            Assert.IsTrue(set.HasKey("bar"));
+        }
+
+        [TestMethod]
+        public void RemoveNonExistingValue()
+        {
+            Set set = new Set(new object[] { "bar", "foo" });
+            Set set2 = set.Remove("foobar");
+
+            Assert.AreSame(set, set2);
+
+            Assert.IsTrue(set2.HasKey("foo"));
+            Assert.IsTrue(set2.HasKey("bar"));
+            Assert.IsTrue(set.HasKey("foo"));
+            Assert.IsTrue(set.HasKey("bar"));
+        }
     }
 }
