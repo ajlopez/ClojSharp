@@ -9,15 +9,17 @@
     public class Map : IObject, IEvaluable
     {
         private IDictionary<object, object> keyvalues = new Dictionary<object, object>();
+        private Map map;
         private Map metadata;
 
         public Map(IList<object> keyvalues)
-            : this(keyvalues, null)
+            : this(keyvalues, null, null)
         {
         }
 
-        internal Map(IList<object> keyvalues, Map metadata)
+        internal Map(IList<object> keyvalues, Map map, Map metadata)
         {
+            this.map = map;
             this.metadata = metadata;
 
             if (keyvalues != null)
@@ -45,8 +47,8 @@
             if (this.keyvalues.ContainsKey(name))
                 return this.keyvalues[name];
 
-            if (this.metadata != null)
-                return this.metadata.GetValue(name);
+            if (this.map != null)
+                return this.map.GetValue(name);
 
             return null;
         }
@@ -64,7 +66,12 @@
 
         public Map SetValue(object name, object value)
         {
-            return new Map(new object[] { name, value }, this);
+            return new Map(new object[] { name, value }, this, this.metadata);
+        }
+
+        public Map RemoveValue(object name)
+        {
+            return this;
         }
 
         public Map Merge(Map map)
@@ -90,7 +97,7 @@
                 list.Add(Machine.Evaluate(this.keyvalues[key], context));
             }
 
-            return new Map(list, this.metadata);
+            return new Map(list, null, this.metadata);
         }
 
         public IObject WithMetadata(Map map)
@@ -108,7 +115,7 @@
                 list.Add(this.keyvalues[key]);
             }
 
-            return new Map(list, newmap);
+            return new Map(list, null, newmap);
         }
 
         public override string ToString()

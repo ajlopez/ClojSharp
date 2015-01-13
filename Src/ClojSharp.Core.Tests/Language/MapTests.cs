@@ -55,13 +55,34 @@
         [TestMethod]
         public void SetValue()
         {
-            Map map = new Map(null);
-            Map map2 = map.SetValue("name", "foo");
+            Map map = new Map(new object[] { "age", 800 });
+            Map map2 = map.SetValue("name", "Adam");
 
             Assert.AreNotSame(map, map2);
 
-            Assert.AreEqual("foo", map2.GetValue("name"));
+            Assert.AreEqual("Adam", map2.GetValue("name"));
+            Assert.AreEqual(800, map2.GetValue("age"));
             Assert.IsNull(map.GetValue("name"));
+        }
+
+        [TestMethod]
+        public void RemoveValue()
+        {
+            Map map = Map.Create(new object[] { new Keyword("one"), 1, new Keyword("two"), 2, new Keyword("three"), 3 });
+            Map map2 = map.RemoveValue("two");
+
+            Assert.IsNotNull(map2);
+
+            Assert.IsTrue(map.HasValue(new Keyword("one")));
+            Assert.IsTrue(map.HasValue(new Keyword("two")));
+            Assert.IsTrue(map.HasValue(new Keyword("three")));
+
+            Assert.IsTrue(map2.HasValue(new Keyword("one")));
+            Assert.IsFalse(map2.HasValue(new Keyword("two")));
+            Assert.IsTrue(map2.HasValue(new Keyword("three")));
+
+            Assert.AreEqual(1, map2.GetValue(new Keyword("one")));
+            Assert.AreEqual(3, map2.GetValue(new Keyword("three")));
         }
     }
 }
