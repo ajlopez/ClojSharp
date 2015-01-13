@@ -69,7 +69,7 @@
         public void RemoveValue()
         {
             Map map = Map.Create(new object[] { new Keyword("one"), 1, new Keyword("two"), 2, new Keyword("three"), 3 });
-            Map map2 = map.RemoveValue("two");
+            Map map2 = map.RemoveValue(new Keyword("two"));
 
             Assert.IsNotNull(map2);
 

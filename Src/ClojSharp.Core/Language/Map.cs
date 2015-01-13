@@ -42,6 +42,21 @@
             return new Map(keyvalues);
         }
 
+        public IList<object> GetKeys()
+        {
+            IList<object> keys = new List<object>();
+
+            foreach (var key in this.keyvalues.Keys)
+                keys.Add(key);
+
+            if (this.map != null)
+                foreach (var key in this.map.GetKeys())
+                    if (!keys.Contains(key))
+                        keys.Add(key);
+
+            return keys;
+        }
+
         public object GetValue(object name)
         {
             if (this.keyvalues.ContainsKey(name))
@@ -71,7 +86,18 @@
 
         public Map RemoveValue(object name)
         {
-            return this;
+            IList<object> newkeyvalues = new List<object>();
+
+            foreach (var key in this.GetKeys())
+            {
+                if (key == name || (key != null && key.Equals(name)))
+                    continue;
+
+                newkeyvalues.Add(key);
+                newkeyvalues.Add(this.GetValue(key));
+            }
+
+            return new Map(newkeyvalues, null, this.metadata);
         }
 
         public Map Merge(Map map)
