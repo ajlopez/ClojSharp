@@ -889,6 +889,12 @@
         }
 
         [TestMethod]
+        public void EvaluateSeqWithEmptyList()
+        {
+            Assert.IsNull(this.Evaluate("(seq ())"));
+        }
+
+        [TestMethod]
         public void EvaluateSeqWithArrays()
         {
             Assert.AreEqual("(1 2 3)", this.Evaluate("(seq [1 2 3])").ToString());
