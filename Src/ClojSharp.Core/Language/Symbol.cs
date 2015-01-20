@@ -26,8 +26,11 @@
             this.name = name;
             this.metadata = metadata;
 
-            if (name[0] == '.')
-                this.value = new MethodForm(this.name.Substring(1));
+            if (name.Length > 1)
+                if (name.StartsWith("."))
+                    this.value = new MethodForm(this.name.Substring(1));
+                else if (name.EndsWith("."))
+                    this.value = new NewInstanceForm(this.name.Substring(0, name.Length - 1));
 
             this.hasns = name.IndexOf('/') > 0;
             this.hasdot = name.IndexOf('.') > 0;
@@ -45,7 +48,7 @@
 
         public object Evaluate(IContext context)
         {
-            if (this.name[0] == '.' && this.name.Length > 1)
+            if (this.value != null)
                 return this.value;
 
             if (this.hasns)

@@ -869,6 +869,12 @@
         }
 
         [TestMethod]
+        public void EvaluateNewStringWithDotNotation()
+        {
+            Assert.AreEqual("ccc", this.Evaluate("(System.String. \\c 3)"));
+        }
+
+        [TestMethod]
         public void EvaluateInstanceP()
         {
             Assert.AreEqual(true, this.Evaluate("(instance? System.String \"foo\")"));
