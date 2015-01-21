@@ -64,3 +64,7 @@
 	([] {})
 	([& keyvals]
 		(. ClojSharp.Core.Language.Map (Create (to-array keyvals)))))
+
+(defn assoc
+	[map & keyvals]
+		(ClojSharp.Core.Language.Map. (to-array keyvals) map))

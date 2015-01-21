@@ -237,6 +237,21 @@
             Assert.AreEqual(3, map.GetValue(new Keyword("three")));
         }
 
+        [TestMethod]
+        public void EvaluateAssocOnMap()
+        {
+            var result = this.Evaluate("(assoc { :one 0 :two 2 } :one 1 :three 3)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Map));
+
+            var map = (Map)result;
+
+            Assert.AreEqual(1, map.GetValue(new Keyword("one")));
+            Assert.AreEqual(2, map.GetValue(new Keyword("two")));
+            Assert.AreEqual(3, map.GetValue(new Keyword("three")));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

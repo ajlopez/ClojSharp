@@ -17,6 +17,11 @@
         {
         }
 
+        public Map(IList<object> keyvalues, Map map)
+            : this(keyvalues, map, null)
+        {
+        }
+
         internal Map(IList<object> keyvalues, Map map, Map metadata)
         {
             this.map = map;
