@@ -95,6 +95,24 @@
             return new Vector(list);
         }
 
+        public Vector Associate(IList<object> keyvalues)
+        {
+            IList<object> newelements = new List<object>(this.elements);
+
+            for (int k = 0; k < keyvalues.Count; k += 2)
+            {
+                int index = (int)keyvalues[k];
+                object value = keyvalues[k + 1];
+
+                if (newelements.Count > index)
+                    newelements[index] = value;
+                else
+                    newelements.Add(value);
+            }
+
+            return new Vector(newelements, this.metadata);
+        }
+
         public object Evaluate(IContext context)
         {
             if (this.elements == null || this.elements.Length == 0)
