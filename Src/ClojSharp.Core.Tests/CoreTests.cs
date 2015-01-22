@@ -252,6 +252,23 @@
             Assert.AreEqual(3, map.GetValue(new Keyword("three")));
         }
 
+        [TestMethod]
+        public void EvaluateAssocOnVector()
+        {
+            var result = this.Evaluate("(assoc [1 2 3] 1 3 3 4)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Vector));
+
+            var vector = (Vector)result;
+
+            Assert.AreEqual(4, vector.Elements.Count);
+            Assert.AreEqual(1, vector.Elements[0]);
+            Assert.AreEqual(3, vector.Elements[1]);
+            Assert.AreEqual(3, vector.Elements[2]);
+            Assert.AreEqual(4, vector.Elements[3]);
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

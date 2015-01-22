@@ -62,6 +62,11 @@
             return keys;
         }
 
+        public Map Associate(IList<object> keyvalues)
+        {
+            return new Map(keyvalues, this, this.metadata);
+        }
+
         public object GetValue(object name)
         {
             if (this.keyvalues.ContainsKey(name))

@@ -67,4 +67,4 @@
 
 (defn assoc
 	[map & keyvals]
-		(ClojSharp.Core.Language.Map. (to-array keyvals) map))
+		(. map (Associate (to-array keyvals))))
