@@ -96,6 +96,9 @@
 
         public Map RemoveValue(object name)
         {
+            if (!this.HasValue(name))
+                return this;
+
             IList<object> newkeyvalues = new List<object>();
 
             foreach (var key in this.GetKeys())

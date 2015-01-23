@@ -84,5 +84,15 @@
             Assert.AreEqual(1, map2.GetValue(new Keyword("one")));
             Assert.AreEqual(3, map2.GetValue(new Keyword("three")));
         }
+
+        [TestMethod]
+        public void RemoveNonExistingValue()
+        {
+            Map map = Map.Create(new object[] { new Keyword("one"), 1, new Keyword("two"), 2, new Keyword("three"), 3 });
+            Map map2 = map.RemoveValue(new Keyword("ten"));
+
+            Assert.IsNotNull(map2);
+            Assert.AreSame(map, map2);
+        }
     }
 }
