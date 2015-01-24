@@ -68,3 +68,7 @@
 (defn assoc
 	[map & keyvals]
 		(. map (Associate (to-array keyvals))))
+
+(defn dissoc
+	[map & keyvals]
+		(. map (Dissociate (to-array keyvals))))

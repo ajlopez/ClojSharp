@@ -253,6 +253,22 @@
         }
 
         [TestMethod]
+        public void EvaluateDissocOnMap()
+        {
+            var result = this.Evaluate("(dissoc { :one 1 :two 2 :three 3 :four 4 } :two :four)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Map));
+
+            var map = (Map)result;
+
+            Assert.AreEqual(1, map.GetValue(new Keyword("one")));
+            Assert.IsNull(map.GetValue(new Keyword("two")));
+            Assert.AreEqual(3, map.GetValue(new Keyword("three")));
+            Assert.IsNull(map.GetValue(new Keyword("four")));
+        }
+
+        [TestMethod]
         public void EvaluateAssocOnVector()
         {
             var result = this.Evaluate("(assoc [1 2 3] 1 3 3 4)");

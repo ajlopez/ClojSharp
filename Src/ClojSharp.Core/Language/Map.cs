@@ -67,6 +67,22 @@
             return new Map(keyvalues, this, this.metadata);
         }
 
+        public Map Dissociate(IList<object> keys)
+        {
+            IList<object> newkeyvalues = new List<object>();
+
+            foreach (var key in this.GetKeys())
+            {
+                if (keys.Contains(key))
+                    continue;
+
+                newkeyvalues.Add(key);
+                newkeyvalues.Add(this.GetValue(key));
+            }
+
+            return new Map(newkeyvalues, null, this.metadata);
+        }
+
         public object GetValue(object name)
         {
             if (this.keyvalues.ContainsKey(name))
