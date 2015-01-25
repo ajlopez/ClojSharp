@@ -69,16 +69,24 @@
 
         public Map Dissociate(IList<object> keys)
         {
+            bool exists = false;
+
             IList<object> newkeyvalues = new List<object>();
 
             foreach (var key in this.GetKeys())
             {
                 if (keys.Contains(key))
+                {
+                    exists = true;
                     continue;
+                }
 
                 newkeyvalues.Add(key);
                 newkeyvalues.Add(this.GetValue(key));
             }
+
+            if (!exists)
+                return this;
 
             return new Map(newkeyvalues, null, this.metadata);
         }

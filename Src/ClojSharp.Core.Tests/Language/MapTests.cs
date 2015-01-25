@@ -86,10 +86,20 @@
         }
 
         [TestMethod]
-        public void RemoveNonExistingValue()
+        public void RemoveNonExistingKey()
         {
             Map map = Map.Create(new object[] { new Keyword("one"), 1, new Keyword("two"), 2, new Keyword("three"), 3 });
             Map map2 = map.RemoveValue(new Keyword("ten"));
+
+            Assert.IsNotNull(map2);
+            Assert.AreSame(map, map2);
+        }
+
+        [TestMethod]
+        public void DissociateNonExistingKeys()
+        {
+            Map map = Map.Create(new object[] { new Keyword("one"), 1, new Keyword("two"), 2, new Keyword("three"), 3 });
+            Map map2 = map.Dissociate(new object[] { new Keyword("ten"), new Keyword("eleven") });
 
             Assert.IsNotNull(map2);
             Assert.AreSame(map, map2);
