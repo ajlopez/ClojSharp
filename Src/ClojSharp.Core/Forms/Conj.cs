@@ -30,6 +30,16 @@
                 return result;
             }
 
+            if (first is Set)
+            {
+                Set set = ((Set)first).Add(arguments[1]);
+
+                for (int k = 2; k < arguments.Count; k++)
+                    set = set.Add(arguments[k]);
+
+                return set;
+            }
+
             Vector vector = Language.Vector.AddItem((Vector)first, arguments[1]);
 
             for (int k = 2; k < arguments.Count; k++)

@@ -79,6 +79,12 @@
         {
             string result = "#{";
 
+            if (this.set != null)
+            {
+                var txt = this.set.ToString();
+                result += txt.Substring(2, txt.Length - 3);
+            }
+
             foreach (var key in this.keys)
             {
                 if (result.Length > 2)
