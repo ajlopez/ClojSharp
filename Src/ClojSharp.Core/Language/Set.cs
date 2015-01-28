@@ -65,6 +65,16 @@
             return new Set(this.keys.Where(k => k != key && (k == null || !k.Equals(key))).ToList());
         }
 
+        public Set Dissociate(object[] keys)
+        {
+            var result = this;
+
+            foreach (var key in keys)
+                result = result.Remove(key);
+
+            return result;
+        }
+
         public object Evaluate(IContext context)
         {
             IList<object> values = new List<object>();

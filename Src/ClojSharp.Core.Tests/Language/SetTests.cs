@@ -102,5 +102,24 @@
             Assert.IsTrue(set.HasKey("foo"));
             Assert.IsTrue(set.HasKey("bar"));
         }
+
+        [TestMethod]
+        public void DissociateKeys()
+        {
+            Set set = new Set(new object[] { "one", "two", "three", "four" });
+            Set set2 = set.Dissociate(new object[] { "two", "four" });
+
+            Assert.AreNotSame(set, set2);
+
+            Assert.IsTrue(set2.HasKey("one"));
+            Assert.IsFalse(set2.HasKey("two"));
+            Assert.IsTrue(set2.HasKey("three"));
+            Assert.IsFalse(set2.HasKey("four"));
+
+            Assert.IsTrue(set.HasKey("one"));
+            Assert.IsTrue(set.HasKey("two"));
+            Assert.IsTrue(set.HasKey("three"));
+            Assert.IsTrue(set.HasKey("four"));
+        }
     }
 }
