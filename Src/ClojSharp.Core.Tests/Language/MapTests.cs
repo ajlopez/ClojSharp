@@ -96,6 +96,28 @@
         }
 
         [TestMethod]
+        public void DissociateKeys()
+        {
+            Map map = Map.Create(new object[] { new Keyword("one"), 1, new Keyword("two"), 2, new Keyword("three"), 3, new Keyword("four"), 4 });
+            Map map2 = map.Dissociate(new object[] { new Keyword("two"), new Keyword("four") });
+
+            Assert.IsNotNull(map2);
+
+            Assert.IsTrue(map.HasValue(new Keyword("one")));
+            Assert.IsTrue(map.HasValue(new Keyword("two")));
+            Assert.IsTrue(map.HasValue(new Keyword("three")));
+            Assert.IsTrue(map.HasValue(new Keyword("four")));
+
+            Assert.IsTrue(map2.HasValue(new Keyword("one")));
+            Assert.IsFalse(map2.HasValue(new Keyword("two")));
+            Assert.IsTrue(map2.HasValue(new Keyword("three")));
+            Assert.IsFalse(map2.HasValue(new Keyword("four")));
+
+            Assert.AreEqual(1, map2.GetValue(new Keyword("one")));
+            Assert.AreEqual(3, map2.GetValue(new Keyword("three")));
+        }
+
+        [TestMethod]
         public void DissociateNonExistingKeys()
         {
             Map map = Map.Create(new object[] { new Keyword("one"), 1, new Keyword("two"), 2, new Keyword("three"), 3 });
