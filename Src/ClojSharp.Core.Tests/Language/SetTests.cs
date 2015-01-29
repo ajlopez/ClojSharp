@@ -121,5 +121,14 @@
             Assert.IsTrue(set.HasKey("three"));
             Assert.IsTrue(set.HasKey("four"));
         }
+
+        [TestMethod]
+        public void DissociateNonExistingKeys()
+        {
+            Set set = new Set(new object[] { "one", "two", "three", "four" });
+            Set set2 = set.Dissociate(new object[] { "five", "six" });
+
+            Assert.AreSame(set, set2);
+        }
     }
 }
