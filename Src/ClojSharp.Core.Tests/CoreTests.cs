@@ -269,6 +269,22 @@
         }
 
         [TestMethod]
+        public void EvaluateDissocOnSet()
+        {
+            var result = this.Evaluate("(dissoc #{ :one :two :three :four } :two :four)");
+
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(Set));
+
+            var set = (Set)result;
+
+            Assert.IsTrue(set.HasKey(new Keyword("one")));
+            Assert.IsFalse(set.HasKey(new Keyword("two")));
+            Assert.IsTrue(set.HasKey(new Keyword("three")));
+            Assert.IsFalse(set.HasKey(new Keyword("four")));
+        }
+
+        [TestMethod]
         public void EvaluateAssocOnVector()
         {
             var result = this.Evaluate("(assoc [1 2 3] 1 3 3 4)");
