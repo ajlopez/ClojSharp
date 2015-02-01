@@ -17,13 +17,20 @@
 
         public override object EvaluateForm(IContext context, IList<object> arguments)
         {
+            double result = 1;
+
             if (arguments.Count == 1)
-                return (int)arguments[0];
+                result /= Convert.ToDouble(arguments[0]);
+            else
+            {
+                result = Convert.ToDouble(arguments[0]);
 
-            var result = (int)arguments[0];
+                for (var k = 1; k < arguments.Count; k++)
+                    result /= Convert.ToDouble(arguments[k]);
+            }
 
-            for (var k = 1; k < arguments.Count; k++)
-                result /= (int)arguments[k];
+            if (Math.Floor(result) == result)
+                return (int)result;
 
             return result;
         }
