@@ -198,6 +198,13 @@
         }
 
         [TestMethod]
+        public void EvaluateWhenNot()
+        {
+            Assert.AreEqual(3, this.Evaluate("(when-not false 1 2 3)"));
+            Assert.IsNull(this.Evaluate("(when-not true 1 2 3)"));
+        }
+
+        [TestMethod]
         public void EvaluateVector()
         {
             Assert.AreEqual("[]", this.Evaluate("(vector)").ToString());

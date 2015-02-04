@@ -51,6 +51,10 @@
 	[test & body]
 	(list 'if test (cons 'do body)))
 
+(defmacro when-not
+    [test & body]
+        (list 'if test nil (cons 'do body)))
+
 (defn vector
   ([] [])
   ([a] [a])
