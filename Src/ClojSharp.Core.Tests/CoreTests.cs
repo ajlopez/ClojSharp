@@ -308,6 +308,14 @@
             Assert.AreEqual(4, vector.Elements[3]);
         }
 
+        [TestMethod]
+        public void EvaluateCond()
+        {
+            Assert.AreEqual("true", this.Evaluate("(cond (true? true) \"true\" (false? true) \"false\" :else \"other\")"));
+            Assert.AreEqual("false", this.Evaluate("(cond (true? false) \"true\" (false? false) \"false\" :else \"other\")"));
+            Assert.AreEqual("other", this.Evaluate("(cond (true? 0) \"true\" (false? 0) \"false\" :else \"other\")"));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

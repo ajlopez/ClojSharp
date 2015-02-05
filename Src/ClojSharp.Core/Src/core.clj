@@ -55,6 +55,16 @@
     [test & body]
         (list 'if test nil (cons 'do body)))
 
+(defmacro cond
+    [& clauses]
+    (when clauses
+        (list 'if (first clauses)
+            (if (next clauses)
+                (second clauses)
+                (throw (Error.
+                         "cond requires an even number of forms")))
+            (cons 'cond (next (next clauses))))))
+
 (defn vector
   ([] [])
   ([a] [a])
