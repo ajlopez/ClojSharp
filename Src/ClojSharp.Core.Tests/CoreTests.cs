@@ -108,6 +108,15 @@
         }
 
         [TestMethod]
+        public void EvaluateSetP()
+        {
+            Assert.AreEqual(true, this.Evaluate("(set? #{:a :b})"));
+            Assert.AreEqual(false, this.Evaluate("(set? {:a 1 :b 2})"));
+            Assert.AreEqual(false, this.Evaluate("(set? 42)"));
+            Assert.AreEqual(false, this.Evaluate("(set? \"foo\")"));
+        }
+
+        [TestMethod]
         public void EvaluateVectorP()
         {
             Assert.AreEqual(true, this.Evaluate("(vector? [1 2])"));

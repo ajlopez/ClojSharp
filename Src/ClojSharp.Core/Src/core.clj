@@ -22,6 +22,8 @@
 
 (defn map? [x] (instance? ClojSharp.Core.Language.Map x))
 
+(defn set? [x] (instance? ClojSharp.Core.Language.Set x))
+
 (defn vector? [x] (instance? ClojSharp.Core.Language.Vector x))
 
 (defn meta [x] 
