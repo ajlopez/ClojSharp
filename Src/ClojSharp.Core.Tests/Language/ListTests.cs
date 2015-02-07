@@ -85,6 +85,14 @@
         }
 
         [TestMethod]
+        public void Length()
+        {
+            List list = new List(1, new List(2, null));
+
+            Assert.AreEqual(2, list.Length);
+        }
+
+        [TestMethod]
         public void SimpleListToList()
         {
             List list = new List(1, new List(2, null));

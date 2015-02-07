@@ -24,6 +24,17 @@
 
         public ISeq Rest { get { return this.rest == null ? EmptyList.Instance : this.rest; } }
 
+        public int Length
+        {
+            get
+            {
+                if (this.rest == null)
+                    return 1;
+
+                return 1 + ((List)this.rest).Length;
+            }
+        }
+
         public static List AddList(ISeq list1, List list2)
         {
             if (list1 == null)
