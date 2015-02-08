@@ -31,6 +31,8 @@
 
         public IList<object> Elements { get { return this.elements; } }
 
+        public int Length { get { return this.elements.Length; } }
+
         public object First
         {
             get 

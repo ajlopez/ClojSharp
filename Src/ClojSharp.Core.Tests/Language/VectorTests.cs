@@ -30,6 +30,14 @@
         }
 
         [TestMethod]
+        public void Length()
+        {
+            Vector vector = new Vector(new object[] { 1, 2, 3 });
+
+            Assert.AreEqual(3, vector.Length);
+        }
+
+        [TestMethod]
         public void Next()
         {
             Vector vector = new Vector(new object[] { 1, 2 });
