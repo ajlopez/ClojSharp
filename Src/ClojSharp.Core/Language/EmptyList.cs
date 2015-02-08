@@ -16,6 +16,8 @@
 
         public static EmptyList Instance { get { return instance; } }
 
+        public int Length { get { return 0; } }
+
         public override string ToString()
         {
             return "()";

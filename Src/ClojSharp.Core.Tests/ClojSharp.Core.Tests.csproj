@@ -69,6 +69,7 @@
     <Compile Include="FileTests.cs" />
     <Compile Include="Forms\DivideTests.cs" />
     <Compile Include="Forms\MultiplyTests.cs" />
+    <Compile Include="Language\EmptyListTests.cs" />
     <Compile Include="Language\SetTests.cs" />
     <Compile Include="SpecialForms\MultiMacroTests.cs" />
     <Compile Include="Forms\MultiFunctionTests.cs" />
