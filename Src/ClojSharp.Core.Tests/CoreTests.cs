@@ -325,6 +325,14 @@
             Assert.AreEqual("other", this.Evaluate("(cond (true? 0) \"true\" (false? 0) \"false\" :else \"other\")"));
         }
 
+        [TestMethod]
+        public void EvaluateCount()
+        {
+            Assert.AreEqual(3, this.Evaluate("(count [1 2 3])"));
+            Assert.AreEqual(0, this.Evaluate("(count '())"));
+            Assert.AreEqual(2, this.Evaluate("(count '(1 2))"));
+        }
+
         private void IsForm(string name)
         {
             var result = this.machine.RootContext.GetValue(name);

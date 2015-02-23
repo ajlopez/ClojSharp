@@ -88,3 +88,6 @@
 (defn dissoc
 	[map & keyvals]
 		(. map (Dissociate (to-array keyvals))))
+
+(defn count
+    [x] (.Length x ()))

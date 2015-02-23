@@ -32,7 +32,7 @@
             else
                 args = null;
 
-            return type.InvokeMember(this.name, BindingFlags.Public | BindingFlags.InvokeMethod | BindingFlags.Instance, null, arguments[0], args);
+            return type.InvokeMember(this.name, BindingFlags.Public | BindingFlags.InvokeMethod | BindingFlags.Instance | BindingFlags.GetProperty, null, arguments[0], args);
         }
     }
 }
