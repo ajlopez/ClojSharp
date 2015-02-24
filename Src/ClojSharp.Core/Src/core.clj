@@ -90,4 +90,4 @@
 		(. map (Dissociate (to-array keyvals))))
 
 (defn count
-    [x] (.Length x ()))
+    [x] (if (nil? x) 0 (.Length x)))
