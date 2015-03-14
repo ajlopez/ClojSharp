@@ -470,6 +470,23 @@
         }
 
         [TestMethod]
+        public void GetUnexpectedSharp()
+        {
+            Lexer lexer = new Lexer("#");
+
+            try
+            {
+                lexer.NextToken();
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOfType(ex, typeof(LexerException));
+                Assert.AreEqual("Unexpected '#'", ex.Message);
+            }
+        }
+
+        [TestMethod]
         public void GetString()
         {
             Lexer lexer = new Lexer("\"foo\"");
