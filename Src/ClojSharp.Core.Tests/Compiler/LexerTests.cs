@@ -560,6 +560,20 @@
         }
 
         [TestMethod]
+        public void GetKeywordWithMinus()
+        {
+            Lexer lexer = new Lexer(":a-b");
+
+            Token token = lexer.NextToken();
+
+            Assert.IsNotNull(token);
+            Assert.AreEqual(TokenType.Keyword, token.Type);
+            Assert.AreEqual("a-b", token.Value);
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetKeywordEndingWithQuestionMark()
         {
             Lexer lexer = new Lexer(":a?");
