@@ -149,6 +149,26 @@
         }
 
         [TestMethod]
+        public void GetBackSlashChar()
+        {
+            Lexer lexer = new Lexer("\\\\");
+
+            IsToken(lexer, TokenType.Character, "\\");
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
+        public void GetBackSlashCharWithSpace()
+        {
+            Lexer lexer = new Lexer("\\\\ ");
+
+            IsToken(lexer, TokenType.Character, "\\");
+
+            Assert.IsNull(lexer.NextToken());
+        }
+
+        [TestMethod]
         public void GetEscapedChar()
         {
             Lexer lexer = new Lexer("\\\\\\ \\\\n \\\\r \\\\t");

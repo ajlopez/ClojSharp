@@ -56,18 +56,23 @@
 
                 if (chr == '\\')
                 {
-                    char chr2 = (char)this.NextChar();
+                    int ichr2 = this.NextChar();
 
-                    if (chr2 == '\\')
-                        return new Token(TokenType.Character, "\\");
-                    if (chr2 == 'n')
-                        return new Token(TokenType.Character, "\n");
-                    if (chr2 == 'r')
-                        return new Token(TokenType.Character, "\r");
-                    if (chr2 == 't')
-                        return new Token(TokenType.Character, "\t");
+                    if (ichr2 >= 0)
+                    {
+                        char chr2 = (char)ichr2;
 
-                    this.PushChar(chr2);
+                        if (chr2 == '\\')
+                            return new Token(TokenType.Character, "\\");
+                        if (chr2 == 'n')
+                            return new Token(TokenType.Character, "\n");
+                        if (chr2 == 'r')
+                            return new Token(TokenType.Character, "\r");
+                        if (chr2 == 't')
+                            return new Token(TokenType.Character, "\t");
+
+                        this.PushChar(chr2);
+                    }
                 }
 
                 return new Token(TokenType.Character, chr.ToString());
