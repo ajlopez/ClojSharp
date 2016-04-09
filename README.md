@@ -26,6 +26,7 @@ A Clojure interpreter written in C#, Work in Progress.
 - [Pythoninc Clojure](http://www.pixelmonkey.org/2014/11/02/clojonic)
 - [Clojure: what is difference between resolve and var?](http://stackoverflow.com/questions/11887852/clojure-what-is-difference-between-resolve-and-var)
 - [Clojure Namespaces and Vars](http://clojure-doc.org/articles/language/namespaces.html)
+- [Clojure Data Structures](http://clojure.org/reference/data_structures)
 
 ## Notes
 
