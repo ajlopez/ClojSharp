@@ -27,6 +27,7 @@ A Clojure interpreter written in C#, Work in Progress.
 - [Clojure: what is difference between resolve and var?](http://stackoverflow.com/questions/11887852/clojure-what-is-difference-between-resolve-and-var)
 - [Clojure Namespaces and Vars](http://clojure-doc.org/articles/language/namespaces.html)
 - [Clojure Data Structures](http://clojure.org/reference/data_structures)
+- [The Ultimate Guide to Clojure Concurrency](https://purelyfunctional.tv/guide/clojure-concurrency/)
 
 ## Notes
 
